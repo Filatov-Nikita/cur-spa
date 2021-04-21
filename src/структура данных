@@ -1,0 +1,105 @@
+{
+  period: {
+    week: '10 неделя',
+    dateWeekPeriod: '01 марта 2021 - 07 марта 2021';
+  },
+  presentations: {
+
+    medical: {
+      type: 'medical',
+      speaker: {
+        name: 'Гумеров',
+        lastname: 'Фарит',
+        patronymic: 'Рифович',
+        position: 'Председатель Государственного комитета Республики Башкортостан по чрезвычайным ситуациям',
+        avatar: 'https://...'
+      },
+      slides: [
+        {
+          title: 'Название слайда',
+          type: 'zdrav1', //тип слайда, который необходимо отобразить (первый слайд здравоохранения)
+          data: {...someData}
+        },
+        {
+          title: 'Название слайда 2',
+          type: 'zdrav2',
+          data: {...someData}
+        }
+        ...
+      ]
+    },
+
+    hoz: {
+      type: 'hoz',
+      speaker: {
+        name: 'Гумеров',
+        lastname: 'Фарит',
+        patronymic: 'Рифович',
+        position: 'Председатель Государственного комитета Республики Башкортостан по чрезвычайным ситуациям',
+        avatar: 'https://...'
+      },
+      slides: [
+        {
+          title: 'Название слайда',
+          type: 'hoz1',
+          data: {...someData}
+        },
+        {
+          title: 'Название слайда 2',
+          type: 'hoz2',
+          data: {...someData}
+        }
+        ...
+      ]
+    },
+
+    situations: {
+      type: 'situations',
+      speaker: {
+        name: 'Гумеров',
+        lastname: 'Фарит',
+        patronymic: 'Рифович',
+        position: 'Председатель Государственного комитета Республики Башкортостан по чрезвычайным ситуациям',
+        avatar: 'https://...'
+      },
+      slides: [
+        {
+          title: 'Название слайда',
+          type: 'hs1',
+          data: {...someData}
+        },
+        {
+          title: 'Название слайда 2',
+          type: 'hs2',
+          data: {...someData}
+        }
+        ...
+      ]
+    },
+
+    transport: {
+      type: 'transport',
+      speaker: {
+        name: 'Гумеров',
+        lastname: 'Фарит',
+        patronymic: 'Рифович',
+        position: 'Председатель Государственного комитета Республики Башкортостан по чрезвычайным ситуациям',
+        avatar: 'https://...'
+      },
+      slides: [
+        {
+          title: 'Название слайда',
+          type: 'transport1',
+          data: {...someData}
+        },
+        {
+          title: 'Название слайда 2',
+          type: 'transport2',
+          data: {...someData}
+        }
+        ...
+      ]
+    }
+
+  }
+}

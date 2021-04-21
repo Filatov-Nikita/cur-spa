@@ -1,0 +1,106 @@
+// app global css in SCSS form
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --board-border-color: rgba(255, 255, 255, 0.5);
+}
+
+.slide-text-body {
+  font-size: 70px;
+  line-height: 112.4%;
+  @apply tw-font-pt-sans tw-text-white tw-font-normal;
+}
+
+.slide-text-caption {
+  font-size: 50px;
+  line-height: 56px;
+  @apply tw-font-pt-sans tw-text-white tw-font-normal;
+}
+
+.slide-text-lg, .slide-text-md, .slide-text-md2, .slide-text-sm, .slide-text-xs, .slide-text-important {
+  @apply tw-font-roboto tw-font-bold;
+}
+
+.slide-text-lg {
+  font-size: 630px;
+  line-height: 738px;
+}
+
+.slide-text-md {
+  font-size: 500px;
+  line-height: 586px;
+}
+
+.slide-text-md2 {
+  font-size: 350px;
+  line-height: 410px
+}
+
+.slide-text-sm {
+  font-size: 220px;
+  line-height: 257px;
+}
+
+.slide-text-xs {
+  font-size: 150px;
+  line-height: 175px;
+}
+
+.slide-text-important {
+  font-size: 80px;
+  line-height: 100%;
+  letter-spacing: -0.025em;
+  @apply tw-text-positive;
+}
+
+.main-bg {
+  background: url('~assets/bg-main.jpg') #00092E no-repeat;
+  background-size: cover;
+}
+
+.main-wrapper {
+  padding-left: 161px;
+}
+
+.online-icon::before {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  background: theme('colors.positive');
+}
+
+.board-l-offset, .board-tl-offset {
+  padding-left: 124px;
+}
+
+.board-t-offset, .board-tl-offset {
+  padding-top: 149px;
+}
+
+.page-title {
+  font-size: 130px;
+  line-height: 152px;
+  @apply tw-font-roboto tw-font-bold tw-text-white;
+}
+
+
+.board-status {
+  font-size: 80px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  padding-left: 30px;
+  padding-right: 36px;
+  @apply tw-uppercase tw-font-bold tw-font-roboto tw-text-white tw-bg-positive tw-inline-block;
+
+}
+
+.board-li-el::before {
+  content: '';
+  border-radius: 50%;
+  display: inline-block;
+  width: 94px;
+  height: 94px;
+  @apply tw-bg-positive;
+}
