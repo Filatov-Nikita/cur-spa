@@ -13,7 +13,7 @@
           <board-text-body
             icon="plain"
             offset="92px"
-            text="Железнодорожный транспорт"
+            text="На объектах авиасообщения"
             v-space-m:bottom="'84px'"
           />
 

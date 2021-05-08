@@ -27,7 +27,7 @@
               textWMax="349px"
               icon="dvor"
               offset="89px"
-              text="Произведен обкос дворов"
+              text="Произведен обкос дворов, км"
               sizeText="caption"
               v-space-m:bottom="'39px'"
             />
@@ -44,7 +44,7 @@
               textWMax="409px"
               icon="obochina"
               offset="89px"
-              text="Произведен обкос обочин дорог"
+              text="Произведен обкос обочин дорог, км"
               sizeText="caption"
               v-space-m:bottom="'39px'"
             />

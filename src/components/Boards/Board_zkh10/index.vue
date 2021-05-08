@@ -17,10 +17,10 @@
             v-space-m:bottom="'150px'"
           />
           <div class="slide-text-important">
-            <p>25 марта 2021</p>
+            <p>25 марта 2021 г.</p>
             <br />
             <p>г.Уфа,</p><br>
-            <p>Орджоникидзевкий район</p>
+            <p>Орджоникидзевский район</p>
           </div>
 
           <board-caption
@@ -28,7 +28,7 @@
             v-space-m:bottom="'30px'"
             class="tw-mt-auto"
           />
-          <div class="slide-text-important">дизинфекция МОПов</div>
+          <div class="slide-text-important">дезинфекция МОПов</div>
         </board-offsets>
       </template>
       <template #right>

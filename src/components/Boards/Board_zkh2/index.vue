@@ -17,9 +17,9 @@
             v-space-m:bottom="'123px'"
           />
           <div class="slide-text-important" v-space-m:bottom="'130px'">
-            <p>25 марта 2021</p>
+            <p>25 марта 2021 г.</p>
             <br />
-            <p>г. Уфа, Нефтеперерабатывающий завод «Уфаоргсинтез»</p>
+            <p>г. Уфа, нефтеперерабатывающий завод «Уфаоргсинтез»</p>
           </div>
 
           <div class="tw-flex tw-flex-wrap tw-w-full" v-space-m:bottom="'87px'">

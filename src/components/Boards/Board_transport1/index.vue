@@ -59,7 +59,7 @@
             textWMax="900px"
             offset="81px"
             sizeText="caption"
-            text="Количество погивших"
+            text="Количество погибших"
             v-space-m:bottom="'55px'"
           />
 

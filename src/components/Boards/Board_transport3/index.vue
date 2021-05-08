@@ -30,7 +30,7 @@ export default {
         },
 
         {
-          label: 'Выезд на встречную полосу',
+          label: 'Наезд на пешехода',
           spaceOffset: '60px',
           options: {
             left: { color: 'negative', size: 'sm', value: '1' },

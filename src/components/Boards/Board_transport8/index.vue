@@ -13,7 +13,7 @@
           <board-text-body
             icon="train"
             offset="92px"
-            text="Объединенный автовокзал РБ"
+            text="На объектах ж/д транспорта"
             v-space-m:bottom="'84px'"
           />
 

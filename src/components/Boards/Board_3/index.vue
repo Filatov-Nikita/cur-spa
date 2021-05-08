@@ -73,7 +73,7 @@
             icon="home"
             textWMax="978px"
             offset="113px"
-            text="Находятся на стационарном лечении"
+            text="Находятся на амбулаторном лечении"
             v-space-p:left="'63px'"
             v-space-m:bottom="'67px'"
           />
