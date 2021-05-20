@@ -2,7 +2,12 @@
   <div class="top">
     <div class="top-wrapper">
       <div class="title">{{ title }}</div>
-      <SpeakerCard v-space-p:top="'45px'"/>
+      <SpeakerCard
+        :name="speaker.name"
+        :position="speaker.position"
+        :avatar="speaker.avatar"
+        v-space-p:top="'45px'"
+      />
     </div>
   </div>
 </template>
@@ -15,6 +20,10 @@ export default {
     title: {
       required: true,
       type: String,
+    },
+    speaker: {
+      required: true,
+      type: Object,
     },
   },
   components: {

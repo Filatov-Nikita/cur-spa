@@ -12,7 +12,8 @@ module.exports = {
         negative: "#FF0000",
         orange: "#FF6B00",
         blue: "#0075FF",
-        green: "#20E100"
+        green: "#20E100",
+        blueSea: "#01CBB8"
       },
       fontFamily: {
         roboto: "Roboto Condensed",

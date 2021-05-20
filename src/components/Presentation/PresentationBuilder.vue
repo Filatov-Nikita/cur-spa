@@ -1,7 +1,7 @@
 <template>
   <div class="builder">
     <!-- <PresentationVideoBackground :src="video" /> -->
-    <PresentationTopBar :title="slideTitle" />
+    <PresentationTopBar :title="slideTitle" :speaker="speaker" />
     <div class="board-container">
       <div class="board-wrapper">
         <transition enter-active-class="animated zoomIn slow" appear>
@@ -14,8 +14,8 @@
           class="tw-font-pt-sans tw-text-white tw-text-right"
           style="font-size: 35px"
         >
-          <p>10 неделя</p>
-          <p>01 марта 2021 - 07 марта 2021</p>
+          <p>20 неделя</p>
+          <p>10 мая 2021 - 16 мая 2021</p>
         </div>
       </div>
     </div>
@@ -66,6 +66,10 @@ export default {
     name: {
       required: true,
       type: String,
+    },
+    speaker: {
+      required: true,
+      type: Object,
     },
   },
   data() {

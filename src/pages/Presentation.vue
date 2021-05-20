@@ -45,24 +45,65 @@ const types = {
     video: 'videos/medicine.mp4',
     color: 'negative',
     logo: 'pres-logos/medical.svg',
+    // временно
+    speaker: {
+      avatar: 'speakers/Забелин.png',
+      name: 'Забелин Максим Васильевич',
+      position:
+        'Заместитель Премьер-министра Правительства Республики Башкортостан - министр здравоохранения',
+    },
   },
   transport: {
     name: 'Транспорт и дорожное хозяйство',
     video: 'videos/transport.mp4',
     color: 'blue',
     logo: 'pres-logos/transport.svg',
+    // временно
+    speaker: {
+      avatar: 'speakers/Жульков.jpg',
+      name: 'Жульков Виктор Михайлович',
+      position:
+        'Исполняющий обязанности министра транспорта и дорожного хозяйства Республики Башкортостан',
+    },
   },
   hoz: {
     name: 'Жилищно-коммунальное хозяйство',
     video: 'videos/hoz.mp4',
     color: 'orange',
     logo: 'pres-logos/hoz.svg',
+    // временно
+    speaker: {
+      avatar: 'speakers/Голованова.jpg',
+      name: 'Голованова Ирина Александровна',
+      position:
+        'Исполняющий обязанности министра жилищно-коммунального хозяйства Республики Башкортостан',
+    },
   },
   situations: {
     name: 'Чрезвычайные ситуации',
     video: 'videos/situations.mp4',
     color: 'green',
     logo: 'pres-logos/situations.svg',
+    // временно
+    speaker: {
+      avatar: 'speakers/Гумеров.jpg',
+      name: 'Гумеров Фарит Рифович',
+      position:
+        'Председатель Государственного комитета Республики Башкортостан по чрезвычайным ситуациям',
+    },
+  },
+  sel: {
+    name: ' Сельское хозяйство',
+    video: 'videos/universal.mp4',
+    color: 'blueSea',
+    logo: 'pres-logos/sel.png',
+    // временно
+    speaker: {
+      avatar: 'speakers/Фазрахманов.jpg',
+      name: 'Фазрахманов Ильшат Ильдусович',
+      position:
+        'Заместитель Премьер-министра Правительства Республики Башкортостан - министр сельского хозяйства',
+    },
   },
 };
 
@@ -88,10 +129,6 @@ export default {
   data() {
     return {
       types,
-      speaker: {
-        name: 'Владимир Владимирович',
-        position: 'Министр',
-      },
       pres: getFromServer(),
     };
   },
@@ -140,6 +177,9 @@ export default {
       if (typesKeys.length <= 0) return {};
       if (!(type in types)) return types[typesKeys[0]];
       return types[type];
+    },
+    speaker() {
+      return this.typeParams.speaker;
     },
     video() {
       return this.typeParams.video;
@@ -388,6 +428,22 @@ function getFromServer() {
         {
           title: 'Мероприятия по дезинфекции подъездов',
           type: 'zdrav_zkh12',
+        },
+      ],
+    },
+    sel: {
+      slides: [
+        {
+          title: 'ХОД ВЕСЕННИХ ПОЛЕВЫХ РАБОТ',
+          type: 'zdrav_sel1',
+        },
+        {
+          title: 'ХОД ВЕСЕННИХ ПОЛЕВЫХ РАБОТ',
+          type: 'zdrav_sel2',
+        },
+        {
+          title: 'ЯРОВОЙ СЕВ',
+          type: 'zdrav_sel3',
         },
       ],
     },

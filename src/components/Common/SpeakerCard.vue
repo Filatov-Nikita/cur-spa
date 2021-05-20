@@ -1,21 +1,18 @@
 <template>
   <div class="speaker" :class="`speaker-${size}`">
-    <q-img
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/%28Sergey_Lavrov%29_2019_Comprehensive_Test-Ban_Treaty_Article_XIV_Conference_%2848832045357%29_%28cropped%29.jpg/1280px-%28Sergey_Lavrov%29_2019_Comprehensive_Test-Ban_Treaty_Article_XIV_Conference_%2848832045357%29_%28cropped%29.jpg"
-      class="avatar"
-      :class="`avatar-${size}`"
-    />
+    <q-img :src="avatar" class="avatar" :class="`avatar-${size}`" />
     <div class="speakerData" :class="`speakerData-${size}`">
       <div class="container" :class="`container-${size}`">
         <div v-if="showLabel" class="label" v-space-m:bottom="'41px'">
           Докладчик:
         </div>
         <div class="name" :class="`name-${size}`">
-          <div>Забелин Максим</div>
-          <div>Васильевич</div>
+          <!-- <div>Забелин Максим</div>
+          <div>Васильевич</div> -->
+          <div>{{ name }}</div>
         </div>
         <div class="position" :class="`position-${size}`">
-          Министр здравоохранения Республики Башкортостан
+          {{ position }}
         </div>
       </div>
     </div>
@@ -31,6 +28,18 @@ export default {
     },
     size: {
       default: 'md',
+      type: String,
+    },
+    name: {
+      required: true,
+      type: String,
+    },
+    avatar: {
+      required: true,
+      type: String,
+    },
+    position: {
+      required: true,
       type: String,
     },
   },

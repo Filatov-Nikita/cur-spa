@@ -14,6 +14,7 @@
       <SpeakerIntroduction
         class="speaker-card tw-w-full tw-self-center"
         :title="name"
+        :speaker="speaker"
       />
     </div>
 
@@ -45,6 +46,10 @@ export default {
     name: {
       required: true,
       type: String,
+    },
+    speaker: {
+      required: true,
+      type: Object,
     },
   },
   components: {

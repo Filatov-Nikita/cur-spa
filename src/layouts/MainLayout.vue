@@ -1,9 +1,15 @@
 <template>
-  <q-layout class="container">
+  <q-layout class="container" :class="{ open }">
     <q-page-container>
+      <MainVideoBackground src="videos/main.mp4" />
       <q-page class="tw-flex tw-flex-col">
-        <div class="tw-flex-grow main-bg">
-          <MainHeader />
+        <div class="tw-flex-grow">
+          <MainHeader :class="open ? ['tw-z-50', 'tw-relative'] : ''" />
+          <MainMenuItems
+            @close="open = false"
+            class="menu-paddings"
+            v-if="open"
+          />
           <transition
             leave-active-class="leave"
             enter-active-class="animated fadeIn slow-enter1"
@@ -11,21 +17,37 @@
             <router-view class="main-wrapper" />
           </transition>
         </div>
-        <MainLinks />
+        <DokladsLink @click="toggleMenu" class="doklad" />
       </q-page>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import MainLinks from 'components/Main/MainLinks';
+import DokladsLink from 'components/Main/DokladsLink';
+import MainMenuItems from 'components/Main/MenuItems/MainMenuItems';
+import MainVideoBackground from 'components/Main/MainVideoBackground';
 import MainHeader from 'layouts/parts/MainHeader';
 
 export default {
   name: 'MainLayout',
+  data() {
+    return {
+      open: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      if (this.$route.name === 'home')
+        return this.$router.push({ name: 'introduction' });
+      this.open = !this.open;
+    },
+  },
   components: {
-    MainLinks,
     MainHeader,
+    DokladsLink,
+    MainMenuItems,
+    MainVideoBackground,
   },
 };
 </script>
@@ -35,6 +57,18 @@ export default {
   overflow: hidden;
   position: relative;
 }
+.open::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 16, 61, 0.92);
+  backdrop-filter: blur(42px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 
 .slow-enter1 {
   animation-duration: 1.5s;
@@ -42,5 +76,16 @@ export default {
 
 .leave {
   display: none;
+}
+
+.doklad {
+  position: absolute;
+  bottom: -1px;
+  left: 141px;
+}
+
+.menu-paddings {
+  padding-left: 161px;
+  padding-top: 391px;
 }
 </style>

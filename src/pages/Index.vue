@@ -1,12 +1,13 @@
 <template>
   <section>
     <div class="title page-title">
-      ОПЕРАТИВНОЕ СОВЕЩАНИЕ В ПРАВИТЕЛЬСТВЕ РЕСПУБЛИКИ БАШКОРТОСТАН
+      <p>ОПЕРАТИВНОЕ СОВЕЩАНИЕ В ПРАВИТЕЛЬСТВЕ</p>
+      <p>РЕСПУБЛИКИ БАШКОРТОСТАН</p>
     </div>
 
     <div class="period">
-      <div>10 неделя</div>
-      <div>01 марта 2021 - 07 марта 2021</div>
+      <div>20 неделя</div>
+      <div>10 мая 2021 - 16 мая 2021</div>
     </div>
   </section>
 </template>
@@ -26,7 +27,7 @@ export default {
 <style scoped>
 .title {
   max-width: 1859px;
-  margin-top: 455px;
+  margin-top: 417px;
   @apply tw-uppercase;
 }
 
