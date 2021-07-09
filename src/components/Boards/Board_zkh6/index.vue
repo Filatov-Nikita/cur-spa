@@ -10,7 +10,7 @@
             v-space-m:bottom="'35px'"
           />
           <board-numbers
-            value="23 414"
+            value="20 585"
             color="negative"
             size="lg"
             showDynamic
@@ -32,7 +32,7 @@
               v-space-m:bottom="'39px'"
             />
             <board-numbers
-              value="5 370"
+              value="7 543"
               color="positive"
               size="sm"
               showDynamic
@@ -49,7 +49,7 @@
               v-space-m:bottom="'39px'"
             />
             <board-numbers
-              value="14 000"
+              value="11 000"
               color="positive"
               size="sm"
               showDynamic

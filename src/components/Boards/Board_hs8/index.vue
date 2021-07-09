@@ -13,12 +13,12 @@
           <board-text-body
             offset="62px"
             icon="people"
-            text="Спасено человек с 2016 года"
+            text="Общее количество установленных пожарных извещателей в РБ"
             v-space-m:bottom="'198px'"
           />
 
           <board-numbers
-            value="44 545"
+            value="332058"
             size="md"
             color="positive"
             showDynamic
@@ -31,7 +31,7 @@
             period="week"
             label="за неделю"
             :valueStg="{
-              value: '545',
+              value: '1052',
               size: 'sm',
               color: 'negative',
               showDynamic: true,

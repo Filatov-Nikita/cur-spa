@@ -17,7 +17,7 @@
             v-space-m:bottom="'150px'"
           />
           <div class="slide-text-important">
-            <p>25 марта 2021 г.</p>
+            <p>25 мая 2021 г.</p>
             <br />
             <p>г.Уфа,</p><br>
             <p>Орджоникидзевский район</p>

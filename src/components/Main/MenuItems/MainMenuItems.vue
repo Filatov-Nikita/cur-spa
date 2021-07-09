@@ -1,6 +1,6 @@
 <template>
   <div class="menu-container">
-    <div class="tw-text-right">
+    <div class="tw-text-right" style="padding-right: 635px">
       <button
         style="font-size: 30px"
         class="tw-inline-flex tw-items-center"
@@ -55,11 +55,11 @@ export default {
           icon: 'chs',
           to: { name: 'presentation', params: { type: 'situations' } },
         },
-        {
-          name: 'Сельское хозяйство',
-          icon: 'sel',
-          to: { name: 'presentation', params: { type: 'sel' } },
-        },
+        // {
+        //   name: 'Сельское хозяйство',
+        //   icon: 'sel',
+        //   to: { name: 'presentation', params: { type: 'sel' } },
+        // },
       ],
     };
   },

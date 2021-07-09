@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-flex tw-items-center">
+  <div class="tw-flex tw-items-end">
     <div class="slides-control">
       <span class="slides-control--large">{{ current }}<span>/</span></span
       ><span class="slides-control--small">{{ total }}</span>
@@ -30,7 +30,8 @@ export default {
 
 <style scoped>
 .slides-control {
-  margin-right: 51px;
+  margin-right: 61px;
+  padding-bottom: 10px;
   @apply tw-font-roboto tw-font-bold tw-text-white;
 }
 

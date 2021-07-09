@@ -17,7 +17,7 @@
           />
 
           <board-numbers
-            value="111"
+            value="163"
             size="lg"
             color="negative"
             showDynamic
@@ -40,7 +40,7 @@
             text="Количество пожаров с начала года"
           />
 
-          <board-numbers value="916" size="lg" color="positive" />
+          <board-numbers value="4669" size="lg" color="positive" />
 
           <board-separator v-space-m:bottom="'82px'" />
 

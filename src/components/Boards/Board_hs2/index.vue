@@ -12,7 +12,7 @@
           />
 
           <board-numbers
-            value="18"
+            value="1"
             color="negative"
             size="md"
             showDynamic
@@ -27,7 +27,7 @@
             period="year"
             :valueStg="{
               color: 'negative',
-              value: '49',
+              value: '120',
               size: 'sm',
             }"
             v-space-m:bottom="'55px'"
@@ -55,7 +55,7 @@
           />
 
           <board-numbers
-            value="8"
+            value="1"
             color="positive"
             size="md"
             showDynamic
@@ -70,7 +70,7 @@
             period="year"
             :valueStg="{
               color: 'negative',
-              value: '49',
+              value: '103',
               size: 'sm',
             }"
             v-space-m:bottom="'55px'"
@@ -98,7 +98,7 @@
           />
 
           <board-numbers
-            value="1"
+            value="23"
             color="negative"
             size="md"
             showDynamic
@@ -113,7 +113,7 @@
             period="year"
             :valueStg="{
               color: 'negative',
-              value: '49',
+              value: '843',
               size: 'sm',
             }"
             v-space-m:bottom="'55px'"

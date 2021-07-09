@@ -17,14 +17,14 @@
             <router-view class="main-wrapper" />
           </transition>
         </div>
-        <DokladsLink @click="toggleMenu" class="doklad" />
+        <BottomMenu class="bottom-menu" @toggleDoklad="toggleMenu" />
       </q-page>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import DokladsLink from 'components/Main/DokladsLink';
+import BottomMenu from 'components/Common/BottomMenu';
 import MainMenuItems from 'components/Main/MenuItems/MainMenuItems';
 import MainVideoBackground from 'components/Main/MainVideoBackground';
 import MainHeader from 'layouts/parts/MainHeader';
@@ -33,7 +33,7 @@ export default {
   name: 'MainLayout',
   data() {
     return {
-      open: false,
+      open: this.$route.query.open || false,
     };
   },
   methods: {
@@ -45,7 +45,7 @@ export default {
   },
   components: {
     MainHeader,
-    DokladsLink,
+    BottomMenu,
     MainMenuItems,
     MainVideoBackground,
   },
@@ -78,7 +78,7 @@ export default {
   display: none;
 }
 
-.doklad {
+.bottom-menu {
   position: absolute;
   bottom: -1px;
   left: 141px;

@@ -7,7 +7,7 @@
 
     <div class="period">
       <div>20 неделя</div>
-      <div>10 мая 2021 - 16 мая 2021</div>
+      <p>1 июня 2021 - 5 июня 2021</p>
     </div>
   </section>
 </template>

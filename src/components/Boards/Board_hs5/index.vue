@@ -19,7 +19,7 @@
           />
 
           <board-numbers
-            value="111"
+            value="109"
             size="md"
             color="negative"
             showDynamic
@@ -33,11 +33,11 @@
             wMax="903px"
             v-space-m:bottom="'23px'"
           />
-          <board-numbers value="4 111" size="sm" color="positive" />
+          <board-numbers value="2832" size="sm" color="positive" />
         </board-offsets>
       </template>
       <template #right>
-        <q-img src="bus.jpg" width="100%" height="100%" />
+        <q-img src="bus3.jpeg" width="100%" height="100%" />
       </template>
     </board-devider>
   </board-cover>

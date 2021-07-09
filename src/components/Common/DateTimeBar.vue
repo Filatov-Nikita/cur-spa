@@ -1,8 +1,10 @@
 <template>
   <div class="text online-icon tw-flex tw-items-start">
-    <div>
-      <div>{{ date }}</div>
-      <div>{{ time }}</div>
+    <div :class="oneLine ? ['tw-flex'] : ''">
+      <div :class="{ 'tw-order-1': oneLine }">{{ date }}</div>
+      <div :class="{ 'tw-mr-4': oneLine }">
+        {{ time }}
+      </div>
     </div>
   </div>
 </template>
@@ -12,6 +14,12 @@ import moment from 'moment';
 
 export default {
   name: 'DateTimeBar',
+  props: {
+    oneLine: {
+      default: false,
+      type: Boolean,
+    },
+  },
   created() {
     // ** погрешность во времени из-за того что создание компонента необязательно произойдет в первую секунду отсчета новой минуты
     this.set();
