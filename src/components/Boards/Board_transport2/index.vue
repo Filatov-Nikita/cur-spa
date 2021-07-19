@@ -5,8 +5,8 @@
         <board-offsets
           :width="1968"
           :l="124"
-          :t="146"
-          :b="106"
+          :t="90"
+          :b="58"
           :r="70"
           :toPerc="['l']"
         >
@@ -21,10 +21,10 @@
             value="24 449"
             color="positive"
             size="lg"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'38px'"
           />
 
-          <board-separator v-space-m:bottom="'82px'" />
+          <board-separator v-space-m:bottom="'62px'" />
 
           <board-mapping-numbers
             :left="{ color: 'negative', value: '+155', size: 'sm' }"
@@ -41,8 +41,8 @@
         <board-offsets
           :width="1312"
           :l="174"
-          :t="134"
-          :b="73"
+          :t="84"
+          :b="50"
           :r="50"
           :toPerc="['l']"
         >
@@ -69,7 +69,7 @@
             align="end"
             bottomSpace="10px"
             offset="40px"
-            v-space-m:bottom="'124px'"
+            v-space-m:bottom="'104px'"
           />
 
           <board-text-body

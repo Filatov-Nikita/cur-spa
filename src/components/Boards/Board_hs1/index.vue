@@ -5,7 +5,7 @@
         <board-offsets
           :width="1632"
           :l="160"
-          :t="139"
+          :t="109"
           :b="87"
           :r="107"
           :toPerc="['l']"
@@ -29,7 +29,7 @@
         <board-offsets
           :width="1632"
           :l="150"
-          :t="137"
+          :t="107"
           :b="87"
           :r="128"
           :toPerc="['l']"

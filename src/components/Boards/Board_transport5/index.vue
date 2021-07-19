@@ -3,8 +3,8 @@
     <board-offsets
       :width="3264"
       :l="146"
-      :t="146"
-      :b="106"
+      :t="106"
+      :b="86"
       :r="215"
       :toPerc="['l']"
     >
@@ -12,7 +12,7 @@
         icon="road-techik"
         offset="73px"
         text="На дорогах республики задействовано техники"
-        v-space-m:bottom="'126px'"
+        v-space-m:bottom="'56px'"
       />
 
       <board-numbers
@@ -21,10 +21,10 @@
         size="lg"
         showDynamic
         dynamic
-        v-space-m:bottom="'98px'"
+        v-space-m:bottom="'58px'"
       />
 
-      <board-separator v-space-m:bottom="'82px'" />
+      <board-separator v-space-m:bottom="'52px'" />
 
       <div class="tw-flex tw-flex-wrap bottom-items">
         <div class="bottom-item">

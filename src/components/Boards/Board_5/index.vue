@@ -3,7 +3,7 @@
     <board-offsets
       :width="3264"
       :l="124"
-      :t="183"
+      :t="103"
       :r="150"
       :b="82"
       :toPerc="['l']"
@@ -18,12 +18,12 @@
       <board-numbers
         value="2 897"
         color="negative"
-        size="lg"
+        size="md"
         showDynamic
         :dynamic="true"
-        v-space-m:bottom="'59px'"
+        v-space-m:bottom="'29px'"
       />
-      <board-separator v-space-m:bottom="'68px'" />
+      <board-separator v-space-m:bottom="'38px'" />
 
       <div>
         <board-mapping-numbers

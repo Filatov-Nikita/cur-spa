@@ -1,6 +1,6 @@
 <template>
   <board-cover>
-    <board-offsets :b="114" :l="124" :r="40" :t="157">
+    <board-offsets :b="84" :l="124" :r="40" :t="117">
       <board-text-body
         offset="112px"
         icon="fuil"
@@ -14,10 +14,10 @@
         :arrowSize="500"
         align="end"
         bottomSpace="100px"
-        v-space-m:bottom="'141px'"
+        v-space-m:bottom="'41px'"
       />
 
-      <board-separator v-space-m:bottom="'53px'" />
+      <board-separator v-space-m:bottom="'83px'" />
 
       <div class="tw-flex tw-flex-wrap items">
         <div class="item">

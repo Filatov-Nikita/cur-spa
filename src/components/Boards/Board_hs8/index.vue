@@ -4,10 +4,10 @@
       <template #left>
         <board-offsets
           :width="1632"
-          :l="134"
-          :t="150"
+          :l="74"
+          :t="100"
           :b="67"
-          :r="187"
+          :r="157"
           :toPerc="['l']"
         >
           <board-text-body
@@ -19,11 +19,11 @@
 
           <board-numbers
             value="332058"
-            size="md"
+            size="md2"
             color="positive"
             showDynamic
             dynamic
-            v-space-m:bottom="'143px'"
+            v-space-m:bottom="'210px'"
           />
           <board-separator v-space-m:bottom="'47px'" />
 
@@ -44,7 +44,7 @@
         <board-offsets
           :width="1632"
           :l="127"
-          :t="137"
+          :t="107"
           :b="87"
           :r="157"
           :toPerc="['l']"
@@ -53,7 +53,7 @@
             offset="62px"
             icon="kids"
             text="Спасено детей с 2016 года"
-            v-space-m:bottom="'198px'"
+            v-space-m:bottom="'148px'"
           />
 
           <board-numbers

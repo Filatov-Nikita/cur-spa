@@ -3,10 +3,10 @@
     <board-devider leftWidth="36%" rightWidth="64%">
       <template #left>
         <board-offsets
-          :b="114"
+          :b="84"
           :l="142"
           :r="50"
-          :t="153"
+          :t="113"
           class="tw-flex tw-flex-col"
           style="height: 100%"
         >
@@ -36,7 +36,7 @@
           src="mop.jpg"
           width="100%"
           height="100%"
-          style="min-height: 1498px"
+          style="min-height: 1450px"
         />
       </template>
     </board-devider>

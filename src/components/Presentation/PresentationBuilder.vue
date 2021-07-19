@@ -148,7 +148,7 @@ export default {
 }
 
 .builder {
-  padding-bottom: 300px;
+  padding-bottom: 200px;
 }
 
 .slow {

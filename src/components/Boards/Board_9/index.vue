@@ -3,9 +3,9 @@
     <board-offsets
       :width="3264"
       :l="84"
-      :t="119"
+      :t="109"
       :r="96"
-      :b="84"
+      :b="54"
       :toPerc="['l']"
       v-space-m:left="'64px'"
     >
@@ -20,7 +20,7 @@
 
       <div
         class="tw-flex tw-flex-wrap tw-items-start"
-        v-space-m:bottom="'39px'"
+        v-space-m:bottom="'29px'"
       >
         <board-numbers
           value="4 490"

@@ -18,14 +18,23 @@
             v-space-m:bottom="'179px'"
           />
 
-          <board-numbers value="1,2" size="lg" color="positive" />
+          <board-numbers
+            value="1,2"
+            size="lg"
+            color="positive"
+            v-space-m:bottom="'79px'"
+          />
 
           <board-separator />
-
         </board-offsets>
       </template>
       <template #right>
-        <q-img src="sel/sel3.jpg" width="100%" height="100%" />
+        <q-img
+          src="sel/sel3.jpg"
+          width="100%"
+          height="100%"
+          style="min-height: 1450px"
+        />
       </template>
     </board-devider>
   </board-cover>

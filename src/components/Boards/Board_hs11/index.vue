@@ -2,13 +2,13 @@
   <board-cover>
     <board-devider :cols="3">
       <template #section1>
-        <board-offsets :l="119" :t="100" :b="76" :r="92">
+        <board-offsets :l="119" :t="60" :b="66" :r="92">
           <board-text-body
             offset="91px"
             icon="road-way"
             text="Количество происшествий"
             sizeText="caption"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'46px'"
           />
 
           <board-numbers
@@ -17,7 +17,7 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'40px'"
           />
 
           <board-separator v-space-m:bottom="'51px'" />
@@ -45,13 +45,13 @@
         </board-offsets>
       </template>
       <template #section2>
-        <board-offsets :l="115" :t="107" :b="76" :r="98">
+        <board-offsets :l="115" :t="67" :b="66" :r="98">
           <board-text-body
             offset="116px"
             icon="affected"
             text="Количество пострадавших"
             sizeText="caption"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'46px'"
           />
 
           <board-numbers
@@ -60,7 +60,7 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'40px'"
           />
 
           <board-separator v-space-m:bottom="'51px'" />
@@ -88,13 +88,13 @@
         </board-offsets>
       </template>
       <template #section3>
-        <board-offsets :l="91" :t="96" :b="76" :r="105">
+        <board-offsets :l="91" :t="66" :b="66" :r="105">
           <board-text-body
             sizeText="caption"
             offset="70px"
             icon="died"
             text="Количество погибших"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'46px'"
           />
 
           <board-numbers
@@ -103,7 +103,7 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'40px'"
           />
 
           <board-separator v-space-m:bottom="'51px'" />

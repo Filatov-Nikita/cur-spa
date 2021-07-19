@@ -2,7 +2,7 @@
   <board-cover>
     <board-devider leftWidth="69%" rightWidth="31%">
       <template #left>
-        <board-offsets :b="390" :l="156" :r="184" :t="139">
+        <board-offsets :b="390" :l="156" :r="184" :t="109">
           <board-text-body
             offset="88px"
             icon="trassa"
@@ -21,7 +21,7 @@
         </board-offsets>
       </template>
       <template #right>
-        <board-offsets :b="154" :l="136" :r="220" :t="209">
+        <board-offsets :b="154" :l="136" :r="220" :t="179">
           <board-offsets>
             <board-text-body
               textWMax="349px"

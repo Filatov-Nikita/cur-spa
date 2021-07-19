@@ -5,7 +5,7 @@
         <board-offsets
           :width="1632"
           :l="160"
-          :t="150"
+          :t="100"
           :b="118"
           :r="87"
           :toPerc="['l']"
@@ -37,7 +37,7 @@
         </board-offsets>
       </template>
       <template #right>
-        <q-img src="bus3.jpeg" width="100%" height="100%" />
+        <q-img src="bus3.jpeg" width="100%" height="100%" style="min-height: 1450px" />
       </template>
     </board-devider>
   </board-cover>

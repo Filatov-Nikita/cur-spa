@@ -2,7 +2,7 @@
   <board-cover>
     <board-devider leftWidth="67%" rightWidth="33%">
       <template #left>
-        <board-offsets :width="2189" :l="134" :t="149" :b="73" :toPerc="['l']">
+        <board-offsets :width="2189" :l="134" :t="109" :b="73" :toPerc="['l']">
           <board-text-body
             icon="corona-virus"
             textWMax="1111px"
@@ -32,7 +32,6 @@
                 dynamic: true,
               }"
               v-space-m:right="'230px'"
-              v-space-m:bottom="'100px'"
             />
 
             <board-period-numbers
@@ -50,7 +49,7 @@
         </board-offsets>
       </template>
       <template #right>
-        <board-offsets :width="1075" :l="236" :t="149" :b="73" :toPerc="['l']">
+        <board-offsets :width="1075" :l="236" :t="109" :b="73" :toPerc="['l']">
           <board-text-body
             icon="up-index"
             textWMax="531px"

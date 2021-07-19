@@ -2,13 +2,13 @@
   <board-cover>
     <board-devider :cols="3">
       <template #section1>
-        <board-offsets :l="119" :t="100" :b="76" :r="92">
+        <board-offsets :l="119" :t="80" :b="56" :r="92">
           <board-text-body
             offset="71px"
             icon="died"
             text="Количество погибших в пожарах за неделю"
             sizeText="caption"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'36px'"
           />
 
           <board-numbers
@@ -17,7 +17,7 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'18px'"
           />
 
           <board-separator v-space-m:bottom="'51px'" />
@@ -45,13 +45,13 @@
         </board-offsets>
       </template>
       <template #section2>
-        <board-offsets :l="115" :t="107" :b="76" :r="98">
+        <board-offsets :l="115" :t="87" :b="56" :r="98">
           <board-text-body
             offset="80px"
             icon="affected"
             text="Количество травмированных в пожарах за неделю"
             sizeText="caption"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'36px'"
           />
 
           <board-numbers
@@ -60,7 +60,7 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'18px'"
           />
 
           <board-separator v-space-m:bottom="'51px'" />
@@ -88,13 +88,13 @@
         </board-offsets>
       </template>
       <template #section3>
-        <board-offsets :l="91" :t="96" :b="76" :r="105">
+        <board-offsets :l="91" :t="96" :b="56" :r="105">
           <board-text-body
             sizeText="caption"
             offset="83px"
             icon="saved"
             text="Количество спасенных в пожарах за неделю"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'36px'"
           />
 
           <board-numbers
@@ -103,7 +103,7 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'18px'"
           />
 
           <board-separator v-space-m:bottom="'51px'" />

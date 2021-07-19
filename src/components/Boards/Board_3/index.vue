@@ -2,7 +2,7 @@
   <board-cover>
     <board-devider leftWidth="50%" rightWidth="50%">
       <template #left>
-        <board-offsets :width="1633" :l="127" :t="169" :b="82" :toPerc="['l']">
+        <board-offsets :width="1633" :l="127" :t="119" :b="100" :toPerc="['l']">
           <board-text-body
             icon="hospital"
             textWMax="978px"
@@ -27,7 +27,6 @@
             <div
               class="tw-flex tw-flex-col"
               v-space-m:right="'203px'"
-              v-space-m:bottom="'100px'"
               style="flex-basis: 594px"
             >
               <board-caption text="В отделении интенсивной терапии" />
@@ -44,7 +43,6 @@
             <div
               class="tw-flex tw-flex-col"
               style="flex-basis: 694px"
-              v-space-m:bottom="'100px'"
             >
               <board-caption text="На ИВЛ" wMax="594px" />
 
@@ -64,7 +62,7 @@
         <board-offsets
           :width="1633"
           :l="118"
-          :t="149"
+          :t="119"
           :b="82"
           :r="50"
           :toPerc="['l']"

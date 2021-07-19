@@ -2,13 +2,13 @@
   <board-cover>
     <board-devider :cols="3">
       <template #section1>
-        <board-offsets :l="86" :t="87" :b="76" :r="107">
+        <board-offsets :l="86" :t="67" :b="46" :r="107">
           <board-text-body
             offset="108px"
             icon="ship"
             text="Количество происшествий"
             sizeText="caption"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'56px'"
           />
 
           <board-numbers
@@ -17,10 +17,10 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'48px'"
           />
 
-          <board-separator v-space-m:bottom="'51px'" />
+          <board-separator v-space-m:bottom="'41px'" />
 
           <board-period-numbers
             label="с начала года"
@@ -45,13 +45,13 @@
         </board-offsets>
       </template>
       <template #section2>
-        <board-offsets :l="112" :t="87" :b="76" :r="96">
+        <board-offsets :l="112" :t="67" :b="46" :r="96">
           <board-text-body
             offset="116px"
             icon="affected"
             text="Количество пострадавших"
             sizeText="caption"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'56px'"
           />
 
           <board-numbers
@@ -60,10 +60,10 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'48px'"
           />
 
-          <board-separator v-space-m:bottom="'51px'" />
+          <board-separator v-space-m:bottom="'41px'" />
 
           <board-period-numbers
             label="с начала года"
@@ -88,13 +88,13 @@
         </board-offsets>
       </template>
       <template #section3>
-        <board-offsets :l="91" :t="96" :b="76" :r="105">
+        <board-offsets :l="91" :t="66" :b="46" :r="105">
           <board-text-body
             sizeText="caption"
             offset="70px"
             icon="died"
             text="Количество погибших"
-            v-space-m:bottom="'66px'"
+            v-space-m:bottom="'56px'"
           />
 
           <board-numbers
@@ -103,10 +103,10 @@
             size="md"
             showDynamic
             :dynamic="false"
-            v-space-m:bottom="'98px'"
+            v-space-m:bottom="'48px'"
           />
 
-          <board-separator v-space-m:bottom="'51px'" />
+          <board-separator v-space-m:bottom="'41px'" />
 
           <board-period-numbers
             label="с начала года"

@@ -2,7 +2,7 @@
   <board-cover>
     <board-devider leftWidth="50%" rightWidth="50%">
       <template #left>
-        <board-offsets :width="1633" :l="147" :t="149" :b="78" :toPerc="['l']">
+        <board-offsets :width="1633" :l="147" :t="109" :b="38" :toPerc="['l']">
           <board-text-body
             icon="sputnik"
             textWMax="1040px"
@@ -37,7 +37,7 @@
         </board-offsets>
       </template>
       <template #right>
-        <board-offsets :width="1633" :l="114" :t="149" :b="78" :toPerc="['l']">
+        <board-offsets :width="1633" :l="114" :t="119" :b="78" :toPerc="['l']">
           <board-text-body
             icon="corona"
             textWMax="906px"

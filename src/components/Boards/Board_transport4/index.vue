@@ -3,8 +3,8 @@
     <board-offsets
       :width="3264"
       :l="146"
-      :t="146"
-      :b="106"
+      :t="86"
+      :b="56"
       :r="116"
       :toPerc="['l']"
     >
@@ -13,7 +13,7 @@
         offset="71px"
         textWMax="1433px"
         text="Количество зафиксированных случаев с водителями, находящимися в состоянии алкогольного опьянения"
-        v-space-m:bottom="'126px'"
+        v-space-m:bottom="'56px'"
       />
 
       <div class="tw-flex tw-flex-wrap container tw-items-center">
@@ -23,7 +23,7 @@
           size="lg"
           showDynamic
           dynamic
-          v-space-m:bottom="'98px'"
+          v-space-m:bottom="'38px'"
           class="numbers"
         />
 
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <board-separator v-space-m:bottom="'82px'" />
+      <board-separator v-space-m:bottom="'52px'" />
 
       <board-period-numbers
         period="year"
@@ -77,14 +77,14 @@ export default {};
 .container {
   margin-left: -79.5px;
   margin-right: -79.5px;
-  margin-top: -50px;
+  margin-top: -30px;
 }
 .numbers,
 .accident {
   margin-left: 79.5px;
   margin-right: 79.5px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .numbers {

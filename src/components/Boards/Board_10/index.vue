@@ -3,9 +3,9 @@
     <board-offsets
       :width="3264"
       :l="84"
-      :t="119"
+      :t="100"
       :r="96"
-      :b="84"
+      :b="54"
       :toPerc="['l']"
       v-space-m:left="'64px'"
     >

@@ -2,7 +2,7 @@
   <board-cover>
     <board-devider leftWidth="26.7%" rightWidth="73.3%">
       <template #left>
-        <board-offsets :width="871" :l="148" :t="144" :b="78" :toPerc="['l']">
+        <board-offsets :width="871" :l="148" :t="114" :b="78" :toPerc="['l']">
           <board-text-body
             offset="63px"
             icon="telescop"
@@ -16,7 +16,7 @@
             color="negative"
             showDynamic
             dynamic
-            v-space-m:bottom="'135px'"
+            v-space-m:bottom="'115px'"
           />
 
           <board-separator wmax="577px" v-space-m:bottom="'70px'" />
@@ -27,7 +27,7 @@
       </template>
 
       <template #right>
-        <board-offsets :width="2393" :l="148" :t="144" :b="78" :toPerc="['l']">
+        <board-offsets :width="2393" :l="148" :t="114" :b="78" :toPerc="['l']">
           <board-text-body
             offset="115px"
             icon="colba"
@@ -43,7 +43,7 @@
             color="positive"
             showDynamic
             dynamic
-            v-space-m:bottom="'159px'"
+            v-space-m:bottom="'139px'"
           />
 
           <board-separator wmax="2016px" v-space-m:bottom="'68px'" />

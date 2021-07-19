@@ -20,7 +20,7 @@ export default {
   border: 1px solid var(--board-border-color);
   position: relative;
   /* max-width: 3264px; */
-  min-height: 500px;
+  min-height: 1450px;
 }
 
 .corners::after,

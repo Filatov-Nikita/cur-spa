@@ -1,6 +1,6 @@
 <template>
   <board-cover>
-    <board-offsets :width="3264" :l="124" :t="169" :b="82" :toPerc="['l']">
+    <board-offsets :width="3264" :l="124" :t="119" :b="62" :toPerc="['l']">
       <board-text-body
         icon="heart-rate"
         textWMax="1901px"

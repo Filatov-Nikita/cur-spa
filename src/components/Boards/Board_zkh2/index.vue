@@ -3,10 +3,10 @@
     <board-devider :cols="2">
       <template #section1>
         <board-offsets
-          :b="114"
+          :b="54"
           :l="142"
           :r="50"
-          :t="153"
+          :t="83"
           class="tw-flex tw-flex-col tw-items-start"
           style="height: 100%"
         >
@@ -14,15 +14,15 @@
             offset="82px"
             icon="fire"
             text="Пожар на нефтеперерабатывающем заводе"
-            v-space-m:bottom="'123px'"
+            v-space-m:bottom="'83px'"
           />
-          <div class="slide-text-important" v-space-m:bottom="'130px'">
+          <div class="slide-text-important" v-space-m:bottom="'80px'">
             <p>25 мая 2021 г.</p>
             <br />
             <p>г. Уфа, нефтеперерабатывающий завод «Уфаоргсинтез»</p>
           </div>
 
-          <div class="tw-flex tw-flex-wrap tw-w-full" v-space-m:bottom="'87px'">
+          <div class="tw-flex tw-flex-wrap tw-w-full" v-space-m:bottom="'27px'">
             <div class="tw-w-1/2 tw-flex-grow" style="flex-basis: 400px">
               <board-caption text="МКД в зоне" v-space-m:bottom="'35px'" />
               <board-numbers value="25" color="negative" size="sm" />
@@ -46,7 +46,7 @@
           src="fire.jpg"
           width="100%"
           height="100%"
-          style="min-height: 1498px"
+          style="min-height: 1450px"
         />
       </template>
     </board-devider>
