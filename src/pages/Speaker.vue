@@ -6,8 +6,7 @@
       <img
         class="presLogo"
         :src="logo"
-        width="602px"
-        height="733px"
+
         v-space-m:right="'437px'"
       />
 
@@ -61,7 +60,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .bottom {
   position: fixed;
   bottom: 0;
@@ -69,26 +69,28 @@ export default {
 }
 
 .speaker-card {
-  max-width: 1918px;
+  max-width: convertValues(1918px);
 }
 
 .title {
-  margin-bottom: 76px;
+  margin-bottom: convertValues(76px);
 }
 
 .presLogo {
-  max-width: 602px;
+  max-width: convertValues(602px);
   height: auto;
   flex-shrink: 0;
+  width:convertValues(602px);
+  height:convertValues(733px);
 }
 
 .container {
-  max-width: 2896px;
+  max-width: convertValues(2896px);
   margin-top: 23vh;
   @apply tw-mx-auto;
 }
 
 .page {
-  padding-bottom: 200px;
+  padding-bottom: convertValues(200px);
 }
 </style>

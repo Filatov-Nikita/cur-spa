@@ -15,10 +15,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .arrow {
-  width: 200px;
-  height: 200px;
+  width: convertValues(200px);
+  height: convertValues(200px);
   transition: background-color, 0.3s;
   cursor: pointer;
   @apply tw-bg-secondary;

@@ -2,9 +2,9 @@
   <div class="tw-flex" :class="`tw-items-${align}`">
     <img
       :src="require('./icons/' + icon + '.svg')"
-      :style="{ 'margin-right': offset }"
+      :style="{ 'margin-right': $toRem(offset) }"
     />
-    <div :class="`slide-text-${sizeText}`" :style="{ 'max-width': textWMax }">
+    <div :class="`slide-text-${sizeText}`" :style="{ 'max-width': $toRem(textWMax) }">
       {{ text }}
     </div>
   </div>

@@ -43,11 +43,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .board-li-el::before {
-  width: 31px;
-  height: 31px;
-  margin-right: 71px;
+  width: convertValues(31px);
+  height: convertValues(31px);
+  margin-right: convertValues(71px);
   vertical-align: middle;
 }
 </style>

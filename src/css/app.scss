@@ -3,104 +3,121 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 100%;
+
+  @include to($FHD) {
+    font-size: 44%;
+  }
+
+  @include to($_1440) {
+    font-size: 37.5%;
+  }
+}
+
 :root {
   --board-border-color: rgba(255, 255, 255, 0.5);
 }
 
 .slide-text-body {
-  font-size: 70px;
+  font-size: convertValues(70px);
   line-height: 112.4%;
   @apply tw-font-pt-sans tw-text-white tw-font-normal;
 }
 
 .slide-text-caption {
-  font-size: 50px;
-  line-height: 56px;
+  font-size: convertValues(50px);
+  line-height: convertValues(56px);
   @apply tw-font-pt-sans tw-text-white tw-font-normal;
 }
 
-.slide-text-lg, .slide-text-md, .slide-text-md2, .slide-text-sm, .slide-text-xs, .slide-text-important {
+.slide-text-lg,
+.slide-text-md,
+.slide-text-md2,
+.slide-text-sm,
+.slide-text-xs,
+.slide-text-important {
   @apply tw-font-roboto tw-font-bold;
 }
 
 .slide-text-lg {
-  font-size: 630px;
+  font-size: convertValues(630px);
   line-height: 100%;
 }
 
 .slide-text-md {
-  font-size: 500px;
+  font-size: convertValues(500px);
   line-height: 100%;
 }
 
 .slide-text-md2 {
-  font-size: 350px;
-  line-height: 100%
+  font-size: convertValues(350px);
+  line-height: 100%;
 }
 
 .slide-text-sm {
-  font-size: 220px;
+  font-size: convertValues(220px);
   line-height: 100%;
 }
 
 .slide-text-xs {
-  font-size: 150px;
+  font-size: convertValues(150px);
   line-height: 100%;
 }
 
 .slide-text-important {
-  font-size: 80px;
+  font-size: convertValues(80px);
   line-height: 100%;
   letter-spacing: -0.025em;
   @apply tw-text-positive;
 }
 
 .main-bg {
-  background: url('~assets/bg-main.jpg') #00092E no-repeat;
+  background: url("~assets/bg-main.jpg") #00092e no-repeat;
   background-size: cover;
 }
 
 .main-wrapper {
-  padding-left: 161px;
+  padding-left: convertValues(161px);
 }
 
 .online-icon::before {
   content: "";
   display: block;
   border-radius: 50%;
-  background: theme('colors.positive');
+  background: theme("colors.positive");
 }
 
-.board-l-offset, .board-tl-offset {
-  padding-left: 124px;
+.board-l-offset,
+.board-tl-offset {
+  padding-left: convertValues(124px);
 }
 
-.board-t-offset, .board-tl-offset {
-  padding-top: 149px;
+.board-t-offset,
+.board-tl-offset {
+  padding-top: convertValues(149px);
 }
 
 .page-title {
-  font-size: 130px;
-  line-height: 152px;
+  font-size: convertValues(130px);
+  line-height: convertValues(152px);
   @apply tw-font-roboto tw-font-bold tw-text-white;
 }
 
-
 .board-status {
-  font-size: 80px;
-  padding-top: 27px;
-  padding-bottom: 27px;
-  padding-left: 30px;
-  padding-right: 36px;
+  font-size: convertValues(80px);
+  padding-top: convertValues(27px);
+  padding-bottom: convertValues(27px);
+  padding-left: convertValues(30px);
+  padding-right: convertValues(36px);
   @apply tw-uppercase tw-font-bold tw-font-roboto tw-text-white tw-bg-positive tw-inline-block;
-
 }
 
 .board-li-el::before {
-  content: '';
+  content: "";
   border-radius: 50%;
   display: inline-block;
-  width: 94px;
-  height: 94px;
+  width: convertValues(94px);
+  height: convertValues(94px);
   @apply tw-bg-positive;
 }

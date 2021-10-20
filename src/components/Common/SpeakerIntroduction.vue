@@ -31,8 +31,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .title {
-  margin-bottom: 76px;
+  margin-bottom: convertValues(76px);
 }
 </style>

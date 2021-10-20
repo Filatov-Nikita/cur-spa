@@ -2,14 +2,14 @@
   <div class="menu">
     <BottomLink
       :flat="flat"
-      style="flex-basis: 755px"
+      :style="{'flex-basis': $toRem('755px')}"
       icon="cur-home"
       label="Домашняя страница ЦУР"
       @click="openCUR"
     />
     <BottomLink
       :flat="flat"
-      style="flex-basis: 569px"
+      :style="{'flex-basis': $toRem('569px')}"
       icon="doclad"
       label="Выбрать доклад"
       @click="toggleMenu"
@@ -41,10 +41,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .menu {
   display: flex;
   width: 100%;
-  max-width: 1350px;
+  max-width: convertValues(1350px);
 }
 </style>

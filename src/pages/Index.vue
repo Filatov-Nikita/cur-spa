@@ -24,19 +24,20 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+//$
 .title {
-  max-width: 1859px;
-  margin-top: 417px;
+  max-width: convertValues(1859px);
+  margin-top: convertValues(417px);
   @apply tw-uppercase;
 }
 
 .period {
-  max-width: 1431px;
-  margin-top: 74px;
-  font-size: 60px;
+  max-width: convertValues(1431px);
+  margin-top: convertValues(74px);
+  font-size: convertValues(60px);
   opacity: 0.69;
-  min-height: 271px;
+  min-height: convertValues(271px);
   @apply tw-font-bold tw-font-pt-sans tw-text-white;
 }
 </style>

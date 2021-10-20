@@ -73,25 +73,26 @@
 export default {};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .container {
-  margin-left: -79.5px;
-  margin-right: -79.5px;
-  margin-top: -30px;
+  margin-left: convertValues(-79.5px);
+  margin-right: convertValues(-79.5px);
+  margin-top: convertValues(-30px);
 }
 .numbers,
 .accident {
-  margin-left: 79.5px;
-  margin-right: 79.5px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-left: convertValues(79.5px);
+  margin-right: convertValues(79.5px);
+  margin-top: convertValues(30px);
+  margin-bottom: convertValues(30px);
 }
 
 .numbers {
-  flex-basis: 1661px;
+  flex-basis: convertValues(1661px);
 }
 
 .accident {
-  flex-basis: 1172px;
+  flex-basis: convertValues(1172px);
 }
 </style>

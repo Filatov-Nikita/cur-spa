@@ -13,14 +13,15 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .cover {
   background: rgba(0, 7, 47, 0.5);
   backdrop-filter: blur(20px);
   border: 1px solid var(--board-border-color);
   position: relative;
   /* max-width: 3264px; */
-  min-height: 1450px;
+  min-height: convertValues(1450px);
 }
 
 .corners::after,
@@ -29,30 +30,30 @@ export default {
 .corners-bottom::before {
   content: '';
   display: block;
-  width: 47px;
-  height: 47px;
+  width: convertValues(47px);
+  height: convertValues(47px);
   background: url('~assets/board-corner.svg');
   position: absolute;
 }
 
 .corners::after {
-  left: -5px;
-  top: -1px;
+  left: convertValues(-5px);
+  top: convertValues(-1px);
 }
 .corners::before {
-  right: -1px;
-  top: -5px;
+  right: convertValues(-1px);
+  top: convertValues(-5px);
   transform: rotate(90deg);
 }
 
 .corners-bottom::after {
-  left: -1px;
-  bottom: -5px;
+  left: convertValues(-1px);
+  bottom: convertValues(-5px);
   transform: rotate(270deg);
 }
 .corners-bottom::before {
-  right: -5px;
-  bottom: -1px;
+  right: convertValues(-5px);
+  bottom: convertValues(-1px);
   transform: rotate(180deg);
 }
 .corners {

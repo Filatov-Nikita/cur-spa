@@ -23,13 +23,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .li {
-  width: 633px;
-  min-height: 633px;
-  padding-top: 123px;
-  padding-left: 30px;
-  padding-right: 30px;
+  width: convertValues(633px);
+  min-height: convertValues(633px);
+  padding-top: convertValues(123px);
+  padding-left: convertValues(30px);
+  padding-right: convertValues(30px);
   position: relative;
   border: 1px solid #ffffff;
   text-align: center;
@@ -43,8 +44,8 @@ export default {
 }
 
 .icon {
-  width: 213px;
-  height: 213px;
+  width: convertValues(213px);
+  height: convertValues(213px);
   display: block;
   @apply tw-mx-auto;
 }
@@ -53,17 +54,17 @@ export default {
   position: absolute;
   top: -1px;
   left: -1px;
-  width: 67px;
-  height: 67px;
+  width: convertValues(67px);
+  height: convertValues(67px);
   color: #00092e;
-  line-height: 67px !important;
+  line-height: convertValues(67px) !important;
   @apply tw-bg-secondary tw-font-pt-sans tw-text-3xl tw-font-bold tw-text-center;
 }
 
 .text {
-  margin-top: 67px;
-  font-size: 40px;
-  line-height: 52px;
+  margin-top: convertValues(67px);
+  font-size: convertValues(40px);
+  line-height: convertValues(52px);
   @apply tw-font-pt-sans tw-text-white;
 }
 </style>

@@ -136,19 +136,20 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+//$
 .board-container {
-  padding-left: 300px;
-  margin-top: 70px;
+  padding-left: convertValues(300px);
+  margin-top: convertValues(70px);
 }
 
 .board-wrapper {
-  padding-left: 113px;
-  padding-right: 161px;
+  padding-left: convertValues(113px);
+  padding-right: convertValues(161px);
 }
 
 .builder {
-  padding-bottom: 200px;
+  padding-bottom: convertValues(200px);
 }
 
 .slow {

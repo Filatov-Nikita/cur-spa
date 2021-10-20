@@ -90,9 +90,10 @@ export default {
   name: 'Board1',
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+//$
 .bottom-numbers {
-  max-width: 1484px;
+  max-width: convertValues(1484px);
   border-top: 1px solid theme('colors.white');
   @apply tw-flex tw-justify-between;
 }

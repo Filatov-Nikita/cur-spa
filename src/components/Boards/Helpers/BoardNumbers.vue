@@ -27,7 +27,7 @@
         v-else
         class="value"
         :class="[colorClass, textSize]"
-        :style="{ 'margin-right': arrowOffset }"
+        :style="{ 'margin-right': $toRem(arrowOffset) }"
         >{{ value }}</span
       >
     </template>
@@ -97,7 +97,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .down::after {
   transform: rotate(180deg);
 }
@@ -105,8 +106,8 @@ export default {
 .numbers::after {
   content: '';
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: conertValues(60px);
+  height: conertValues(60px);
   background: url(../icons/position-arrow.svg) no-repeat;
 }
 .numbers {

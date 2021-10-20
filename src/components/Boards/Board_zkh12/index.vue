@@ -55,9 +55,10 @@
 export default {};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .item {
-  flex-basis: 1428px;
+  flex-basis: convertValues(1428px);
   @apply tw-w-1/2 tw-flex-grow;
 }
 </style>

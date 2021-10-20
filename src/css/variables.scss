@@ -1,0 +1,37 @@
+$rootFontSize: 16px;
+$FHDFactor: 0.5;
+$HDFactor: 0.375;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function toRem($pxValue) {
+  $res: strip-unit($pxValue) / strip-unit($rootFontSize);
+  @return $res + rem;
+}
+
+@function convertValues($values, $convertToRem: true) {
+  $max: length($values);
+  $newValues: "";
+
+  @if ($max > 1) {
+    @for $i from 1 through $max {
+      $part: nth($values, $i);
+      $newValues: #{$newValues + toRem($part)};
+
+      @if $i < $max {
+        $newValues: #{$newValues + " "};
+      }
+    }
+  } @else {
+    $part: nth($values, 1);
+
+    @if ($convertToRem) {
+      $newValues: toRem($part);
+    } @else {
+      $newValues: $part;
+    }
+  }
+  @return $newValues;
+}

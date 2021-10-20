@@ -6,16 +6,16 @@
       <div
         class="tw-flex tw-items-center"
         :class="`tw-self-${align}`"
-        :style="{ 'padding-bottom': bottomSpace }"
+        :style="{ 'padding-bottom': $toRem(bottomSpace)}"
       >
         <q-img
           class="arrow"
           ratio="1"
           src="./arrows/arrow-lg.svg"
           :style="{
-            width: arrowSize + 'px',
-            'margin-left': offset,
-            'margin-right': offset,
+            width: $toRem(arrowSize),
+            'margin-left': $toRem(offset),
+            'margin-right': $toRem(offset),
           }"
           :position="position"
         />
@@ -76,14 +76,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .mapnumbers {
   @apply tw-flex tw-items-end;
 }
 
 .arrow {
   align-self: center;
-  height: 54px;
+  height: convertValues(54px);
   flex-shrink: 0;
 }
 </style>

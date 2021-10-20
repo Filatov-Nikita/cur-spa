@@ -45,14 +45,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .bottom-item {
-  flex-basis: 781px;
+  flex-basis: convertValues(781px);
   flex-grow: 1;
-  margin: 50px 143px;
+  margin: convertValues(50px 143px);
 }
 
 .bottom-items {
-  margin: -50px -143px;
+  margin: convertValues(-50px -143px);
 }
 </style>

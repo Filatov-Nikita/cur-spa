@@ -57,14 +57,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .items {
   @apply tw-flex;
-  margin: 0 -177px;
+  margin: convertValues(0 -177px);
 }
 
 .item {
   @apply tw-w-1/4 tw-text-center;
-  padding: 0 177px;
+  padding: convertValues(0 177px);
 }
 </style>

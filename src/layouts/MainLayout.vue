@@ -51,7 +51,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .container {
   height: 100vh;
   overflow: hidden;
@@ -81,11 +81,11 @@ export default {
 .bottom-menu {
   position: absolute;
   bottom: -1px;
-  left: 141px;
+  left: convertValues(141px);
 }
 
 .menu-paddings {
-  padding-left: 161px;
-  padding-top: 391px;
+  padding-left: convertValues(161px);
+  padding-top: convertValues(391px);
 }
 </style>

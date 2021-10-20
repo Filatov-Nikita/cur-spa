@@ -53,7 +53,7 @@ export default {
             };
           }
 
-          return { ...acc, [`padding-${posDict[cur]}`]: this[cur] + 'px' };
+          return { ...acc, [`padding-${posDict[cur]}`]: this.$toRem(this[cur])  };
         }, {});
       return styles;
     },

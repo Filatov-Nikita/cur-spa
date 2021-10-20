@@ -44,17 +44,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .bottom {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding-left: 300px;
+  padding-left: convertValues(300px);
 }
 
 .offset {
-  padding-left: 115px;
+  padding-left: convertValues(115px);
   @apply tw-bg-primary tw-flex tw-justify-between tw-items-end;
 }
 
@@ -63,7 +64,7 @@ export default {
   display: flex;
 }
 .timebar {
-  margin-right: 129px;
-  padding-bottom: 30px;
+  margin-right: convertValues(129px);
+  padding-bottom: convertValues(30px);
 }
 </style>

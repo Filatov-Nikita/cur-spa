@@ -2,10 +2,8 @@
   <div>
     <div class="tw-flex tw-items-center tw-mb-5">
       <img
-        width="50px"
-        height="50px"
         :src="require('./icons/' + period + '.svg')"
-        :style="{ 'margin-right': offset }"
+        :style="{ 'margin-right': $toRem(offset), width: $toRem('50px'), height: $toRem('50px') }"
       />
       <div class="slide-text-caption tw-text-white">{{ label }}</div>
     </div>

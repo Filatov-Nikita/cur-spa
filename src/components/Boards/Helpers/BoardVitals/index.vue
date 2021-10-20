@@ -14,7 +14,7 @@
       </slot>
       <div
         class="tw-flex-grow space"
-        :style="{ 'margin-bottom': vital.spaceOffset || '43px' }"
+        :style="{ 'margin-bottom': $toRem(vital.spaceOffset) || $toRem('43px') }"
       ></div>
       <board-numbers
         v-if="vitalType === 'numbers'"
@@ -56,17 +56,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .space {
   border-bottom: 1px dashed theme('colors.white');
 }
 
 .items {
-  margin-top: -35px;
+  margin-top: convertValues(-35px);
 }
 
 .item {
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: convertValues(35px);
+  margin-bottom: convertValues(35px);
 }
 </style>

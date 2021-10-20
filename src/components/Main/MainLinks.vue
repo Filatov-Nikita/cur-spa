@@ -62,19 +62,20 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .item {
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: convertValues(50px);
   @apply tw-w-1/4 tw-normal-case tw-block;
 }
 
 .img-size {
-  width: 220px;
-  height: 247px;
+  width: convertValues(220px);
+  height: convertValues(247px);
 }
 .item:first-child .item-container {
-  padding-left: 50px;
+  padding-left: convertValues(50px);
 }
 
 .item-medical::after,
@@ -84,7 +85,7 @@ export default {
   content: '';
   display: block;
   width: 100%;
-  height: 50px;
+  height: convertValues(50px);
   position: absolute;
   bottom: 0;
 }
@@ -108,17 +109,17 @@ export default {
 .items {
   background: #00092e;
   display: flex;
-  min-height: 297px;
+  min-height: convertValues(297px);
 }
 
 .items::before {
   content: '';
   display: block;
   position: absolute;
-  top: -470px;
+  top: convertValues(-470px);
   z-index: 0;
   width: 100%;
-  height: 589px;
+  height: convertValues(589px);
   background: linear-gradient(180deg, #000a2e 0%, rgba(0, 18, 58, 0) 100%);
   transform: rotate(-180deg);
 }

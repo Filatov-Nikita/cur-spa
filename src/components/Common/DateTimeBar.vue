@@ -46,16 +46,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+//$
 .text {
-  font-size: 50px;
+  font-size: convertValues(50px);
   @apply tw-font-bold tw-font-pt-sans tw-text-white;
 }
 
 .text::before {
-  width: 16px;
-  height: 16px;
-  margin-right: 35px;
-  margin-top: 30px;
+  width: convertValues(16px);
+  height: convertValues(16px);
+  margin-right: convertValues(35px);
+  margin-top: convertValues(30px);
 }
 </style>

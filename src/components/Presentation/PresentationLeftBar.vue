@@ -28,9 +28,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .left {
-  width: 300px;
+  width: convertValues(300px);
   height: 100%;
   position: fixed;
   left: 0;
@@ -38,8 +39,8 @@ export default {
 }
 
 .name {
-  font-size: 100px;
-  padding-left: 74px;
+  font-size: convertValues(100px);
+  padding-left: convertValues(74px);
   z-index: 1;
   position: absolute;
   right: 50%;
@@ -56,13 +57,13 @@ export default {
 }
 
 .logo {
-  width: 300px;
-  height: 300px;
+  width: convertValues(300px);
+  height: convertValues(300px);
   @apply tw-bg-primary tw-relative tw-block;
 }
 
 .img {
-  width: 163px;
+  width: convertValues(163px);
   position: absolute;
   left: 50%;
   top: 50%;

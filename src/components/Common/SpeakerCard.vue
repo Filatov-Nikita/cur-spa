@@ -46,10 +46,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .label {
-  line-height: 65px;
-  font-size: 50px;
+  line-height: convertValues(65px);
+  font-size: convertValues(50px);
   @apply tw-font-pt-sans tw-text-white tw-underline;
 }
 
@@ -58,7 +59,7 @@ export default {
 }
 
 .speaker-md {
-  max-width: 1172px;
+  max-width: convertValues(1172px);
 }
 
 .avatar {
@@ -68,15 +69,15 @@ export default {
 }
 
 .avatar-md {
-  width: 220px;
-  height: 220px;
-  margin-right: 55px;
+  width: convertValues(220px);
+  height: convertValues(220px);
+  margin-right: convertValues(55px);
 }
 
 .avatar-lg {
-  width: 447px;
-  height: 447px;
-  margin-right: 61px;
+  width: convertValues(447px);
+  height: convertValues(447px);
+  margin-right: convertValues(61px);
 }
 
 .name {
@@ -85,13 +86,13 @@ export default {
 }
 
 .name-md {
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: convertValues(50px);
+  margin-bottom: convertValues(20px);
 }
 
 .name-lg {
-  margin-bottom: 56px;
-  font-size: 100px;
+  margin-bottom: convertValues(56px);
+  font-size: convertValues(100px);
 }
 
 .position {
@@ -100,19 +101,19 @@ export default {
 }
 
 .position-md {
-  font-size: 28px;
-  line-height: 36px;
+  font-size: convertValues(28px);
+  line-height: convertValues(36px);
 }
 .position-lg {
-  font-size: 50px;
-  line-height: 65px;
+  font-size: convertValues(50px);
+  line-height: convertValues(65px);
 }
 
 .speakerData-md::before {
-  width: 20px;
-  height: 20px;
-  margin-right: 23px;
-  margin-top: 20px;
+  width: convertValues(20px);
+  height: convertValues(20px);
+  margin-right: convertValues(23px);
+  margin-top: convertValues(20px);
 }
 
 .speakerData {
@@ -120,7 +121,7 @@ export default {
 }
 
 .container-md {
-  max-width: 785px;
-  min-width: 785px;
+  max-width: convertValues(785px);
+  min-width: convertValues(785px);
 }
 </style>

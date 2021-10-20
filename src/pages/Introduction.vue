@@ -3,7 +3,7 @@
     <SpeakerIntroduction
       :speaker="speaker"
       title="Вступительное слово"
-      style="max-width: 1628px; margin-top: 456px"
+      :style="{'max-width': $toRem('1628px'), 'margin-top': $toRem('456px')}"
     />
   </section>
 </template>

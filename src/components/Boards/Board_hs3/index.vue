@@ -47,9 +47,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .cities {
-  height: 1234px;
+  height: convertValues(1234px);
   overflow-x: hidden;
 }
 </style>

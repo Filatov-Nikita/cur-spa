@@ -53,8 +53,8 @@
 export default {};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .board-li-el::before {
-  margin-right: 108px;
+  margin-right: convertValues(108px);
 }
 </style>

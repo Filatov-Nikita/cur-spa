@@ -2,13 +2,13 @@
   <div class="menu-container">
     <div class="tw-text-right" style="padding-right: 635px">
       <button
-        style="font-size: 30px"
+        :style="{'font-size': $toRem('30px')}"
         class="tw-inline-flex tw-items-center"
         @click="$emit('close')"
       >
         <div
           class="tw-underline tw-font-pt-sans tw-text-white"
-          style="margin-right: 30px"
+          :style="{'margin-right': $toRem('30px')}"
         >
           закрыть
         </div>
@@ -69,13 +69,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .items {
   @apply tw-flex tw-flex-wrap;
 }
 
 .menu-container {
-  max-width: 3330px;
+  max-width: convertValues(3330px);
   width: 100%;
   position: absolute;
   z-index: 20;

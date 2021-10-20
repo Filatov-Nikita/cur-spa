@@ -28,18 +28,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .slides-control {
-  margin-right: 61px;
-  padding-bottom: 10px;
+  margin-right: convertValues(61px);
+  padding-bottom: convertValues(10px);
   @apply tw-font-roboto tw-font-bold tw-text-white;
 }
 
 .slides-control--large {
-  font-size: 100px;
+  font-size: convertValues(100px);
 }
 
 .slides-control--small {
-  font-size: 40px;
+  font-size: convertValues(40px);
 }
 </style>

@@ -54,19 +54,20 @@
 export default {};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .items {
-  margin-left: -40px;
-  margin-right: -40px;
-  margin-top: -30px;
+  margin-left: convertValues(-40px);
+  margin-right: convertValues(-40px);
+  margin-top: convertValues(-30px);
 }
 
 .item {
-  flex-basis: 602px;
+  flex-basis: convertValues(602px);
   flex-grow: 1;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-left: convertValues(40px);
+  padding-right: convertValues(40px);
+  margin-top: convertValues(30px);
+  margin-bottom: convertValues(30px);
 }
 </style>

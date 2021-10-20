@@ -24,17 +24,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .link {
   display: block;
-  padding-left: 42px;
-  padding-bottom: 33px;
-  padding-top: 25px;
-  padding-right: 26px;
+  padding-left: convertValues(42px);
+  padding-bottom: convertValues(33px);
+  padding-top: convertValues(25px);
+  padding-right: convertValues(26px);
   background: rgba(0, 9, 46, 0.77);
   border: 1px solid #ffffff;
-  font-size: 50px;
-  line-height: 65px;
+  font-size: convertValues(50px);
+  line-height: convertValues(65px);
   @apply tw-font-pt-sans tw-underline tw-text-white tw-flex tw-items-center;
 }
 
@@ -44,6 +45,8 @@ export default {
 }
 
 .icon {
-  margin-right: 47px;
+  margin-right: convertValues(47px);
+  width: convertValues(57px);
+  height: convertValues(57px);
 }
 </style>

@@ -51,9 +51,37 @@ Vue.component(
 );
 
 Vue.directive("space-m", function(el, binding, vnode) {
-  el.style[`margin-${binding.arg}`] = binding.value;
+  
+  el.style[`margin-${binding.arg}`] = Vue.prototype.$toRem(binding.value); 
 });
 
 Vue.directive("space-p", function(el, binding, vnode) {
-  el.style[`padding-${binding.arg}`] = binding.value;
+  
+  el.style[`padding-${binding.arg}`] = Vue.prototype.$toRem(binding.value); 
 });
+
+
+Vue.prototype.$formatNumber = function(data,tail='px', lgFactor=0.44, xlFactor=1, smFactor=0.375 ){
+      let number =  String(data).match(/.\d*/g)[0];
+      let screen = Screen.lt;
+      
+      if(/px/.test(data) || /%/.test(data)){
+        if(/px/.test(data)){
+          return screen.sm?number*smFactor+'px':screen.lg?number*lgFactor+'px':screen.xl?number*xlFactor+'px':data;
+        }
+        return data;
+      }
+      return screen.sm?data*smFactor+tail:screen.lg?data*lgFactor+tail:screen.xl?data*xlFactor+tail:data+tail;
+}
+
+Vue.prototype.$toRem=function(data){
+  let number =  String(data).match(/.\d*/g)[0];
+        if(/px/.test(data) || /%/.test(data)){
+        if(/px/.test(data)){
+          console.log(number/16+'rem')
+          return number/16+'rem';
+        }
+        return data;
+      }
+    return data/16+'rem'      
+}

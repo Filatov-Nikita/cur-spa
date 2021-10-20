@@ -32,21 +32,22 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .top {
   width: 100%;
-  padding-left: 300px;
+  padding-left: convertValues(300px);
 }
 
 .top-wrapper {
-  padding-left: 113px;
-  padding-right: 141px;
+  padding-left: convertValues(113px);
+  padding-right: convertValues(141px);
   @apply tw-flex tw-justify-between;
 }
 
 .title {
-  font-size: 90px;
-  padding-top: 104px;
+  font-size: convertValues(90px);
+  padding-top: convertValues(104px);
   @apply tw-font-roboto tw-font-bold tw-text-white;
 }
 </style>
