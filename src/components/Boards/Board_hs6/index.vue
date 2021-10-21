@@ -20,7 +20,7 @@
           <img
             :src="require('./icons/' + item.icon + '.svg')"
             :alt="item.text"
-            class="tw-block tw-mx-auto"
+            class="img-size tw-block tw-mx-auto"
             v-space-m:bottom="'134px'"
           />
           <div class="slide-text-body tw-text-white">{{ item.text }}</div>
@@ -59,6 +59,10 @@ export default {
 
 <style lang="scss" scoped>
 //$
+.img-size {
+  width: convertValues(257px);
+  height: convertValues(257px);
+}
 .items {
   @apply tw-flex;
   margin: convertValues(0 -177px);

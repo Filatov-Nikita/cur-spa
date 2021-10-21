@@ -50,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 //$
 .cities {
-  height: convertValues(1234px);
+  height: convertValues(1254px);
   overflow-x: hidden;
 }
 </style>

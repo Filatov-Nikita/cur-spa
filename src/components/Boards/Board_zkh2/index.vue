@@ -46,7 +46,7 @@
           src="fire.jpg"
           width="100%"
           height="100%"
-          style="min-height: 1450px"
+          :style="{'min-height': $toRem('1450px')}"
         />
       </template>
     </board-devider>

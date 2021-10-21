@@ -1,6 +1,7 @@
 <template>
   <div class="tw-flex" :class="`tw-items-${align}`">
     <img
+      class="img-size"
       :src="require('./icons/' + icon + '.svg')"
       :style="{ 'margin-right': $toRem(offset) }"
     />
@@ -41,3 +42,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+//$
+.img-size {
+  width: convertValues(132px);
+  height: convertValues(132px);
+}
+</style>
