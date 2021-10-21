@@ -81,7 +81,7 @@ export default {
   height: auto;
   flex-shrink: 0;
   width:convertValues(602px);
-  height:convertValues(733px);
+  
 }
 
 .container {
