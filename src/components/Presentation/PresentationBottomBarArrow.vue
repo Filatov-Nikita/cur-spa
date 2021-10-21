@@ -33,6 +33,7 @@ export default {
   content: '';
   display: block;
   background: url(~assets/arrow.svg) center no-repeat;
+  background-size: convertValues(104px);
   width: 100%;
   height: 100%;
 }

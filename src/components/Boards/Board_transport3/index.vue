@@ -5,7 +5,7 @@
         <template v-slot:label="{ label }">
           <div
             class="board-li-el slide-text-body tw-align-middle"
-            style="margin-bottom: 60px"
+            :style="{'margin-bottom': $toRem('60px')}"
           >
             {{ label }}
           </div>

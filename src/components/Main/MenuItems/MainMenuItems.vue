@@ -1,6 +1,6 @@
 <template>
   <div class="menu-container">
-    <div class="tw-text-right" style="padding-right: 635px">
+    <div class="tw-text-right" :style="{'padding-right': $toRem('635px')}">
       <button
         :style="{'font-size': $toRem('30px')}"
         class="tw-inline-flex tw-items-center"
@@ -12,7 +12,7 @@
         >
           закрыть
         </div>
-        <img src="~/assets/icons/close.svg" />
+        <img src="~/assets/icons/close.svg" class="close-icon"/>
       </button>
     </div>
     <ul class="items tw-z-50">
@@ -80,5 +80,10 @@ export default {
   width: 100%;
   position: absolute;
   z-index: 20;
+}
+
+.close-icon {
+  width: convertValues(67px);
+  height: convertValues(67px);
 }
 </style>

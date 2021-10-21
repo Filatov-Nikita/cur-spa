@@ -32,8 +32,10 @@ export default {
   display: block;
   width: convertValues(47px);
   height: convertValues(47px);
+  background-size: convertValues(47px);
   background: url('~assets/board-corner.svg');
   position: absolute;
+  
 }
 
 .corners::after {
