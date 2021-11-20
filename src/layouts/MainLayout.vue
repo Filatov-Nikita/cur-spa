@@ -6,7 +6,7 @@
         <div class="tw-flex-grow">
           <MainHeader :class="open ? ['tw-z-50', 'tw-relative'] : ''" />
           <MainMenuItems
-            @close="open = false"
+            @close="close"
             class="menu-paddings"
             v-if="open"
           />
@@ -42,6 +42,10 @@ export default {
         return this.$router.push({ name: 'introduction' });
       this.open = !this.open;
     },
+    close(){
+      this.open = false
+      this.$router.push({ name: 'home' });
+    }
   },
   components: {
     MainHeader,

@@ -3,7 +3,7 @@
     <div class="top-wrapper">
       <div class="title">{{ title }}</div>
       <SpeakerCard
-        :name="speaker.name"
+        :name="name"
         :position="speaker.position"
         :avatar="speaker.avatar"
         v-space-p:top="'45px'"
@@ -18,6 +18,7 @@ import SpeakerCard from 'src/components/Common/SpeakerCard';
 export default {
   props: {
     title: {
+      default: undefined,
       required: true,
       type: String,
     },
@@ -29,6 +30,11 @@ export default {
   components: {
     SpeakerCard,
   },
+  computed:{
+        name(){
+      return this.speaker.last_name + ' '+ this.speaker.first_name
+    }
+  }
 };
 </script>
 

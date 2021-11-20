@@ -8,7 +8,7 @@
       :complete="complete"
       :formatValue="formatToPrice"
     />
-    <span v-else>{{ value }}</span>
+    <span v-else>{{ value | prettyAmount }}</span>
   </div>
   <div v-else class="numbers" :class="{ down: !dynamic }">
     <template v-if="value">
@@ -28,7 +28,7 @@
         class="value"
         :class="[colorClass, textSize]"
         :style="{ 'margin-right': $toRem(arrowOffset) }"
-        >{{ value }}</span
+        >{{ value | prettyAmount }}</span
       >
     </template>
     <slot v-else-if="$slots.default" />
@@ -52,7 +52,7 @@ export default {
     },
     value: {
       default: undefined,
-      type: String,
+      type: [String, Number],
     },
     size: {
       default: 'sm',

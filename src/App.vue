@@ -12,6 +12,10 @@
 <script>
 export default {
   name: 'App',
+  created(){
+    // this.$store.dispatch("slideList")
+    this.$store.dispatch("activeMetting")
+  }
 };
 </script>
 <style scoped>

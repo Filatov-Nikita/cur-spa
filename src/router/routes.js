@@ -21,7 +21,7 @@ const routes = [
     name: "speaker"
   },
   {
-    path: "/presentation/:type/:currentSlide",
+    path: "/presentation/:id/:type/:currentSlide",
     component: () => import("pages/Presentation.vue"),
     name: "presentation",
     props: route => {

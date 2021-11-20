@@ -121,3 +121,8 @@ html {
   height: convertValues(94px);
   @apply tw-bg-positive;
 }
+
+.q-carousel__slide,
+.q-carousel .q-carousel--padding {
+  padding: 0;
+}

@@ -3,7 +3,7 @@
     <div class="page-title tw-uppercase title">{{ title }}</div>
     <board-separator v-space-m:bottom="'108px'" />
     <SpeakerCard
-      :name="speaker.name"
+      :name="name"
       :position="speaker.position"
       :avatar="speaker.avatar"
       size="lg"
@@ -28,6 +28,11 @@ export default {
   components: {
     SpeakerCard,
   },
+  computed:{
+    name(){
+      return this.speaker.last_name + ' '+ this.speaker.first_name
+    }
+  }
 };
 </script>
 

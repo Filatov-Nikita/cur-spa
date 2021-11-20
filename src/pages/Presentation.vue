@@ -38,7 +38,7 @@
 import PresentationBuilder from 'src/components/Presentation/PresentationBuilder';
 import PresentationVideoBackground from 'src/components/Presentation/PresentationVideoBackground';
 import Speaker from 'pages/Speaker';
-
+import {mapGetters} from 'vuex'
 const types = {
   medical: {
     name: 'Здравоохранение',
@@ -66,7 +66,7 @@ const types = {
         'Исполняющий обязанности министра транспорта и дорожного хозяйства Республики Башкортостан',
     },
   },
-  hoz: {
+  zkh: {
     name: 'Жилищно-коммунальное хозяйство',
     video: 'videos/hoz.mp4',
     color: 'orange',
@@ -79,7 +79,7 @@ const types = {
         'Исполняющий обязанности министра жилищно-коммунального хозяйства Республики Башкортостан',
     },
   },
-  situations: {
+  emergency: {
     name: 'Чрезвычайные ситуации',
     video: 'videos/situations.mp4',
     color: 'green',
@@ -92,7 +92,7 @@ const types = {
         'Председатель Государственного комитета Республики Башкортостан по чрезвычайным ситуациям',
     },
   },
-  sel: {
+  universal: {
     name: ' Сельское хозяйство',
     video: 'videos/universal.mp4',
     color: 'blueSea',
@@ -108,13 +108,14 @@ const types = {
 };
 
 export default {
-  beforeRouteEnter(to, from, next) {
-    if (!(to.params.type in types)) {
-      next({ ...to, params: { ...to.params, type: 'medical' } });
-    } else {
-      next();
-    }
-  },
+  // beforeRouteEnter(to, from, next) {
+  //   if (!(to.params.type in types)) {
+  //     console.log('hi')
+  //     next({ ...to, params: { ...to.params, type: 'medical' } });
+  //   } else {
+  //     next();
+  //   }
+  // },
   props: {
     type: {
       default: 'medical',
@@ -136,7 +137,7 @@ export default {
     nextType() {
       if (!this.nextTypeName) return this.$router.push({ name: 'home' });
       this.$router.push({
-        params: { currentSlide: 0, type: this.nextTypeName },
+        params: { currentSlide: 0, id: this.nextTypeId, type: this.nextTypeName },
       });
     },
     setSpeakerSlide() {
@@ -145,27 +146,65 @@ export default {
       });
     },
     prevType() {
+      
       if (!this.prevTypeName) return this.$router.push({ name: 'home' });
       this.$router.push({
         params: {
-          currentSlide: this.pres[this.prevTypeName].slides.length,
+          currentSlide: this.presentations.find(item=>item.type === this.prevTypeName).slides.length,
+          id: this.prevTypeId,
           type: this.prevTypeName,
         },
       });
     },
   },
   computed: {
+    ...mapGetters({
+      slideData: "slideDataGetter"
+    }),
     slides() {
-      return this.pres[this.type].slides;
+      if(this.slideData){
+        return this.slideData.presentations.find(item=>{
+          return item.id == this.$route.params.id
+        }).slides
+      }
+      // return this.pres[this.type].slides;
+    },
+    presentations(){
+      return this.slideData.presentations
     },
     showSpeaker() {
       return this.currentSlide === 0;
     },
     typesKeys() {
-      return Object.keys(this.types);
+      return this.presentations.map(item=>{
+        return item.type
+      });
+    },
+    nextTypeId(){
+      const i = this.typesKeys.indexOf(this.type);
+      let id
+      this.presentations.forEach(item=>{
+        if(this.typesKeys[i + 1]===item.type){
+          id =item.id
+        }
+
+      })
+      return id
+    },
+    prevTypeId(){
+      const i = this.typesKeys.indexOf(this.type);
+      let id
+      this.presentations.forEach(item=>{
+        if(this.typesKeys[i - 1]===item.type){
+          id =item.id
+        }
+
+      })
+      return id
     },
     nextTypeName() {
       const i = this.typesKeys.indexOf(this.type);
+      
       return i !== -1 && this.typesKeys[i + 1];
     },
     prevTypeName() {
@@ -178,20 +217,26 @@ export default {
       if (!(type in types)) return types[typesKeys[0]];
       return types[type];
     },
+    newTypeParams(){
+      console.log(this.$route)
+      return this.presentations.find(item=>item.id === this.$route.params.id)
+    },
     speaker() {
-      return this.typeParams.speaker;
+      return this.newTypeParams.speaker;
     },
     video() {
+      
       return this.typeParams.video;
     },
     color() {
       return this.typeParams.color;
     },
     logo() {
-      return this.typeParams.logo;
+      return this.newTypeParams.department.presentation_image.url;
     },
     name() {
-      return this.typeParams.name;
+      
+      return this.newTypeParams.department.name;
     },
   },
   components: {

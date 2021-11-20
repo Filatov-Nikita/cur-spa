@@ -1,13 +1,13 @@
 <template>
-  <section>
+  <section v-if="slideData">
     <div class="title page-title">
-      <p>ОПЕРАТИВНОЕ СОВЕЩАНИЕ В ПРАВИТЕЛЬСТВЕ</p>
-      <p>РЕСПУБЛИКИ БАШКОРТОСТАН</p>
+      <p>{{slideData.title}}</p>
+      
     </div>
 
     <div class="period">
-      <div>20 неделя</div>
-      <p>1 июня 2021 - 5 июня 2021</p>
+      <div>{{slideData.week}}</div>
+      <p>{{slideData.period}}</p>
     </div>
   </section>
 </template>
@@ -15,13 +15,18 @@
 <script>
 // import Board from 'components/Board';
 import DateTimeBar from 'components/Common/DateTimeBar';
-
+import {mapGetters} from "vuex";
 export default {
   name: 'PageIndex',
   components: {
     // Board,
     DateTimeBar,
   },
+  computed:{
+    ...mapGetters({
+      slideData: "slideDataGetter"
+    })
+  }
 };
 </script>
 <style lang="scss" scoped>

@@ -1,7 +1,15 @@
 <template>
   <div>
     <div class="tw-flex tw-items-center tw-mb-5">
+      <q-icon
+        v-if="iconChoice"
+        size="3.125rem"
+        :name="period"
+        color="white"
+        :style="{ 'margin-right': $toRem(offset) }"
+      ></q-icon>
       <img
+      v-else
         :src="require('./icons/' + period + '.svg')"
         :style="{ 'margin-right': $toRem(offset), width: $toRem('50px'), height: $toRem('50px') }"
       />
@@ -35,6 +43,10 @@ export default {
       default: '39px',
       type: String,
     },
+    iconChoice: {
+      default: false,
+      type: Boolean
+    }
   },
   components: {
     BoardNumbers,

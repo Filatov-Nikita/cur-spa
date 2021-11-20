@@ -1,10 +1,19 @@
 <template>
   <div class="tw-flex" :class="`tw-items-${align}`">
+    <q-icon
+        v-if="iconChoice"
+        size="8.25rem"
+        :name="icon"
+        color="white"
+        :style="{ 'margin-right': $toRem(offset) }"
+      ></q-icon>   
     <img
+      v-else
       class="img-size"
       :src="require('./icons/' + icon + '.svg')"
       :style="{ 'margin-right': $toRem(offset) }"
     />
+      
     <div :class="`slide-text-${sizeText}`" :style="{ 'max-width': $toRem(textWMax) }">
       {{ text }}
     </div>
@@ -39,7 +48,12 @@ export default {
       default: 'center',
       type: String,
     },
+    iconChoice: {
+      default: false,
+      type: Boolean
+    }
   },
+
 };
 </script>
 <style lang="scss" scoped>

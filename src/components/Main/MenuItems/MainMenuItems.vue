@@ -1,6 +1,6 @@
 <template>
   <div class="menu-container">
-    <div class="tw-text-right" :style="{'padding-right': $toRem('635px')}">
+    <div class="tw-text-right tw-self-end">
       <button
         :style="{'font-size': $toRem('30px')}"
         class="tw-inline-flex tw-items-center"
@@ -17,7 +17,7 @@
     </div>
     <ul class="items tw-z-50">
       <MainMenuItem
-        v-for="(item, index) in items"
+        v-for="(item, index) in presentations"
         :key="index"
         :index="index + 1"
         :icon="item.icon"
@@ -30,7 +30,7 @@
 
 <script>
 import MainMenuItem from './MainMenuItem';
-
+import {mapGetters} from 'vuex';
 export default {
   data() {
     return {
@@ -63,6 +63,21 @@ export default {
       ],
     };
   },
+  computed:{
+    ...mapGetters({
+      slideData: "slideDataGetter"
+    }),
+    presentations(){
+      return this.slideData.presentations
+        .map(item=>{
+          return {
+          name: item.department.name,
+          icon: 'medical',
+          to: { name: 'presentation', params: { id:item.id, type: item.type } },
+          }
+        })
+    }
+  },
   components: {
     MainMenuItem,
   },
@@ -76,8 +91,10 @@ export default {
 }
 
 .menu-container {
-  max-width: convertValues(3330px);
-  width: 100%;
+  // max-width: convertValues(3330px);
+  display: flex;
+  flex-direction: column;
+  // width: 100%;
   position: absolute;
   z-index: 20;
 }

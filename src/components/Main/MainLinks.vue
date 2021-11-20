@@ -52,10 +52,10 @@ export default {
   },
   computed: {
     itemsMap() {
-      if (this.$route.name === 'home') {
-        const to = { name: 'introduction' };
-        return this.items.map((item) => ({ ...item, to }));
-      }
+      // if (this.$route.name === 'home') {
+      //   const to = { name: 'introduction' };
+      //   return this.items.map((item) => ({ ...item, to }));
+      // }
       return this.items;
     },
   },

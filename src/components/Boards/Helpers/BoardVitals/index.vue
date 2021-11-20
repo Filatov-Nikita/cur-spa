@@ -8,6 +8,7 @@
       <slot name="label" :label="vital.label">
         <board-text-body
           v-bind="textOptions"
+          :iconChoice="vital.iconChoice"
           :icon="vital.icon"
           :text="vital.label"
         />

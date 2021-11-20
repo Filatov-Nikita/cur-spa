@@ -14,8 +14,10 @@
           class="tw-font-pt-sans tw-text-white tw-text-right"
           style="font-size: 35px"
         >
-          <p>20 неделя</p>
-          <p>1 июня 2021 - 5 июня 2021</p>
+              <p>{{slideData.week}}</p>
+      <p>{{slideData.period}}</p>
+          <!-- <p>20 неделя</p>
+          <p>1 июня 2021 - 5 июня 2021</p> -->
         </div>
       </div>
     </div>
@@ -34,7 +36,7 @@ import PresentationLeftBar from './PresentationLeftBar';
 import PresentationTopBar from './PresentationTopBar';
 import PresentationBottomBar from './PresentationBottomBar';
 import PresentationVideoBackground from './PresentationVideoBackground';
-
+import {mapGetters} from 'vuex';
 /*
   Делаем нулевой слайд
   отслеживаем если слайд 0 то отображаем спикера
@@ -78,13 +80,17 @@ export default {
     };
   },
   computed: {
+    ...mapGetters({
+      slideData: "slideDataGetter"
+    }),
     board() {
       const type = this.slides[this.current].type;
-      const [left, boardNumber] = type.split('_');
-      return () => import('src/components/Boards/Board_' + boardNumber);
+      
+      
+      return () => import('src/components/Boards/Board_' + type);
     },
     slideTitle() {
-      return this.slides[this.current].title;
+      return this.slides[this.current].data.name;
     },
   },
   methods: {
@@ -94,7 +100,11 @@ export default {
     next() {
       const prev = this.current;
       this.current = this.minMax(this.current + 1);
-      if (prev === this.current) return this.$emit('nextType');
+      if (prev === this.current){
+        
+        return this.$emit('nextType');
+      }
+        
       this.$router.push({
         params: { ...this.$route.params, currentSlide: this.current + 1 },
       });
