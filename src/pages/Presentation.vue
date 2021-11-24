@@ -9,6 +9,7 @@
         <keep-alive v-if="slideData">
           <q-page v-if="!showSpeaker">
             <PresentationBuilder
+              :key="presentations[this.$route.params.id-1].id"
               :type="type"
               :speaker="speaker"
               :slides="slides"
@@ -187,7 +188,7 @@ export default {
       //   }
 
       // })
-      console.log(this.presentations[this.$route.params.id].id)
+      
       return this.presentations[this.$route.params.id].id
     },
     prevTypeId(){  
@@ -196,9 +197,6 @@ export default {
     nextTypeName() {
       // const i = this.typesKeys.indexOf(this.type);
       const i = this.$route.params.id;
-      console.log(this.typesKeys)
-      console.log(i)
-      console.log(this.typesKeys[i])
       return  this.typesKeys[i] !== undefined && this.typesKeys[i];
     },
     prevTypeName() {

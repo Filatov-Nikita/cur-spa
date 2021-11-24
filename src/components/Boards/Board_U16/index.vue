@@ -1,5 +1,5 @@
 <template>
-  <board-cover>
+  <board-cover v-if="type">
     <board-offsets :width="3264" :l="124" :t="169" :b="82" :toPerc="['l']">
       <board-text-body
         iconChoice

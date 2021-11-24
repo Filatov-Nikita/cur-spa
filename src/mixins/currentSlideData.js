@@ -30,8 +30,7 @@ export default {
 
   },
   created(){
-    console.log('hi')
-    console.log(this.type)
+    
   },
   mounted(){
 

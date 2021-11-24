@@ -1,5 +1,5 @@
 <template>
-  <board-cover>
+  <board-cover v-if="type">
     <board-devider :cols="3">
       <template #section1>
         <board-offsets :l="86" :t="67" :b="46" :r="107">

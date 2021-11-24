@@ -1,5 +1,5 @@
 <template>
-  <board-cover>
+  <board-cover v-if="type">
     <board-offsets :l="188" :t="241" :b="488" :r="272">
       <board-vitals :vitals="vitals" vitalType="mapping" align="end">
         <template v-slot:label="{ label }">
