@@ -119,7 +119,6 @@ export default {
       type: Number,
     },
   },
-  created() {},
   data() {
     return {
       types,
@@ -128,6 +127,7 @@ export default {
   },
   methods: {
     nextType() {
+      console.log(this.nextTypeId + "hi")
       if (!this.nextTypeName) return this.$router.push({ name: 'home' });
       this.$router.push({
         params: { currentSlide: 0, id: this.nextTypeId, type: this.nextTypeName },
@@ -143,7 +143,7 @@ export default {
       if (!this.prevTypeName) return this.$router.push({ name: 'home' });
       this.$router.push({
         params: {
-          currentSlide: this.presentations.find(item=>item.type === this.prevTypeName).slides.length,
+          currentSlide: this.presentations.find(item=>item.id === this.prevTypeId).slides.length,
           id: this.prevTypeId,
           type: this.prevTypeName,
         },
@@ -180,35 +180,31 @@ export default {
       }
     },
     nextTypeId(){
-      const i = this.typesKeys.indexOf(this.type);
-      let id
-      this.presentations.forEach(item=>{
-        if(this.typesKeys[i + 1]===item.type){
-          id =item.id
-        }
+      // const i = this.$route.params.id;
+      // let id
+      // this.presentations.forEach(item=>{
+      //   if(this.typesKeys[i]===item.type){
+      //     id =item.id
+      //   }
 
-      })
-      return id
+      // })
+      
+      return this.presentations[this.$route.params.id].id
     },
-    prevTypeId(){
-      const i = this.typesKeys.indexOf(this.type);
-      let id
-      this.presentations.forEach(item=>{
-        if(this.typesKeys[i - 1]===item.type){
-          id =item.id
-        }
-
-      })
-      return id
+    prevTypeId(){  
+      return this.presentations[this.$route.params.id-2].id
     },
     nextTypeName() {
-      const i = this.typesKeys.indexOf(this.type);
-      
-      return i !== -1 && this.typesKeys[i + 1];
+      // const i = this.typesKeys.indexOf(this.type);
+      const i = this.$route.params.id;
+      console.log(this.typesKeys)
+      console.log(i)
+      console.log(this.typesKeys[i-1])
+      return  this.typesKeys[i-1] !== undefined && this.typesKeys[i-1];
     },
     prevTypeName() {
-      const i = this.typesKeys.indexOf(this.type);
-      return i !== -1 && this.typesKeys[i - 1];
+      const i = this.$route.params.id;
+      return this.typesKeys[i-2] !== undefined && this.typesKeys[i - 2];
     },
     typeParams() {
       if(this.typesKeys){

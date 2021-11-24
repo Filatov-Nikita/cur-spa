@@ -8,7 +8,7 @@
 export default {
   props: {
     text: {
-      required: true,
+      default: undefined,
       type: String,
     },
     wMax: {

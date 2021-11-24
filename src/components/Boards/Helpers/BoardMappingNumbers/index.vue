@@ -48,10 +48,11 @@ export default {
       type: String,
     },
     left: {
-      required: true,
-      validator(left) {
-        return left.value && left.color && left.size;
-      },
+      default: undefined,
+      type: Object,
+      // validator(left) {
+      //   return left.value && left.color && left.size;
+      // },
     },
     right: {
       required: true,

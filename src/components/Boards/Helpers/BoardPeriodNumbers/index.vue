@@ -26,13 +26,11 @@ export default {
   name: 'BoardPeriodNumbers',
   props: {
     period: {
-      default: 'day',
-      validator(value) {
-        return ['day', 'week', 'month', 'year'].includes(value);
-      },
+      default: undefined,
+      type: String
     },
     label: {
-      required: true,
+      default: undefined,
       type: String,
     },
     valueStg: {

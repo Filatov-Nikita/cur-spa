@@ -25,7 +25,7 @@ export default {
   name: 'BoardTextBody',
   props: {
     text: {
-      required: true,
+      default: undefined,
       type: String,
     },
     sizeText: {
@@ -37,7 +37,7 @@ export default {
       type: String,
     },
     icon: {
-      required: true,
+      default: undefined,
       type: String,
     },
     offset: {
