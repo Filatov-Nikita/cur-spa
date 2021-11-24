@@ -127,7 +127,6 @@ export default {
   },
   methods: {
     nextType() {
-      console.log(this.nextTypeId + "hi")
       if (!this.nextTypeName) return this.$router.push({ name: 'home' });
       this.$router.push({
         params: { currentSlide: 0, id: this.nextTypeId, type: this.nextTypeName },
@@ -188,7 +187,7 @@ export default {
       //   }
 
       // })
-      
+      console.log(this.presentations[this.$route.params.id].id)
       return this.presentations[this.$route.params.id].id
     },
     prevTypeId(){  
@@ -199,8 +198,8 @@ export default {
       const i = this.$route.params.id;
       console.log(this.typesKeys)
       console.log(i)
-      console.log(this.typesKeys[i-1])
-      return  this.typesKeys[i-1] !== undefined && this.typesKeys[i-1];
+      console.log(this.typesKeys[i])
+      return  this.typesKeys[i] !== undefined && this.typesKeys[i];
     },
     prevTypeName() {
       const i = this.$route.params.id;
