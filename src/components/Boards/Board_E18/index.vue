@@ -6,18 +6,21 @@
           <board-text-body
             offset="70px"
             icon="bomb"
-            text="Происшествие 1"
+            :text="type.text"
             v-space-m:bottom="'82px'"
           />
 
           <div class="slide-text-important" v-space-m:bottom="'83px'">
-            <p>25 марта 2021 г.</p>
+            <!-- <p>25 марта 2021 г.</p>
             <br />
-            <p>г. Уфа, нефтеперерабатывающий завод «Уфаоргсинтез»</p>
+            <p>г. Уфа, нефтеперерабатывающий завод «Уфаоргсинтез»</p> -->
+            <p>
+              {{type.description}}
+            </p>
           </div>
 
           <board-caption
-            text="Организована работа 18 стационарных пунктов обогрева, выдвинут мобильный пункт обогрева Главного управления МЧС России."
+            :text="type.description2"
             v-space-m:bottom="'86px'"
           />
 
@@ -26,17 +29,17 @@
               {
                 icon: 'door',
                 label: 'Количество эвакуированных',
-                value: '1',
+                value: type.numberOfEvacuees,
               },
               {
                 icon: 'affected',
                 label: 'Количество пострадавших',
-                value: '1',
+                value: type.numberOfVictims,
               },
               {
                 icon: 'died',
                 label: 'Количество погибших',
-                value: '0',
+                value: type.theDeathToll,
               },
             ]"
           />

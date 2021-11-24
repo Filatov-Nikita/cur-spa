@@ -4,6 +4,7 @@
     <MainHeader />
     <div class="tw-flex tw-items-center container">
       <img
+        v-if="logo"
         class="presLogo"
         :src="logo"
 
@@ -11,6 +12,7 @@
       />
 
       <SpeakerIntroduction
+        v-if="name"
         class="speaker-card tw-w-full tw-self-center"
         :title="name"
         :speaker="speaker"

@@ -58,16 +58,23 @@
 
           </div>
         </div>  -->
-        <BoardsCarousel v-model="currentSlide" :slides="[1,2,3,4]" height="100%" >
+        <BoardsCarousel v-if="images.length>1" v-model="currentSlide" :slides="images" >
           <q-carousel-slide
-            v-for="slide in 4"
-            :key="slide"
-            :name="slide"
-            height="100%"
+            v-for="(slide,index) in images"
+            :key="index"
+            :name="index"
+            
           >
-            <q-img src="bus3.jpeg" width="100%" height="100%" :style="{'min-height': '100%'}" />
+            <q-img :src="slide.url" width="100%"  style="min-height:100%"/>
           </q-carousel-slide>
         </BoardsCarousel> 
+        <q-img
+          v-else-if="images.length===1"
+          :src="images[0].url"
+          width="100%"
+          height="100%"
+          :style="{'min-height': $toRem('1450px')}"
+        />
         <!-- <q-img src="bus3.jpeg" width="100%" height="100%" :style="{'min-height': $toRem('1450px')}" /> -->
       </template>
     </board-devider>

@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover >
     <board-devider leftWidth="50%" rightWidth="50%">
       <template #left>
         <board-offsets :width="1633" :l="124" :t="149" :b="350" :toPerc="['l']">

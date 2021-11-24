@@ -6,7 +6,7 @@
         enter-active-class="animated fadeIn"
         leave-active-class="animated fadeOut"
       >
-        <keep-alive>
+        <keep-alive v-if="slideData">
           <q-page v-if="!showSpeaker">
             <PresentationBuilder
               :type="type"
@@ -108,14 +108,7 @@ const types = {
 };
 
 export default {
-  // beforeRouteEnter(to, from, next) {
-  //   if (!(to.params.type in types)) {
-  //     console.log('hi')
-  //     next({ ...to, params: { ...to.params, type: 'medical' } });
-  //   } else {
-  //     next();
-  //   }
-  // },
+
   props: {
     type: {
       default: 'medical',
@@ -170,15 +163,21 @@ export default {
       // return this.pres[this.type].slides;
     },
     presentations(){
-      return this.slideData.presentations
+      if(this.slideData){
+
+        return this.slideData.presentations
+      }
     },
     showSpeaker() {
       return this.currentSlide === 0;
     },
     typesKeys() {
-      return this.presentations.map(item=>{
-        return item.type
-      });
+      if(this.presentations){
+        return this.presentations.map(item=>{
+          return item.type
+        });
+
+      }
     },
     nextTypeId(){
       const i = this.typesKeys.indexOf(this.type);
@@ -212,31 +211,53 @@ export default {
       return i !== -1 && this.typesKeys[i - 1];
     },
     typeParams() {
-      const { typesKeys, type, types } = this;
-      if (typesKeys.length <= 0) return {};
-      if (!(type in types)) return types[typesKeys[0]];
-      return types[type];
+      if(this.typesKeys){
+        const { typesKeys, type, types } = this;
+        if (typesKeys.length <= 0) return {};
+        if (!(type in types)) return types[typesKeys[0]];
+        return types[type];
+      }
+      return null
     },
     newTypeParams(){
-      console.log(this.$route)
-      return this.presentations.find(item=>item.id === this.$route.params.id)
+      if(this.presentations){
+        
+          
+        return this.presentations.find(item=>item.id == this.$route.params.id)
+      }
+      return null
     },
     speaker() {
-      return this.newTypeParams.speaker;
+      if(this.newTypeParams){
+        
+        return this.newTypeParams.speaker;
+      }
+      return null
     },
     video() {
-      
-      return this.typeParams.video;
+      if(this.typeParams){
+
+        return this.typeParams.video;
+      }
+      return null
     },
     color() {
-      return this.typeParams.color;
+      if(this.typeParams){
+        return this.typeParams.color;
+      }
+      return null
     },
     logo() {
-      return this.newTypeParams.department.presentation_image.url;
+      if(this.newTypeParams){
+        return this.newTypeParams.department.presentation_image.url;
+      }
+      return null
     },
     name() {
-      
-      return this.newTypeParams.department.name;
+      if(this.newTypeParams){
+        return this.newTypeParams.department.name;
+      }
+      return null
     },
   },
   components: {

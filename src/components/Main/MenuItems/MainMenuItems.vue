@@ -1,6 +1,6 @@
 <template>
   <div class="menu-container">
-    <div class="tw-text-right tw-self-end">
+    <div class="tw-text-right tw-self-end" :style="{'margin-right': $toRem('510px')}">
       <button
         :style="{'font-size': $toRem('30px')}"
         class="tw-inline-flex tw-items-center"
@@ -68,14 +68,17 @@ export default {
       slideData: "slideDataGetter"
     }),
     presentations(){
-      return this.slideData.presentations
-        .map(item=>{
-          return {
-          name: item.department.name,
-          icon: 'medical',
-          to: { name: 'presentation', params: { id:item.id, type: item.type } },
-          }
-        })
+      if(this.slideData){
+
+        return this.slideData.presentations
+          .map(item=>{
+            return {
+            name: item.department.name,
+            icon: 'medical',
+            to: { name: 'presentation', params: { id:item.id, type: item.type } },
+            }
+          })
+      }
     }
   },
   components: {

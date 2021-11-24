@@ -10,11 +10,33 @@
   </div>
 </template>
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: 'App',
+  methods: {
+    async getData(){
+      try{
+        await this.$store.dispatch("activeMetting");
+        this.$q.loading.hide()
+
+      }
+      catch {
+        console.log('erorr')
+      } 
+  }
+  },
+    computed: {
+    ...mapGetters({
+      slideData: "slideDataGetter"
+    }),
+    },
   created(){
-    // this.$store.dispatch("slideList")
-    this.$store.dispatch("activeMetting")
+    console.log(this.$route.query)
+    if(this.slideData === null){
+
+      this.$q.loading.show()
+      this.getData()
+    }
   }
 };
 </script>

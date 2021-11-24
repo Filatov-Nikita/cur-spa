@@ -3,7 +3,7 @@
     <q-carousel
           animated
           v-model="innerValue"
-          height="100%"
+          :height="$toRem('1428px')"
           control-color="purple"
           navigation
           infinite

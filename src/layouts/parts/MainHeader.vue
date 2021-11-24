@@ -1,4 +1,4 @@
-convertValues(<template)>
+<template>
   <div class="header main-wrapper tw-flex">
     <router-link to="/">
       <img src="~assets/logo.svg" alt=""  class="logo" />

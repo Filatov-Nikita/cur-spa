@@ -2,7 +2,7 @@
   <q-layout class="container" :class="{ open }">
     <q-page-container>
       <MainVideoBackground src="videos/main.mp4" />
-      <q-page class="tw-flex tw-flex-col">
+      <q-page class="tw-flex tw-flex-col tw-overflow-auto">
         <div class="tw-flex-grow">
           <MainHeader :class="open ? ['tw-z-50', 'tw-relative'] : ''" />
           <MainMenuItems
@@ -38,14 +38,19 @@ export default {
   },
   methods: {
     toggleMenu() {
-      if (this.$route.name === 'home')
+      if (this.$route.name === 'home'){
+
+        this.open = !this.open;
         return this.$router.push({ name: 'introduction' });
-      this.open = !this.open;
+      }
     },
     close(){
       this.open = false
       this.$router.push({ name: 'home' });
     }
+  },
+  created(){
+    if(this.$route.name === 'introduction')this.open = true
   },
   components: {
     MainHeader,

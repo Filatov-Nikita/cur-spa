@@ -1,11 +1,5 @@
 <template>
-  <section class="speaker-card tw-w-full tw-self-center">
-    <SpeakerIntroduction
-      :speaker="speaker"
-      title="Вступительное слово"
-      :style="{'max-width': $toRem('1628px'), 'margin-top': $toRem('456px')}"
-    />
-  </section>
+  
 </template>
 
 <script>

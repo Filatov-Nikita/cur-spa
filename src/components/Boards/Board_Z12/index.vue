@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover >
     <board-offsets :b="84" :l="124" :r="40" :t="117">
       <board-text-body
         offset="112px"

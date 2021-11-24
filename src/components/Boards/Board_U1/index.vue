@@ -38,7 +38,7 @@
           <board-text-body
             offset="62px"
             iconChoice
-            :icon="type.selectIconAtTheTopColumn1"
+            :icon="type.selectIconAtTheTopColumn2"
             :text="type.topTextColumn2"
           />
 
