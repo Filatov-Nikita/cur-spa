@@ -62,7 +62,7 @@
           :src="images[0].url"
           width="100%"
           height="100%"
-contain :ratio="4/3"
+          contain :ratio="4/3"
           :style="{'min-height': $toRem('1450px')}"
         />
       </template>
