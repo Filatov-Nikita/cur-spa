@@ -11,7 +11,7 @@
     >
       <board-text-body
         offset="67px"
-        icon="syringe"
+        icon="phone"
         text="Поступило сообщений"
         textWMax="2640px"
         v-space-m:bottom="'55px'"
@@ -36,7 +36,7 @@
 
       <div class="tw-flex tw-flex-wrap">
         <board-period-numbers
-          period="day"
+          period="signal"
           label="Объектов под угрозой"
           :valueStg="{
             value: type.objectsUnderThreat,
@@ -50,7 +50,7 @@
         />
 
         <board-period-numbers
-          period="month"
+          period="stop"
           label="Ложные сообщения"
           :valueStg="{
             value: type.falseMessages,

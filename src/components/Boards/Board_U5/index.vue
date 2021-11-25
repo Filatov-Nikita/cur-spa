@@ -26,11 +26,16 @@
           <masonry :cols="2" :gutter="80">
             <div
               class="slide-text-body"
+            >
+              {{type.descriptionColumn2}}
+            </div>
+            <!-- <div
+              class="slide-text-body"
               v-for="(item, index) in type.cities"
               :key="index"
             >
               {{ item }}
-            </div>
+            </div> -->
           </masonry>
         </board-offsets>
       </template>

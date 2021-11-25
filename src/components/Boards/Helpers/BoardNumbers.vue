@@ -80,7 +80,10 @@ export default {
       return 'slide-text-' + this.size;
     },
     cleanValue() {
-      return this.value.replace(/[^0-9.]/g, '');
+      if(this.value){
+        
+        return this.value.replace(/[^0-9.]/g, '');
+      }
     },
   },
   methods: {

@@ -55,10 +55,12 @@ export default {
       // },
     },
     right: {
-      required: true,
-      validator(left) {
-        return left.value && left.color && left.size;
-      },
+            default: undefined,
+      type: Object,
+      // required: true,
+      // validator(left) {
+      //   return left.value && left.color && left.size;
+      // },
     },
     label: {
       default: undefined,

@@ -13,7 +13,7 @@
         :icon="type.selectIconAtTheTop"
         textWMax="2239px"
         offset="73px"
-        :text="type.name"
+        :text="type.date"
         v-space-m:bottom="'55px'"
       />
       <board-numbers

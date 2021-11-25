@@ -3,10 +3,11 @@
     <q-carousel
           animated
           v-model="innerValue"
-          :height="$toRem('1428px')"
-          control-color="purple"
+          :height="$toRem('1440px')"
+          
           navigation
           infinite
+          style="background-color: transparent;"
         >
         <template v-slot:navigation-icon="{ active, btnProps, onClick }">
         <q-btn v-if="active" :size="$toRem('15px')" :icon="btnProps.icon" color="positive" flat round dense @click="onClick" />

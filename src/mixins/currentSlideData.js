@@ -8,7 +8,7 @@ export default {
       if(this.slideData){
 
         const slides =  this.slideData.presentations.find(item=>{
-            return item.type == this.$route.params.type
+            return item.id == this.$route.params.id
                
           }).slides
           if(this.$route.params.currentSlide-1 !== -1){
@@ -21,11 +21,13 @@ export default {
     },
     images(){
       if(this.$route.params.currentSlide-1 !== -1){
-      return this.slideData.presentations.find(item=>{
+      const imagesArray =  this.slideData.presentations.find(item=>{
             return item.type == this.$route.params.type
                
           }).slides[this.$route.params.currentSlide-1].images
+        return imagesArray ? imagesArray : []
       }
+      
     }
 
   },
