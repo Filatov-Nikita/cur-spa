@@ -9,7 +9,7 @@
         <keep-alive v-if="slideData">
           <q-page v-if="!showSpeaker">
             <PresentationBuilder
-              :key="presentations[this.$route.params.id-1].id"
+              :key="$route.params.id-1"
               :type="type"
               :speaker="speaker"
               :slides="slides"
@@ -130,7 +130,7 @@ export default {
   methods: {
     nextType() {
       if (!this.nextTypeName) return this.$router.push({ name: 'home' });
-      console.log(this.nextTypeName)
+      
       this.$router.push({
         params: { currentSlide: 0, id: this.nextTypeId, type: this.nextTypeName },
       });
@@ -190,7 +190,11 @@ export default {
       //   }
 
       // })
-      return this.presentations[this.$route.params.id].id
+            for(let key in this.presentations){
+        if(this.presentations[key].id == this.$route.params.id){
+          return this.presentations[+key+1].id
+        } 
+      }
     },
     prevTypeId(){  
       for(let key in this.presentations){
@@ -202,8 +206,9 @@ export default {
     },
     nextTypeName() {
       for(let key in this.presentations){
-        if(this.presentations[key].id == this.$route.params.id){
-          return this.presentations[+key+1].type
+        if(this.presentations[key].id == this.$route.params.id && this.presentations[+key+1]){
+        
+          return this.presentations[+key+1].type?this.presentations[+key+1].type:undefined
         }
       }
     },
