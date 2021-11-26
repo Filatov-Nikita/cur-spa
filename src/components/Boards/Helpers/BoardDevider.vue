@@ -9,7 +9,7 @@
       </div>
     </template>
     <template v-else>
-      <template v-if="typeof cols === 'number'">
+      <template v-if="typeof cols === 'number' && cols">
         <div
           v-for="number in cols"
           :key="number"

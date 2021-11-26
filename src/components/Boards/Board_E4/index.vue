@@ -65,7 +65,7 @@
             :name="index"
             
           >
-            <q-img :src="slide.url" contain :ratio="4/3" height="100%"/>
+            <q-img :src="slide.url"  height="100%"/>
           </q-carousel-slide>
         </BoardsCarousel> 
           <q-img
@@ -73,7 +73,7 @@
             :src="images[0].url"
             width="100%"
             height="100%"
-            contain :ratio="4/3"
+            
           :style="{'min-height': $toRem('1450px')}"
         />
         <!-- <q-img src="bus3.jpeg" width="100%" height="100%" :style="{'min-height': $toRem('1450px')}" /> -->

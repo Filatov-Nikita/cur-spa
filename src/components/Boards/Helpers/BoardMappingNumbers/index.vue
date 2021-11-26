@@ -2,7 +2,7 @@
   <div>
     <board-caption v-if="label" :text="label" />
     <div class="mapnumbers">
-      <BoardNumbers v-bind="left" />
+      <BoardNumbers v-if="left" v-bind="left" />
       <div
         class="tw-flex tw-items-center"
         :class="`tw-self-${align}`"
@@ -19,7 +19,7 @@
           }"
           :position="position"
         />
-        <BoardNumbers v-bind="right" />
+        <BoardNumbers v-if="right " v-bind="right" />
       </div>
     </div>
   </div>
@@ -48,14 +48,14 @@ export default {
       type: String,
     },
     left: {
-      default: undefined,
+      default: null,
       type: Object,
       // validator(left) {
       //   return left.value && left.color && left.size;
       // },
     },
     right: {
-            default: undefined,
+            default: null,
       type: Object,
       // required: true,
       // validator(left) {

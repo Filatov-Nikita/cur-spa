@@ -1,20 +1,20 @@
 <template>
   <div class="tw-flex" :class="`tw-items-${align}`">
     <q-icon
-        v-if="iconChoice"
+        v-if="iconChoice && icon "
         size="8.25rem"
         :name="icon"
         color="white"
         :style="{ 'margin-right': $toRem(offset) }"
       ></q-icon>   
     <img
-      v-else
+      v-else-if="icon"
       class="img-size"
       :src="require('./icons/' + icon + '.svg')"
       :style="{ 'margin-right': $toRem(offset) }"
     />
       
-    <div :class="`slide-text-${sizeText}`" :style="{ 'max-width': $toRem(textWMax) }">
+    <div v-if="text" :class="`slide-text-${sizeText}`" :style="{ 'max-width': $toRem(textWMax) }">
       {{ text }}
     </div>
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="top">
     <div class="top-wrapper">
-      <div class="title">{{ title }}</div>
+      <div class="title" v-if="title">{{ title }}</div>
       <SpeakerCard
         :name="name"
         :position="speaker.position"

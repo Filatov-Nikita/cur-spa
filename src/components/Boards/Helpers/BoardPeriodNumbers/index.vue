@@ -2,18 +2,18 @@
   <div>
     <div class="tw-flex tw-items-center tw-mb-5">
       <q-icon
-        v-if="iconChoice"
+        v-if="iconChoice && period"
         size="3.125rem"
         :name="period"
         color="white"
         :style="{ 'margin-right': $toRem(offset) }"
       ></q-icon>
       <img
-      v-else
+      v-else-if="period"
         :src="require('./icons/' + period + '.svg')"
         :style="{ 'margin-right': $toRem(offset), width: $toRem('50px'), height: $toRem('50px') }"
       />
-      <div class="slide-text-caption tw-text-white">{{ label }}</div>
+      <div class="slide-text-caption tw-text-white" v-if="label">{{ label }}</div>
     </div>
     <BoardNumbers v-bind="valueStg" />
   </div>

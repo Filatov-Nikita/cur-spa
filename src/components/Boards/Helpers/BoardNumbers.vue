@@ -8,7 +8,7 @@
       :complete="complete"
       :formatValue="formatToPrice"
     />
-    <span v-else>{{ value | prettyAmount }}</span>
+    <span v-else-if="value">{{ value | prettyAmount }}</span>
   </div>
   <div v-else class="numbers" :class="{ down: !dynamic }">
     <template v-if="value">
@@ -24,7 +24,7 @@
         :style="{ 'margin-right': arrowOffset }"
       />
       <span
-        v-else
+        v-else-if="value"
         class="value"
         :class="[colorClass, textSize]"
         :style="{ 'margin-right': $toRem(arrowOffset) }"

@@ -1,6 +1,6 @@
 <template>
   <div class="menu-container">
-    <div class="tw-text-right tw-self-end" :style="{'margin-right': $toRem('510px')}">
+    <div class="tw-text-right tw-self-end" >
       <button
         :style="{'font-size': $toRem('30px')}"
         class="tw-inline-flex tw-items-center"

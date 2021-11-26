@@ -22,12 +22,13 @@
             />
           </q-page>
           <Speaker
+            v-else-if="speaker"
             :type="type"
             :logo="logo"
             :name="name"
             :speaker="speaker"
             @prevType="prevType"
-            v-else
+            
           />
         </keep-alive>
       </transition>
@@ -112,7 +113,7 @@ export default {
 
   props: {
     type: {
-      default: 'medical',
+      default: undefined,
       type: String,
     },
     currentSlide: {
@@ -129,6 +130,7 @@ export default {
   methods: {
     nextType() {
       if (!this.nextTypeName) return this.$router.push({ name: 'home' });
+
       this.$router.push({
         params: { currentSlide: 0, id: this.nextTypeId, type: this.nextTypeName },
       });
@@ -139,7 +141,7 @@ export default {
       });
     },
     prevType() {
-      
+
       if (!this.prevTypeName) return this.$router.push({ name: 'home' });
       this.$router.push({
         params: {
@@ -188,26 +190,36 @@ export default {
       //   }
 
       // })
-      
       return this.presentations[this.$route.params.id].id
     },
     prevTypeId(){  
-      return this.presentations[this.$route.params.id-2].id
+      for(let key in this.presentations){
+        if(this.presentations[key].id == this.$route.params.id){
+          return this.presentations[key-1].id
+        }
+      }
+      // return this.presentations[this.$route.params.id-2].id
     },
     nextTypeName() {
-      // const i = this.typesKeys.indexOf(this.type);
-      const i = this.$route.params.id;
+      const i = this.typesKeys.indexOf(this.type);
+      
       return  this.typesKeys[i] !== undefined && this.typesKeys[i];
     },
     prevTypeName() {
       const i = this.$route.params.id;
-      return this.typesKeys[i-2] !== undefined && this.typesKeys[i - 2];
+      // return this.typesKeys[i-2] !== undefined && this.typesKeys[i - 2];
+            for(let key in this.presentations){
+        if(this.presentations[key].id == this.$route.params.id){
+          return this.presentations[key-1].type
+        }
+            }
     },
     typeParams() {
       if(this.typesKeys){
         const { typesKeys, type, types } = this;
         if (typesKeys.length <= 0) return {};
         if (!(type in types)) return types[typesKeys[0]];
+
         return types[type];
       }
       return null

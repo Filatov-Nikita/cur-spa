@@ -1,5 +1,5 @@
 <template>
-  <div class="slide-text-caption tw-text-white" :style="{ 'max-width': wMax }">
+  <div v-if="text" class="slide-text-caption tw-text-white" :style="{ 'max-width': wMax }">
     {{ text }}
   </div>
 </template>

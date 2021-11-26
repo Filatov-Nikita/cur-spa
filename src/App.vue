@@ -31,7 +31,7 @@ export default {
     }),
     },
   created(){
-    console.log(this.$route.query)
+
     if(this.slideData === null){
 
       this.$q.loading.show()

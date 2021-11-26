@@ -37,11 +37,11 @@
             text="по сравнению с прошлым годом"
             v-space-m:bottom="'20px'"
           />
-          <board-mapping-numbers
-            :left="{ color: 'negative', value: type.numberOfIncidentsBottomLeftSide, size: 'xs' }"
-            :right="{ color: 'white', value: `${type.numberOfIncidentsBottomRightSide}%`, size: 'xs' }"
-            :arrowSize="315"
-          />
+            <board-mapping-numbers
+              :left="{ color: 'negative', value: type.numberOfIncidentsBottomLeftSide, size: 'xs' }"
+              :right="{ color: 'white', value: `${type.numberOfIncidentsBottomRightSide}%`, size: 'xs' }"
+              :arrowSize="315"
+            />
         </board-offsets>
       </template>
       <template #section2>
