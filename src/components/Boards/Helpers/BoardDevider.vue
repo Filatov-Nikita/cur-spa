@@ -50,8 +50,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+//$
 .container {
+  min-height: convertValues(1498px);
   @apply tw-flex;
 }
 .right {

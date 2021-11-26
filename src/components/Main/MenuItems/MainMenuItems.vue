@@ -74,7 +74,7 @@ export default {
           .map(item=>{
             return {
             name: item.department.name,
-            icon: 'medical',
+            icon: item.department['menu_image'].url,
             to: { name: 'presentation', params: { id:item.id, type: item.type } },
             }
           })

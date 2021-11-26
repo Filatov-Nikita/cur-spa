@@ -1,7 +1,7 @@
 <template>
   <router-link tag="li" :to="to" class="li">
     <div class="num">{{ index }}</div>
-    <img class="icon" :src="`menu-icons/${icon}.png`" alt="" />
+    <img class="icon" :src="icon" alt="" />
     <p class="text">{{ name }}</p>
   </router-link>
 </template>
