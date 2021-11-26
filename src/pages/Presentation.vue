@@ -130,7 +130,7 @@ export default {
   methods: {
     nextType() {
       if (!this.nextTypeName) return this.$router.push({ name: 'home' });
-
+      console.log(this.nextTypeName)
       this.$router.push({
         params: { currentSlide: 0, id: this.nextTypeId, type: this.nextTypeName },
       });
@@ -201,9 +201,11 @@ export default {
       // return this.presentations[this.$route.params.id-2].id
     },
     nextTypeName() {
-      const i = this.typesKeys.indexOf(this.type);
-      
-      return  this.typesKeys[i] !== undefined && this.typesKeys[i];
+      for(let key in this.presentations){
+        if(this.presentations[key].id == this.$route.params.id){
+          return this.presentations[+key+1].type
+        }
+      }
     },
     prevTypeName() {
       const i = this.$route.params.id;

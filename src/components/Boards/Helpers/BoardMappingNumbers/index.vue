@@ -19,7 +19,7 @@
           }"
           :position="position"
         />
-        <BoardNumbers v-if="right " v-bind="right" />
+        <BoardNumbers v-if="right" v-bind="right" />
       </div>
     </div>
   </div>
