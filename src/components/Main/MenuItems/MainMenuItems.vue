@@ -75,7 +75,7 @@ export default {
             return {
             name: item.department.name,
             icon: item.department['menu_image'].url,
-            to: { name: 'presentation', params: { id:item.id, type: item.type } },
+            to: { name: 'presentation', params: { id:item.id, type: item.type, currentSlide: 0 } },
             }
           })
       }
@@ -100,6 +100,7 @@ export default {
   // width: 100%;
   position: absolute;
   z-index: 20;
+  padding-bottom: 7rem;
 }
 
 .close-icon {

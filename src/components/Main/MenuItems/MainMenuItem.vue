@@ -36,6 +36,7 @@ export default {
   text-align: center;
   background: rgba(4, 16, 61, 0.92);
   backdrop-filter: blur(42px);
+  cursor: pointer;
 }
 
 .li:nth-child(2n) {
