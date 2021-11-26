@@ -12,7 +12,7 @@
       />
 
       <SpeakerIntroduction
-        v-if="name"
+        v-if="name && speaker"
         class="speaker-card tw-w-full tw-self-center"
         :title="name"
         :speaker="speaker"
