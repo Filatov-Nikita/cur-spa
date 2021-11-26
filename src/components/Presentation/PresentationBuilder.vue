@@ -1,6 +1,5 @@
 <template>
   <div class="builder">
-    <!-- <PresentationVideoBackground :src="video" /> -->
     <PresentationTopBar :title="slideTitle" :speaker="speaker" />
     <div class="board-container">
       <div class="board-wrapper">
@@ -14,10 +13,8 @@
           class="tw-font-pt-sans tw-text-white tw-text-right"
           style="font-size: 35px"
         >
-              <p>{{slideData.week}}</p>
-      <p>{{slideData.period}}</p>
-          <!-- <p>20 неделя</p>
-          <p>1 июня 2021 - 5 июня 2021</p> -->
+          <p>{{ slideData.week }}</p>
+          <p>{{ slideData.period }}</p>
         </div>
       </div>
     </div>
@@ -35,8 +32,7 @@
 import PresentationLeftBar from './PresentationLeftBar';
 import PresentationTopBar from './PresentationTopBar';
 import PresentationBottomBar from './PresentationBottomBar';
-import PresentationVideoBackground from './PresentationVideoBackground';
-import {mapGetters} from 'vuex';
+import { mapGetters } from 'vuex';
 /*
   Делаем нулевой слайд
   отслеживаем если слайд 0 то отображаем спикера
@@ -81,12 +77,11 @@ export default {
   },
   computed: {
     ...mapGetters({
-      slideData: "slideDataGetter"
+      slideData: 'slideDataGetter',
     }),
     board() {
       const type = this.slides[this.current].type;
-      
-      
+
       return () => import('src/components/Boards/Board_' + type);
     },
     slideTitle() {
@@ -100,11 +95,10 @@ export default {
     next() {
       const prev = this.current;
       this.current = this.minMax(this.current + 1);
-      if (prev === this.current){
-        
+      if (prev === this.current) {
         return this.$emit('nextType');
       }
-        
+
       this.$router.push({
         params: { ...this.$route.params, currentSlide: this.current + 1 },
       });
@@ -122,7 +116,6 @@ export default {
     PresentationLeftBar,
     PresentationBottomBar,
     PresentationTopBar,
-    PresentationVideoBackground,
   },
   watch: {
     currentSlide: {

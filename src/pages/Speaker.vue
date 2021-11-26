@@ -3,16 +3,9 @@
     <!-- <PresentationVideoBackground src="videos/medicine.mp4" /> -->
     <MainHeader />
     <div class="tw-flex tw-items-center container">
-      <img
-        v-if="logo"
-        class="presLogo"
-        :src="logo"
-
-        v-space-m:right="'437px'"
-      />
+      <img class="presLogo" :src="logo" v-space-m:right="'437px'" />
 
       <SpeakerIntroduction
-        v-if="name && speaker"
         class="speaker-card tw-w-full tw-self-center"
         :title="name"
         :speaker="speaker"
@@ -82,8 +75,7 @@ export default {
   max-width: convertValues(602px);
   height: auto;
   flex-shrink: 0;
-  width:convertValues(602px);
-  
+  width: convertValues(602px);
 }
 
 .container {

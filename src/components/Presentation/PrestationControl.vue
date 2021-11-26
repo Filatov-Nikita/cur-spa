@@ -24,10 +24,8 @@ function removeListeners() {
   document.removeEventListener('keydown', keydown);
 }
 
-function addListeners() {}
-
 export default {
-  activated() {
+  mounted() {
     keydown = (e) => {
       if (e.keyCode === 37) {
         const el = this.$refs.left.$el;
@@ -52,6 +50,10 @@ export default {
       }
     };
 
+    document.addEventListener('keyup', keyup);
+    document.addEventListener('keydown', keydown);
+  },
+  activated() {
     document.addEventListener('keyup', keyup);
     document.addEventListener('keydown', keydown);
   },

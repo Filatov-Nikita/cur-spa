@@ -1,6 +1,6 @@
 <template>
   <div class="speaker" :class="`speaker-${size}`">
-    <q-img  :src="avatar.url" class="avatar" :class="`avatar-${size}`" />
+    <q-img :src="avatar.url" class="avatar" :class="`avatar-${size}`" />
     <div class="speakerData" :class="`speakerData-${size}`">
       <div class="container" :class="`container-${size}`">
         <div v-if="showLabel" class="label" v-space-m:bottom="'41px'">

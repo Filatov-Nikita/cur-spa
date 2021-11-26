@@ -11,7 +11,7 @@ const routes = [
       {
         path: "/introduction",
         component: () => import("pages/Introduction.vue"),
-        name: "introduction",
+        name: "introduction"
       }
     ]
   },
@@ -25,8 +25,8 @@ const routes = [
     component: () => import("pages/Presentation.vue"),
     name: "presentation",
     props: route => {
-      const { currentSlide, type } = route.params;
-      return { currentSlide: parseInt(currentSlide), type };
+      const { currentSlide, type, id } = route.params;
+      return { currentSlide: parseInt(currentSlide), type, id: parseInt(id) };
     },
     beforeEnter(to, from, next) {
       let { currentSlide } = to.params;
