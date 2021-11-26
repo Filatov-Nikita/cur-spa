@@ -1,3 +1,4 @@
+
 <template>
   <board-cover v-if="type">
     <board-offsets :l="188" :t="241" :b="488" :r="272">
@@ -5,7 +6,7 @@
         <template v-slot:label="{ label }">
           <div
             class="board-li-el slide-text-body tw-align-middle"
-            style="margin-bottom: 60px"
+            :style="{'margin-bottom': $toRem('60px')}"
           >
             {{ label }}
           </div>
@@ -61,11 +62,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//$
 .board-li-el::before {
-  width: 31px;
-  height: 31px;
-  margin-right: 71px;
+  width: convertValues(31px);
+  height: convertValues(31px);
+  margin-right: convertValues(71px);
   vertical-align: middle;
 }
 </style>
