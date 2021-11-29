@@ -3,7 +3,7 @@
     <PresentationTopBar :title="slideTitle" :speaker="speaker" />
     <div class="board-container">
       <div class="board-wrapper">
-        <transition enter-active-class="animated zoomIn slow" appear>
+        <transition enter-active-class="animated zoomIn slow" appear mode="out-in">
           <component
             :is="board"
             :type="slides[current].data"
