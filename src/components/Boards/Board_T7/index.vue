@@ -48,7 +48,7 @@
 
 <script>
 import BoardDevider from '../Helpers/BoardDevider.vue';
-import currentSlideData from "src/mixins/currentSlideData"
+
 import BoardsCarousel from 'src/components/BoardsCarousel';
 export default {
     data() {
@@ -58,7 +58,16 @@ export default {
     }
   },
   components: { BoardDevider,BoardsCarousel },
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+    images: {
+      required: true,
+      type: Array,
+    },
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover>
     <board-devider leftWidth="26.7%" rightWidth="73.3%">
       <template #left>
         <board-offsets :width="871" :l="148" :t="114" :b="78" :toPerc="['l']">
@@ -61,10 +61,10 @@
               }"
               v-space-m:right="'259px'"
               v-space-m:bottom="'59px'"
-              style="flex-basis: 804px"
+              :style="{'flex-basis': $toRem(' 804px')}"
             />
 
-            <div style="flex-basis: 1077px">
+            <div :style="{'flex-basis': $toRem(' 1077px')}">
               <board-caption
                 text="Уровень тестирования на 100 тыс. населения"
                 wMax="1017px"
@@ -80,9 +80,14 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 export default {
   name: 'Board4',
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>

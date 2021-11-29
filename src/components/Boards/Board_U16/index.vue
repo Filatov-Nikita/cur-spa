@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover>
     <board-offsets :width="3264" :l="124" :t="169" :b="82" :toPerc="['l']">
       <board-text-body
         iconChoice
@@ -48,9 +48,14 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 export default {
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>
 

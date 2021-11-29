@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover>
     <board-offsets :l="188" :t="241" :b="488" :r="272">
       <board-vitals :vitals="vitals" vitalType="mapping" align="end">
         <template v-slot:label="{ label }">
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 export default {
   // data() {
   //   return {
@@ -43,7 +43,12 @@ export default {
   // },
   
 
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
   computed: {
     vitals(){
       const {type} = this

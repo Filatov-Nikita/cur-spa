@@ -86,10 +86,15 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 export default {
   name: 'BoardM1',
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

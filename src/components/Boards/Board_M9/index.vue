@@ -26,7 +26,7 @@
           :value="type.amountOfReceivedVaccineGamCOVIDVacSputnikVagainstNewCoronavirusInfection"
           size="lg"
           color="positive"
-          style="flex-basis: 1693px"
+          :style="{'flex-basis': $toRem('1693px')}"
           class="tw-flex-grow tw-whitespace-nowrap"
           v-space-m:right="'200px'"
         />
@@ -87,9 +87,14 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 export default {
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>
 

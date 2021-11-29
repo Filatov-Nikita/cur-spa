@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover>
     <board-devider leftWidth="50%" rightWidth="50%">
       <template #left>
         <board-offsets
@@ -83,7 +83,7 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 import BoardsCarousel from 'src/components/BoardsCarousel';
 export default {
   data() {
@@ -93,7 +93,16 @@ export default {
     }
   },
   components: {BoardsCarousel},
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+    images: {
+      required: true,
+      type: Array,
+    },
+  },
 };
 </script>
 

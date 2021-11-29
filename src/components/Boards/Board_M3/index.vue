@@ -27,7 +27,7 @@
             <div
               class="tw-flex tw-flex-col"
               v-space-m:right="'203px'"
-              style="flex-basis: 594px"
+              :style="{'flex-basis': $toRem(' 594px')}"
             >
               <board-caption text="В отделении интенсивной терапии" />
 
@@ -42,7 +42,7 @@
             </div>
             <div
               class="tw-flex tw-flex-col"
-              style="flex-basis: 694px"
+              :style="{'flex-basis': $toRem(' 694px')}"
             >
               <board-caption text="На ИВЛ" wMax="594px" />
 
@@ -91,9 +91,14 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 export default {
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>
 

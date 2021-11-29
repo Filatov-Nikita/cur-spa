@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover>
     <board-devider leftWidth="50%" rightWidth="50%">
       <template #left>
         <board-offsets :width="1633" :l="147" :t="109" :b="48" :toPerc="['l']">
@@ -77,10 +77,15 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 export default {
   name: 'Board4',
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
 }
 </script>
 

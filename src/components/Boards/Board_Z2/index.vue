@@ -23,11 +23,11 @@
           </div>
 
           <div class="tw-flex tw-flex-wrap tw-w-full" v-space-m:bottom="'27px'">
-            <div class="tw-w-1/2 tw-flex-grow" style="flex-basis: 400px">
+            <div class="tw-w-1/2 tw-flex-grow" :style="{'flex-basis': $toRem(' 400px')}">
               <board-caption text="МКД в зоне" v-space-m:bottom="'35px'" />
               <board-numbers :value="type.mkdInTheZone" color="negative" size="sm" />
             </div>
-            <div class="tw-w-1/2 tw-flex-grow" style="flex-basis: 400px">
+            <div class="tw-w-1/2 tw-flex-grow" :style="{'flex-basis': $toRem(' 400px')}">
               <board-caption text="СЗО в зоне" v-space-m:bottom="'35px'" />
               <board-numbers :value="type.szoInTheZone" color="negative" size="sm" />
             </div>
@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 import BoardsCarousel from 'src/components/BoardsCarousel';
 export default {
   data() {
@@ -78,7 +78,16 @@ export default {
     }
   },
   components: {BoardsCarousel},
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+    images: {
+      required: true,
+      type: Array,
+    },
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover>
     <board-offsets
       :width="3264"
       :l="177"
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+
 export default {
   // data() {
   //   return {
@@ -61,7 +61,12 @@ export default {
   //     ],
   //   };
   // },
-  mixins: [currentSlideData],
+    props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
     computed:{
     items(){
       const {type}=this
