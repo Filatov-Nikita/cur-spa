@@ -7,8 +7,9 @@
           <MainHeader :class="open ? ['tw-z-50', 'tw-relative'] : ''" />
           <MainMenuItems
             @close="close"
-            class="menu-paddings"
+            class="menu-paddings items"
             v-if="open"
+            
           />
           <transition
             leave-active-class="leave"
@@ -51,6 +52,9 @@ export default {
   },
   created(){
     if(this.$route.name === 'introduction')this.open = true
+  },
+  mounted() {
+    
   },
   components: {
     MainHeader,

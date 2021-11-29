@@ -17,12 +17,15 @@ export default {
     async getData(){
       try{
         await this.$store.dispatch("activeMetting");
-        this.$q.loading.hide()
+        
 
       }
-      catch {
-        console.log('erorr')
+      catch(e) {
+        console.log(e)
       } 
+      finally{
+        this.$q.loading.hide()
+      }
   }
   },
     computed: {
