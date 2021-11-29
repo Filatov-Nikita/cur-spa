@@ -9,7 +9,7 @@
             @close="close"
             class="menu-paddings items"
             v-if="open"
-            
+
           />
           <transition
             leave-active-class="leave"
@@ -54,7 +54,7 @@ export default {
     if(this.$route.name === 'introduction')this.open = true
   },
   mounted() {
-    
+
   },
   components: {
     MainHeader,
@@ -100,6 +100,7 @@ export default {
 
 .menu-paddings {
   padding-left: convertValues(161px);
+  padding-right: convertValues(161px);
   padding-top: convertValues(391px);
 }
 </style>

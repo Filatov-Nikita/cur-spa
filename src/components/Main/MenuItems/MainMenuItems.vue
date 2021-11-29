@@ -1,36 +1,37 @@
 <template>
   <div class="menu-container">
-    <div class="tw-text-right tw-self-end" >
+    <div class="tw-flex tw-flex-wrap menu-container__wrap">
+      <q-space/>
       <button
-        :style="{'font-size': $toRem('30px')}"
+        :style="{ 'font-size': $toRem('30px') }"
         class="tw-inline-flex tw-items-center"
         @click="$emit('close')"
       >
         <div
           class="tw-underline tw-font-pt-sans tw-text-white"
-          :style="{'margin-right': $toRem('30px')}"
+          :style="{ 'margin-right': $toRem('30px') }"
         >
           закрыть
         </div>
-        <img src="~/assets/icons/close.svg" class="close-icon"/>
+        <img src="~/assets/icons/close.svg" class="close-icon" />
       </button>
+      <ul class="items tw-z-50 tw-w-full">
+        <MainMenuItem
+          v-for="(item, index) in presentations"
+          :key="index"
+          :index="index + 1"
+          :icon="item.icon"
+          :name="item.name"
+          :to="item.to"
+        />
+      </ul>
     </div>
-    <ul class="items tw-z-50">
-      <MainMenuItem
-        v-for="(item, index) in presentations"
-        :key="index"
-        :index="index + 1"
-        :icon="item.icon"
-        :name="item.name"
-        :to="item.to"
-      />
-    </ul>
   </div>
 </template>
 
 <script>
 import MainMenuItem from './MainMenuItem';
-import {mapGetters} from 'vuex';
+import { mapGetters } from 'vuex';
 export default {
   data() {
     return {
@@ -55,31 +56,25 @@ export default {
           icon: 'chs',
           to: { name: 'presentation', params: { type: 'situations' } },
         },
-        // {
-        //   name: 'Сельское хозяйство',
-        //   icon: 'sel',
-        //   to: { name: 'presentation', params: { type: 'sel' } },
-        // },
       ],
     };
   },
-  computed:{
+  computed: {
     ...mapGetters({
-      slideData: "slideDataGetter"
+      slideData: 'slideDataGetter',
     }),
-    presentations(){
-      if(this.slideData){
+    presentations() {
+      const getItem = (item) => ({
+        name: item.department.name,
+        icon: item.department['menu_image'].url,
+        to: {
+          name: 'presentation',
+          params: { id: item.id, type: item.type, currentSlide: 0 },
+        },
+      });
 
-        return this.slideData.presentations
-          .map(item=>{
-            return {
-            name: item.department.name,
-            icon: item.department['menu_image'].url,
-            to: { name: 'presentation', params: { id:item.id, type: item.type, currentSlide: 0 } },
-            }
-          })
-      }
-    }
+      return this.slideData?.presentations.map(getItem) || [];
+    },
   },
   components: {
     MainMenuItem,
@@ -89,18 +84,21 @@ export default {
 
 <style lang="scss" scoped>
 //$
+
 .items {
   @apply tw-flex tw-flex-wrap;
 }
 
 .menu-container {
-  // max-width: convertValues(3330px);
   display: flex;
   flex-direction: column;
-  // width: 100%;
   position: absolute;
   z-index: 20;
   padding-bottom: 7rem;
+
+  &__wrap {
+    max-width: convertValues(3165px);
+  }
 }
 
 .close-icon {

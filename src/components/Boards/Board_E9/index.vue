@@ -63,7 +63,7 @@
             :key="index"
             :name="index"
           >
-            <q-img :src="slide.url" height="100%" />
+            <q-img :src="slide.url" height="100%" width="100%" />
           </q-carousel-slide>
         </BoardsCarousel>
         <q-img
