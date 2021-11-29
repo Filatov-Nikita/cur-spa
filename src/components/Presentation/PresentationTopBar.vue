@@ -1,7 +1,7 @@
 <template>
   <div class="top">
     <div class="top-wrapper">
-      <div class="title" v-if="title">{{ title }}</div>
+      <div class="title">{{ title }}</div>
       <SpeakerCard
         :name="name"
         :position="speaker.position"
@@ -18,7 +18,6 @@ import SpeakerCard from 'src/components/Common/SpeakerCard';
 export default {
   props: {
     title: {
-      default: undefined,
       required: true,
       type: String,
     },
@@ -30,11 +29,11 @@ export default {
   components: {
     SpeakerCard,
   },
-  computed:{
-        name(){
-      return this.speaker.last_name + ' '+ this.speaker.first_name
-    }
-  }
+  computed: {
+    name() {
+      return this.speaker.last_name + ' ' + this.speaker.first_name;
+    },
+  },
 };
 </script>
 

@@ -9,11 +9,17 @@
         :style="{ 'margin-right': $toRem(offset) }"
       ></q-icon>
       <img
-      v-else-if="period"
+        v-else-if="period"
         :src="require('./icons/' + period + '.svg')"
-        :style="{ 'margin-right': $toRem(offset), width: $toRem('50px'), height: $toRem('50px') }"
+        :style="{
+          'margin-right': $toRem(offset),
+          width: $toRem('50px'),
+          height: $toRem('50px'),
+        }"
       />
-      <div class="slide-text-caption tw-text-white" v-if="label">{{ label }}</div>
+      <div class="slide-text-caption tw-text-white" v-if="label">
+        {{ label }}
+      </div>
     </div>
     <BoardNumbers v-bind="valueStg" />
   </div>
@@ -26,11 +32,11 @@ export default {
   name: 'BoardPeriodNumbers',
   props: {
     period: {
-      default: undefined,
-      type: String
+      required: true,
+      type: String,
     },
     label: {
-      default: undefined,
+      required: true,
       type: String,
     },
     valueStg: {
@@ -43,8 +49,8 @@ export default {
     },
     iconChoice: {
       default: false,
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
   components: {
     BoardNumbers,

@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type"> 
+  <board-cover v-if="type">
     <board-offsets
       :width="3264"
       :l="177"
@@ -18,13 +18,7 @@
 
       <div class="items">
         <div class="item" v-for="item in items" :key="item.text">
-          
-          <q-icon
-            size="16.06rem"
-            :name="item.icon"
-            color="positive"
-            
-          ></q-icon>
+          <q-icon size="16.06rem" :name="item.icon" color="positive"></q-icon>
           <div class="slide-text-body tw-text-white">{{ item.text }}</div>
         </div>
       </div>
@@ -33,13 +27,13 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
+import currentSlideData from 'src/mixins/currentSlideData';
+
 export default {
-  
   mixins: [currentSlideData],
-  computed:{
-    items(){
-      const {type}=this
+  computed: {
+    items() {
+      const { type } = this;
       return [
         {
           icon: type.selectIcon1,
@@ -57,9 +51,9 @@ export default {
           icon: type.selectIcon4,
           text: type.textUnderTheIcon4,
         },
-      ]
-    }
-  }
+      ];
+    },
+  },
 };
 </script>
 

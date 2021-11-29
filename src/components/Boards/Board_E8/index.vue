@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover>
     <board-devider :cols="3">
       <template #section1>
         <board-offsets :l="86" :t="67" :b="46" :r="107">
@@ -38,8 +38,16 @@
             v-space-m:bottom="'20px'"
           />
           <board-mapping-numbers
-            :left="{ color: 'negative', value: type.numberOfIncidentsBottomLeftSide, size: 'xs' }"
-            :right="{ color: 'white', value: `${type.numberOfIncidentsBottomRightSide}%`, size: 'xs' }"
+            :left="{
+              color: 'negative',
+              value: type.numberOfIncidentsBottomLeftSide,
+              size: 'xs',
+            }"
+            :right="{
+              color: 'white',
+              value: `${type.numberOfIncidentsBottomRightSide}%`,
+              size: 'xs',
+            }"
             :arrowSize="315"
           />
         </board-offsets>
@@ -81,8 +89,16 @@
             v-space-m:bottom="'20px'"
           />
           <board-mapping-numbers
-            :left="{ color: 'negative', value: type.numberOfVictimsAtTheBottomTheLeftSide, size: 'xs' }"
-            :right="{ color: 'white', value: `${type.numberOfVictimsAtTheBottomTheRightSide}%`, size: 'xs' }"
+            :left="{
+              color: 'negative',
+              value: type.numberOfVictimsAtTheBottomTheLeftSide,
+              size: 'xs',
+            }"
+            :right="{
+              color: 'white',
+              value: `${type.numberOfVictimsAtTheBottomTheRightSide}%`,
+              size: 'xs',
+            }"
             :arrowSize="315"
           />
         </board-offsets>
@@ -123,8 +139,16 @@
             v-space-m:bottom="'20px'"
           />
           <board-mapping-numbers
-            :left="{ color: 'negative', value: type.theDeathTollBottomLeftSide, size: 'xs' }"
-            :right="{ color: 'white', value: `${type.theDeathTollBottomRightSide}%`, size: 'xs' }"
+            :left="{
+              color: 'negative',
+              value: type.theDeathTollBottomLeftSide,
+              size: 'xs',
+            }"
+            :right="{
+              color: 'white',
+              value: `${type.theDeathTollBottomRightSide}%`,
+              size: 'xs',
+            }"
             :arrowSize="249"
           />
         </board-offsets>
@@ -134,11 +158,12 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
 export default {
-  mixins: [currentSlideData],
+  props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>
-
-<style scoped>
-</style>

@@ -2,11 +2,11 @@
   <div>
     <board-caption v-if="label" :text="label" />
     <div class="mapnumbers">
-      <BoardNumbers v-if="left" v-bind="left" />
+      <BoardNumbers v-bind="left" />
       <div
         class="tw-flex tw-items-center"
         :class="`tw-self-${align}`"
-        :style="{ 'padding-bottom': $toRem(bottomSpace)}"
+        :style="{ 'padding-bottom': $toRem(bottomSpace) }"
       >
         <q-img
           class="arrow"
@@ -19,7 +19,7 @@
           }"
           :position="position"
         />
-        <BoardNumbers v-if="right" v-bind="right" />
+        <BoardNumbers v-bind="right" />
       </div>
     </div>
   </div>
@@ -48,19 +48,18 @@ export default {
       type: String,
     },
     left: {
-      default: null,
+      required: true,
       type: Object,
-      // validator(left) {
-      //   return left.value && left.color && left.size;
-      // },
+      validator(left) {
+        return left.value && left.color && left.size;
+      },
     },
     right: {
-            default: null,
       type: Object,
-      // required: true,
-      // validator(left) {
-      //   return left.value && left.color && left.size;
-      // },
+      required: true,
+      validator(left) {
+        return left.value && left.color && left.size;
+      },
     },
     label: {
       default: undefined,

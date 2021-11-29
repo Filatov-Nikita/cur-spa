@@ -11,26 +11,24 @@
     <span v-else-if="value">{{ value | prettyAmount }}</span>
   </div>
   <div v-else class="numbers" :class="{ down: !dynamic }">
-    <template v-if="value">
-      <animated-number
-        :round="0"
-        v-if="!replaceValue"
-        :value="cleanValue"
-        :duration="300"
-        :complete="complete"
-        :formatValue="formatToPrice"
-        class="value"
-        :class="[colorClass, textSize]"
-        :style="{ 'margin-right': arrowOffset }"
-      />
-      <span
-        v-else-if="value"
-        class="value"
-        :class="[colorClass, textSize]"
-        :style="{ 'margin-right': $toRem(arrowOffset) }"
-        >{{ value | prettyAmount }}</span
-      >
-    </template>
+    <animated-number
+      :round="0"
+      v-if="!replaceValue"
+      :value="cleanValue"
+      :duration="300"
+      :complete="complete"
+      :formatValue="formatToPrice"
+      class="value"
+      :class="[colorClass, textSize]"
+      :style="{ 'margin-right': arrowOffset }"
+    />
+    <span
+      v-else-if="value"
+      class="value"
+      :class="[colorClass, textSize]"
+      :style="{ 'margin-right': $toRem(arrowOffset) }"
+      >{{ value | prettyAmount }}</span
+    >
     <slot v-else-if="$slots.default" />
   </div>
 </template>
@@ -51,7 +49,7 @@ export default {
       type: String,
     },
     value: {
-      default: undefined,
+      required: true,
       type: [String, Number],
     },
     size: {
@@ -80,8 +78,7 @@ export default {
       return 'slide-text-' + this.size;
     },
     cleanValue() {
-      if(this.value){
-        
+      if (this.value) {
         return this.value.replace(/[^0-9.]/g, '');
       }
     },

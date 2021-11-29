@@ -1,20 +1,23 @@
 <template>
   <div class="tw-flex" :class="`tw-items-${align}`">
     <q-icon
-        v-if="iconChoice && icon "
-        size="8.25rem"
-        :name="icon"
-        color="white"
-        :style="{ 'margin-right': $toRem(offset) }"
-      ></q-icon>   
+      v-if="iconChoice"
+      size="8.25rem"
+      :name="icon"
+      color="white"
+      :style="{ 'margin-right': $toRem(offset) }"
+    ></q-icon>
     <img
-      v-else-if="icon"
+      v-else="icon"
       class="img-size"
       :src="require('./icons/' + icon + '.svg')"
       :style="{ 'margin-right': $toRem(offset) }"
     />
-      
-    <div v-if="text" :class="`slide-text-${sizeText}`" :style="{ 'max-width': $toRem(textWMax) }">
+
+    <div
+      :class="`slide-text-${sizeText}`"
+      :style="{ 'max-width': $toRem(textWMax) }"
+    >
       {{ text }}
     </div>
   </div>
@@ -25,7 +28,7 @@ export default {
   name: 'BoardTextBody',
   props: {
     text: {
-      default: undefined,
+      required: true,
       type: String,
     },
     sizeText: {
@@ -37,7 +40,7 @@ export default {
       type: String,
     },
     icon: {
-      default: undefined,
+      required: true,
       type: String,
     },
     offset: {
@@ -50,10 +53,9 @@ export default {
     },
     iconChoice: {
       default: false,
-      type: Boolean
-    }
+      type: Boolean,
+    },
   },
-
 };
 </script>
 <style lang="scss" scoped>

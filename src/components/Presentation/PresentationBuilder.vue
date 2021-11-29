@@ -4,9 +4,13 @@
     <div class="board-container">
       <div class="board-wrapper">
         <transition enter-active-class="animated zoomIn slow" appear>
-          <keep-alive>
-            <component :is="board" />
-          </keep-alive>
+          <component
+            :is="board"
+            :type="slides[current].data"
+            v-bind="
+              slides[current].images ? { images: slides[current].images } : {}
+            "
+          />
         </transition>
         <div
           v-space-m:top="'35px'"

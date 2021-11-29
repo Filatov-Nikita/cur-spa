@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type">
+  <board-cover>
     <board-devider :cols="2">
       <template #section1>
         <board-offsets :l="144" :t="156" :b="134" :r="57">
@@ -11,7 +11,7 @@
             v-space-m:bottom="'155px'"
           />
           <div class="slide-text-important" v-space-m:bottom="'228px'">
-            <p>{{type.description}}</p>
+            <p>{{ type.description }}</p>
             <!-- <p>25 марта 2021 г.</p>
             <br />
             <p>г. Уфа, нефтеперерабатывающий завод «Уфаоргсинтез»</p> -->
@@ -27,7 +27,11 @@
                 v-space-m:bottom="'25px'"
               />
 
-              <board-numbers :value="type.numberOfVictims" size="sm" color="negative" />
+              <board-numbers
+                :value="type.numberOfVictims"
+                size="sm"
+                color="negative"
+              />
             </div>
 
             <div class="tw-w-1/2 item">
@@ -39,29 +43,35 @@
                 v-space-m:bottom="'25px'"
               />
 
-              <board-numbers :value="type.theDeathToll" size="sm" color="negative" />
+              <board-numbers
+                :value="type.theDeathToll"
+                size="sm"
+                color="negative"
+              />
             </div>
           </div>
         </board-offsets>
       </template>
       <template #section2>
-        <BoardsCarousel v-if="images.length>1" v-model="currentSlide" :slides="images" >
+        <BoardsCarousel
+          v-if="images.length > 1"
+          v-model="currentSlide"
+          :slides="images"
+        >
           <q-carousel-slide
-            v-for="(slide,index) in images"
+            v-for="(slide, index) in images"
             :key="index"
             :name="index"
-            
           >
-            <q-img :src="slide.url"  height="100%"/>
+            <q-img :src="slide.url" height="100%" />
           </q-carousel-slide>
-        </BoardsCarousel> 
+        </BoardsCarousel>
         <q-img
-          v-else-if="images.length===1"
+          v-else-if="images.length === 1"
           :src="images[0].url"
           width="100%"
           height="100%"
-          
-          :style="{'min-height': $toRem('1450px')}"
+          :style="{ 'min-height': $toRem('1450px') }"
         />
       </template>
     </board-devider>
@@ -69,17 +79,25 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
 import BoardsCarousel from 'src/components/BoardsCarousel';
+
 export default {
-    data() {
+  props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+    images: {
+      required: true,
+      type: Array,
+    },
+  },
+  data() {
     return {
       currentSlide: 0,
-      
-    }
+    };
   },
   components: { BoardsCarousel },
-  mixins: [currentSlideData],
 };
 </script>
 

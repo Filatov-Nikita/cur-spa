@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type" >
+  <board-cover>
     <board-devider leftWidth="50%" rightWidth="50%">
       <template #left>
         <board-offsets
@@ -42,7 +42,11 @@
             :text="type.topTextColumn2"
           />
 
-          <board-numbers :value="type.valueAtTheTopColumn2" size="lg" color="positive" />
+          <board-numbers
+            :value="type.valueAtTheTopColumn2"
+            size="lg"
+            color="positive"
+          />
 
           <board-separator v-space-m:bottom="'82px'" />
 
@@ -51,8 +55,16 @@
           />
           <board-mapping-numbers
             :arrowSize="549"
-            :left="{ value: type.valueAtTheBottomLeftSideColumn2, size: 'sm', color: 'negative' }"
-            :right="{ value: `${type.valueAtTheBottomRightSideColumn2}%`, size: 'xs', color: 'white' }"
+            :left="{
+              value: type.valueAtTheBottomLeftSideColumn2,
+              size: 'sm',
+              color: 'negative',
+            }"
+            :right="{
+              value: `${type.valueAtTheBottomRightSideColumn2}%`,
+              size: 'xs',
+              color: 'white',
+            }"
             align="end"
             offset="95px"
             bottomSpace="10px"
@@ -65,11 +77,12 @@
 </template>
 
 <script>
-import currentSlideData from "src/mixins/currentSlideData"
 export default {
-  mixins: [currentSlideData],
+  props: {
+    type: {
+      required: true,
+      type: Object,
+    },
+  },
 };
 </script>
-
-<style>
-</style>

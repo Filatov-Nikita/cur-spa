@@ -1,5 +1,5 @@
 <template>
-  <div v-if="text" class="slide-text-caption tw-text-white" :style="{ 'max-width': wMax }">
+  <div class="slide-text-caption tw-text-white" :style="{ 'max-width': wMax }">
     {{ text }}
   </div>
 </template>
@@ -8,7 +8,7 @@
 export default {
   props: {
     text: {
-      default: undefined,
+      required: true,
       type: String,
     },
     wMax: {
