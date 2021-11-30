@@ -1,5 +1,5 @@
 <template>
-  <board-cover  v-if="type">
+  <board-cover>
     <board-devider leftWidth="67%" rightWidth="33%">
       <template #left>
         <board-offsets :width="2189" :l="134" :t="109" :b="73" :toPerc="['l']">
@@ -10,7 +10,7 @@
             :text="type.name"
             v-space-m:bottom="'40px'"
           />
-          
+
           <board-numbers
             :value="type.coronavirusInfectionCasesRegistered"
             color="negative"

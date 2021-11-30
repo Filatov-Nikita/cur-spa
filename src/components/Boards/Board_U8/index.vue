@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type" >
+  <board-cover>
     <board-devider leftWidth="35%" rightWidth="65%">
       <template #left>
         <board-offsets
@@ -25,7 +25,7 @@
       </template>
       <template #right>
         <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
-        
+
       </template>
     </board-devider>
   </board-cover>
@@ -39,7 +39,7 @@ export default {
     data() {
     return {
       currentSlide: 0,
-      
+
     }
   },
   components: { BoardDevider,BoardSlider },

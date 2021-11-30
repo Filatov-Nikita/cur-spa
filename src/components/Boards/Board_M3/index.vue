@@ -1,5 +1,5 @@
 <template>
-  <board-cover  v-if="type">
+  <board-cover>
     <board-devider leftWidth="50%" rightWidth="50%">
       <template #left>
         <board-offsets :width="1633" :l="127" :t="119" :b="100" :toPerc="['l']">
@@ -11,7 +11,7 @@
             v-space-m:bottom="'50px'"
 
           />
-          
+
           <board-numbers
             :value="type.areHospitalizedOnTheLeft"
             color="negative"

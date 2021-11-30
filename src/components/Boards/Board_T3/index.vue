@@ -1,4 +1,3 @@
-
 <template>
   <board-cover>
     <board-offsets :l="188" :t="241" :b="488" :r="272">

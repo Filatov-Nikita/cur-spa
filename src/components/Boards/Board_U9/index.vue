@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type" >
+  <board-cover>
     <board-devider leftWidth="36%" rightWidth="64%">
       <template #left>
         <board-offsets
@@ -12,17 +12,16 @@
         >
           <board-text-body
             offset="73px"
-            iconChoice  
+            iconChoice
             :icon="type.selectIconAtTheTopColumn1"
             :text="type.topTextColumn1"
             v-space-m:bottom="'150px'"
           />
           <div class="slide-text-important">
-             
-             <p>{{type.dateColumn1}}</p> 
-             <br />
-            
-            <p>{{type.placeColumn1}}</p> 
+            <p>{{ type.dateColumn1 }}</p>
+            <br />
+
+            <p>{{ type.placeColumn1 }}</p>
           </div>
 
           <board-caption
@@ -30,28 +29,21 @@
             v-space-m:bottom="'30px'"
             class="tw-mt-auto"
           />
-          <div class="slide-text-important">{{type.typeOfWorkColumn1}}</div>
+          <div class="slide-text-important">{{ type.typeOfWorkColumn1 }}</div>
         </board-offsets>
       </template>
       <template #right>
-        <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
+        <BoardSlider v-if="images" :images="images" />
       </template>
     </board-devider>
   </board-cover>
 </template>
 
 <script>
-
 import BoardSlider from 'src/components/BoardSlider';
 export default {
-  data() {
-    return {
-      currentSlide: 0,
-      
-    }
-  },
-  components: {BoardSlider},
-    props: {
+  components: { BoardSlider },
+  props: {
     type: {
       required: true,
       type: Object,

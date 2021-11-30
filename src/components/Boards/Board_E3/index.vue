@@ -1,5 +1,5 @@
 <template>
-  <board-cover >
+  <board-cover>
     <board-devider leftWidth="39%" rightWidth="61%">
       <template #left>
         <board-offsets :l="123" :t="127" :r="149" :b="70" class="cities">
@@ -54,7 +54,7 @@ export default {
       cities: ['г. Салават'],
     };
   },
-  
+
 };
 </script>
 

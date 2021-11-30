@@ -12,7 +12,7 @@
           />
           <div class="slide-text-important" v-space-m:bottom="'228px'">
             <p>
-              {{type.description}}
+              {{ type.description }}
             </p>
             <!-- <p>25 марта 2021 г.</p>
             <br />
@@ -29,7 +29,11 @@
                 v-space-m:bottom="'25px'"
               />
 
-              <board-numbers :value="type.numberOfVictims" size="sm" color="negative" />
+              <board-numbers
+                :value="type.numberOfVictims"
+                size="sm"
+                color="negative"
+              />
             </div>
 
             <div class="tw-w-1/2 item">
@@ -41,30 +45,27 @@
                 v-space-m:bottom="'25px'"
               />
 
-              <board-numbers :value="type.theDeathToll" size="sm" color="negative" />
+              <board-numbers
+                :value="type.theDeathToll"
+                size="sm"
+                color="negative"
+              />
             </div>
           </div>
         </board-offsets>
       </template>
       <template #section2>
-        <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
+        <BoardSlider v-if="images" :images="images" />
       </template>
     </board-devider>
   </board-cover>
 </template>
 
 <script>
-
 import BoardSlider from 'src/components/BoardSlider';
 export default {
-    data() {
-    return {
-      currentSlide: 0,
-      
-    }
-  },
-  components: {BoardSlider},
-    props: {
+  components: { BoardSlider },
+  props: {
     type: {
       required: true,
       type: Object,
