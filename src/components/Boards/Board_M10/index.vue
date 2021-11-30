@@ -22,7 +22,7 @@
         v-space-m:bottom="'39px'"
       >
         <board-numbers
-          :value="type.amountOfReceivedEpiVacCoronaVaccineAgainstNewCoronavirusInfection"
+          :value="type.amountOfReceivedVaccineEpiVacCoronaAgainstNewCoronavirusInfection"
           size="lg"
           color="positive"
           :style="{'flex-basis': $toRem(' 1693px')}"

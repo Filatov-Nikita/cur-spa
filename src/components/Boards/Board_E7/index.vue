@@ -18,7 +18,7 @@
           />
 
           <board-numbers
-            :value="type['quantity_warning_systems']"
+            :value="type['rescuedPerson']"
             size="md2"
             color="positive"
             showDynamic
