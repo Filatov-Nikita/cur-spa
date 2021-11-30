@@ -97,7 +97,7 @@ export default {
 }
 
 .numbers {
-  flex-basis: convertValues(1661px);
+  flex-basis: convertValues(1480px);
 }
 
 // .accident {
