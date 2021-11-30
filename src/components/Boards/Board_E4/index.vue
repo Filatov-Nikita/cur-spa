@@ -58,25 +58,7 @@
 
           </div>
         </div>  -->
-        <BoardsCarousel v-if="images.length>1" v-model="currentSlide" :slides="images" >
-          <q-carousel-slide
-            v-for="(slide,index) in images"
-            :key="index"
-            :name="index"
-            
-          >
-            <q-img :src="slide.url"  height="100%"/>
-          </q-carousel-slide>
-        </BoardsCarousel> 
-          <q-img
-            v-else-if="images.length===1"
-            :src="images[0].url"
-            width="100%"
-            height="100%"
-            
-          :style="{'min-height': $toRem('1450px')}"
-        />
-        <!-- <q-img src="bus3.jpeg" width="100%" height="100%" :style="{'min-height': $toRem('1450px')}" /> -->
+        <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
       </template>
     </board-devider>
   </board-cover>
@@ -84,7 +66,7 @@
 
 <script>
 
-import BoardsCarousel from 'src/components/BoardsCarousel';
+import BoardSlider from 'src/components/BoardSlider';
 export default {
   data() {
     return {
@@ -92,7 +74,7 @@ export default {
       slide: 1
     }
   },
-  components: {BoardsCarousel},
+  components: {BoardSlider},
     props: {
     type: {
       required: true,
