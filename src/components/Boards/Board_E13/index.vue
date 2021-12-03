@@ -47,7 +47,7 @@
         </board-offsets>
       </template>
       <template #section2>
-        <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
+        <BoardSlider v-if="images" :images="images" />
       </template>
     </board-devider>
   </board-cover>
@@ -57,12 +57,6 @@
 
 import BoardSlider from 'src/components/BoardSlider';
 export default {
-    data() {
-    return {
-      currentSlide: 0,
-      
-    }
-  },
   components: {BoardSlider},
     props: {
     type: {

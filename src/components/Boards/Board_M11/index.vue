@@ -1,5 +1,5 @@
 <template>
-  <board-cover  v-if="type">
+  <board-cover>
     <board-devider leftWidth="50%" rightWidth="50%">
       <template #left>
         <board-offsets :width="1633" :l="147" :t="109" :b="38" :toPerc="['l']">
@@ -16,7 +16,7 @@
             wMax="1070px"
           />
 
-          <board-numbers 
+          <board-numbers
             :value="type.gamCOVIDVakSputnikVReceivedPInTotalInTheRepublicOfBashkortostan"
             color="negative"
             size="md"

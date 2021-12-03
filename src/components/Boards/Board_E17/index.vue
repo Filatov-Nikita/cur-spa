@@ -11,18 +11,14 @@
           />
 
           <div class="slide-text-important" v-space-m:bottom="'83px'">
-            <p>{{type.description}}</p>
-            
+            <p>{{ type.description }}</p>
 
             <!-- <p>25 марта 2021 г.</p>
             <br />
             <p>г. Уфа, нефтеперерабатывающий завод «Уфаоргсинтез»</p> -->
           </div>
 
-          <board-caption
-            :text="type.description2"
-            v-space-m:bottom="'86px'"
-          />
+          <board-caption :text="type.description2" v-space-m:bottom="'86px'" />
 
           <board-vitals
             :vitals="[
@@ -46,24 +42,17 @@
         </board-offsets>
       </template>
       <template #section2>
-        <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
+        <BoardSlider v-if="images" :images="images" />
       </template>
     </board-devider>
   </board-cover>
 </template>
 
 <script>
-
 import BoardSlider from 'src/components/BoardSlider';
 export default {
-    data() {
-    return {
-      currentSlide: 0,
-      
-    }
-  },
-  components: {BoardSlider},
-    props: {
+  components: { BoardSlider },
+  props: {
     type: {
       required: true,
       type: Object,

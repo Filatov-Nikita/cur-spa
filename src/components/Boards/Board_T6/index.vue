@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type" >
+  <board-cover>
     <board-devider leftWidth="35%" rightWidth="65%">
       <template #left>
         <board-offsets
@@ -17,14 +17,11 @@
             v-space-m:bottom="'84px'"
           />
 
-          <board-caption
-            :text="type.description"
-          />
+          <board-caption :text="type.description" />
         </board-offsets>
       </template>
       <template #right>
-        <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
-        
+        <BoardSlider v-if="images" :images="images" />
       </template>
     </board-devider>
   </board-cover>
@@ -35,14 +32,8 @@ import BoardDevider from '../Helpers/BoardDevider.vue';
 
 import BoardSlider from 'src/components/BoardSlider';
 export default {
-    data() {
-    return {
-      currentSlide: 0,
-      
-    }
-  },
-  components: { BoardDevider,BoardSlider },
-    props: {
+  components: { BoardDevider, BoardSlider },
+  props: {
     type: {
       required: true,
       type: Object,
@@ -53,7 +44,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style lang="scss" scoped>

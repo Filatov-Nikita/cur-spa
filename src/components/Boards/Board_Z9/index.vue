@@ -1,5 +1,5 @@
 <template>
-  <board-cover v-if="type" >
+  <board-cover>
     <board-offsets
       :width="3264"
       :l="156"
@@ -9,7 +9,7 @@
       :toPerc="['l']"
     >
       <div class="tw-flex" v-space-m:bottom="'53px'">
-        <div :style="{'flex-basis': $toRem(' 1661px')}" class="tw-flex-grow">
+        <div :style="{ 'flex-basis': $toRem(' 1661px') }" class="tw-flex-grow">
           <board-text-body
             offset="76px"
             icon="building"
@@ -25,7 +25,7 @@
             dynamic
           />
         </div>
-        <div :style="{'flex-basis': $toRem(' 1461px')}" class="tw-flex-grow">
+        <div :style="{ 'flex-basis': $toRem(' 1461px') }" class="tw-flex-grow">
           <board-text-body
             offset="82px"
             icon="door"
@@ -59,9 +59,8 @@
 </template>
 
 <script>
-
 export default {
-    props: {
+  props: {
     type: {
       required: true,
       type: Object,

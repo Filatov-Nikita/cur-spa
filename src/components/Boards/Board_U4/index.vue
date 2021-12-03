@@ -12,9 +12,9 @@
           />
 
           <div class="slide-text-important" v-space-m:bottom="'83px'">
-            <p>{{type.dateColumn1}}</p>
+            <p>{{ type.dateColumn1 }}</p>
             <br />
-            <p>{{type.placeColumn1}}</p>
+            <p>{{ type.placeColumn1 }}</p>
           </div>
 
           <board-caption
@@ -25,19 +25,19 @@
           <board-vitals
             :vitals="[
               {
-                iconChoice:true,
+                iconChoice: true,
                 icon: type.selectIcon1InTheBottomColumn1,
                 label: type.text1AtTheBottomColumn1,
                 value: type.value1AtTheBottomRightSideColumn1,
               },
               {
-                iconChoice:true,
+                iconChoice: true,
                 icon: type.selectIcon2InTheBottomColumn1,
                 label: type.text2AtTheBottomColumn1,
                 value: type.value2AtTheBottomRightSideColumn1,
               },
               {
-                iconChoice:true,
+                iconChoice: true,
                 icon: type.selectIcon2InTheBottomColumn1,
                 label: type.text3AtTheBottomColumn1,
                 value: type.value3AtTheBottomRightSideColumn1,
@@ -47,24 +47,17 @@
         </board-offsets>
       </template>
       <template #section2>
-        <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
+        <BoardSlider v-if="images" :images="images" />
       </template>
     </board-devider>
   </board-cover>
 </template>
 
 <script>
-
 import BoardSlider from 'src/components/BoardSlider';
 export default {
-      data() {
-    return {
-      currentSlide: 0,
-      
-    }
-  },
-  components: {BoardSlider},
-    props: {
+  components: { BoardSlider },
+  props: {
     type: {
       required: true,
       type: Object,

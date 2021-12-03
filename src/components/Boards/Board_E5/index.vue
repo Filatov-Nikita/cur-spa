@@ -17,12 +17,6 @@
 
       <div class="items">
         <div class="item" v-for="item in items" :key="item.text">
-          <!-- <img
-            :src="require('./icons/' + item.icon + '.svg')"
-            :alt="item.text"
-            class="img-size tw-block tw-mx-auto"
-            v-space-m:bottom="'134px'"
-          /> -->
           <q-icon
             size="16.06rem"
             :name="item.icon"
@@ -37,39 +31,16 @@
 </template>
 
 <script>
-
 export default {
-  // data() {
-  //   return {
-  //     items: [
-  //       {
-  //         icon: 'radio',
-  //         text: 'Радио',
-  //       },
-  //       {
-  //         icon: 'tv',
-  //         text: 'Телевидение',
-  //       },
-  //       {
-  //         icon: 'soc',
-  //         text: 'Социальные сети',
-  //       },
-  //       {
-  //         icon: 'notify',
-  //         text: 'Системы оповещения',
-  //       },
-  //     ],
-  //   };
-  // },
-    props: {
+  props: {
     type: {
       required: true,
       type: Object,
     },
   },
-    computed:{
-    items(){
-      const {type}=this
+  computed: {
+    items() {
+      const { type } = this;
       return [
         {
           icon: type.iconColumn1,
@@ -87,9 +58,9 @@ export default {
           icon: type.iconColumn4,
           text: type.textColumn4,
         },
-      ]
-    }
-  }
+      ];
+    },
+  },
 };
 </script>
 

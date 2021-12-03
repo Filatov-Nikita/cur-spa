@@ -5,7 +5,7 @@
         <template v-slot:label="{ label }">
           <div
             class="board-li-el slide-text-body tw-align-middle"
-            :style="{'margin-bottom': $toRem('60px')}"
+            :style="{ 'margin-bottom': $toRem('60px') }"
           >
             {{ label }}
           </div>
@@ -16,79 +16,68 @@
 </template>
 
 <script>
-
 export default {
-  // data() {
-  //   return {
-  //     vitals: [
-  //       {
-  //         label: 'Выезд на встречную полосу',
-  //         spaceOffset: '60px',
-  //         options: {
-  //           left: { color: 'negative', size: 'sm', value: '10' },
-  //           right: { color: 'white', size: 'xs', value: '80%' },
-  //         },
-  //       },
-
-  //       {
-  //         label: 'Наезд на пешехода',
-  //         spaceOffset: '60px',
-  //         options: {
-  //           left: { color: 'negative', size: 'sm', value: '1' },
-  //           right: { color: 'white', size: 'xs', value: '80%' },
-  //         },
-  //       },
-  //     ],
-  //   };
-  // },
-  
-
-    props: {
+  props: {
     type: {
       required: true,
       type: Object,
     },
   },
   computed: {
-    vitals(){
-      const {type} = this
+    vitals() {
+      const { type } = this;
       return [
         {
           label: type.text1,
           spaceOffset: '60px',
           options: {
-            left: { color: 'negative', size: 'sm', value: type.valueLeftSide1},
-            right: { color: 'white', size: 'xs', value: `${type.valueRightSide1}` },
+            left: { color: 'negative', size: 'sm', value: type.valueLeftSide1 },
+            right: {
+              color: 'white',
+              size: 'xs',
+              value: `${type.valueRightSide1}`,
+            },
           },
         },
         {
           label: type.text2,
           spaceOffset: '60px',
           options: {
-            left: { color: 'negative', size: 'sm', value: type.valueLeftSide2},
-            right: { color: 'white', size: 'xs', value: `${type.valueRightSide2}` },
+            left: { color: 'negative', size: 'sm', value: type.valueLeftSide2 },
+            right: {
+              color: 'white',
+              size: 'xs',
+              value: `${type.valueRightSide2}`,
+            },
           },
         },
         {
           label: type.text3,
           spaceOffset: '60px',
           options: {
-            left: { color: 'negative', size: 'sm', value: type.valueLeftSide3},
-            right: { color: 'white', size: 'xs', value: `${type.valueRightSide3}` },
+            left: { color: 'negative', size: 'sm', value: type.valueLeftSide3 },
+            right: {
+              color: 'white',
+              size: 'xs',
+              value: `${type.valueRightSide3}`,
+            },
           },
         },
         {
           label: type.text4,
           spaceOffset: '60px',
           options: {
-            left: { color: 'negative', size: 'sm', value: type.valueLeftSide4},
-            right: { color: 'white', size: 'xs', value: `${type.valueRightSide4}` },
+            left: { color: 'negative', size: 'sm', value: type.valueLeftSide4 },
+            right: {
+              color: 'white',
+              size: 'xs',
+              value: `${type.valueRightSide4}`,
+            },
           },
         },
-      ]
-    }
-  }
-
+      ];
+    },
+  },
 };
 </script>
 

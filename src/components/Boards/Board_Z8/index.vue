@@ -17,7 +17,7 @@
             v-space-m:bottom="'150px'"
           />
           <div class="slide-text-important">
-            <p>{{type.description}}</p>
+            <p>{{ type.description }}</p>
             <!-- <p>25 марта 2021 г.</p> -->
             <!-- <br />
             <p>г.Уфа,</p><br>
@@ -29,29 +29,22 @@
             v-space-m:bottom="'30px'"
             class="tw-mt-auto"
           />
-          <div class="slide-text-important">{{type.typeOfWork}}</div>
+          <div class="slide-text-important">{{ type.typeOfWork }}</div>
         </board-offsets>
       </template>
       <template #right>
-        <BoardSlider v-if="images" :images="images" v-model="currentSlide"/>
+        <BoardSlider v-if="images" :images="images" />
       </template>
     </board-devider>
   </board-cover>
 </template>
 
 <script>
-
 import BoardSlider from 'src/components/BoardSlider';
 
 export default {
-  data() {
-    return {
-      currentSlide: 0,
-      
-    }
-  },
-  components: {BoardSlider},
-    props: {
+  components: { BoardSlider },
+  props: {
     type: {
       required: true,
       type: Object,

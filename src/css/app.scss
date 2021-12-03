@@ -7,11 +7,11 @@ html {
   font-size: 100%;
 
   @include to($FHD) {
-    font-size: 44%;
+    font-size: 45%;
   }
 
   @include to($_1440) {
-    font-size: 37.5%;
+    font-size: 37%;
   }
 }
 
