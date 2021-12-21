@@ -198,7 +198,9 @@ export default {
       return this.curIndex + 1 < this.presentations.length;
     },
     hasPrev() {
-      return this.curIndex - 1 > 0;
+      console.log(this.curIndex)
+      console.log(this.curIndex  > 0)
+      return this.curIndex > 0;
     },
     nextPres() {
       if (this.hasNext) return this.presentations[this.curIndex + 1];
