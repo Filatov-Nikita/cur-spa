@@ -19,6 +19,32 @@ html {
   --board-border-color: rgba(255, 255, 255, 0.5);
 }
 
+body {
+  @apply tw-text-white;
+}
+
+a[type="button"] {
+  appearance: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.app-notification {
+  padding: convertValues(40px 60px);
+  font-size: convertValues(40px);
+}
+
+.app-notification .q-notification__icon {
+  margin-right: convertValues(40px);
+  font-size: convertValues(40px);
+}
+
 .slide-text-body {
   font-size: convertValues(70px);
   line-height: 112.4%;

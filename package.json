@@ -14,7 +14,8 @@
     "core-js": "^3.6.5",
     "ky": "^0.28.7",
     "moment": "^2.29.1",
-    "quasar": "^1.0.0"
+    "quasar": "^1.0.0",
+    "vee-validate": "^3.4.14"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",
