@@ -9,7 +9,7 @@ const apiSPAServer = ky.create({
     headers: {
         Authorization: "Bearer 1|3CXZVtmaXhctyXInyDVCQ0ULsk23wMsLSsnBUO5o"
     },
-    prefixUrl: "http://62.109.10.150/api/",
+    prefixUrl: process.env.API,
     timeout: 30000
 })
 export {apiServer, apiSPAServer};

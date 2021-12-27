@@ -12,6 +12,7 @@
     "@quasar/extras": "^1.0.0",
     "animated-number-vue": "^1.0.0",
     "core-js": "^3.6.5",
+    "dotenv": "^10.0.0",
     "ky": "^0.28.7",
     "moment": "^2.29.1",
     "quasar": "^1.0.0"

@@ -5,8 +5,14 @@
 
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
+require("dotenv").config();
 
-module.exports = function(/* ctx */) {
+const env = {
+  API: process.env.DEVAPI,
+  APP_VERSION: require("./package.json").version
+};
+
+module.exports = function(ctx ) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -39,7 +45,17 @@ module.exports = function(/* ctx */) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: "hash", // available values: 'hash', 'history'
-
+            env: ctx.dev
+        ? {
+            // so on dev we'll have
+            ...env,
+            API: process.env.DEVAPI
+          }
+        : {
+            // and on build (production):
+            ...env,
+            API: process.env.PRODAPI
+          },
       // transpile: false,
 
       // Add dependencies for transpiling with Babel (Array of string/regex)
@@ -64,7 +80,14 @@ module.exports = function(/* ctx */) {
     devServer: {
       https: false,
       port: 8080,
-      open: true // opens browser window automatically
+      open: true, // opens browser window automatically
+      proxy: {
+        // proxy all requests starting with /api to jsonplaceholder
+        "/admin/api": {
+          target: "http://62.109.10.150/",
+          changeOrigin: true
+        }
+      }
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
