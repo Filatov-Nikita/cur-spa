@@ -1,8 +1,10 @@
+import { markAuth, markRoute } from "./utilities/auth";
+
 const routes = [
   {
     path: "",
     component: () => import("layouts/MainLayout.vue"),
-    children: [
+    children: markAuth(
       {
         path: "/",
         component: () => import("pages/Index.vue"),
@@ -13,14 +15,16 @@ const routes = [
         component: () => import("pages/Introduction.vue"),
         name: "introduction"
       }
-    ]
+    )
   },
-  {
+
+  markRoute({
     path: "/speaker",
     component: () => import("pages/Speaker.vue"),
     name: "speaker"
-  },
-  {
+  }),
+
+  markRoute({
     path: "/presentation/:id/:type/:currentSlide",
     component: () => import("pages/Presentation.vue"),
     name: "presentation",
@@ -39,6 +43,28 @@ const routes = [
       }
       next();
     }
+  }),
+
+  {
+    path: "/auth",
+    component: () => import("src/layouts/AuthLayout.vue"),
+    children: [
+      {
+        path: "/login",
+        component: () => import("src/pages/Auth/AuthLogin.vue"),
+        name: "auth.login"
+      },
+      {
+        path: "/confirm-email",
+        component: () => import("src/pages/Auth/AuthConfirmEmail.vue"),
+        name: "auth.confirm-email"
+      },
+      {
+        path: "/reset-password",
+        component: () => import("src/pages/Auth/AuthResetPassword.vue"),
+        name: "auth.reset-password"
+      }
+    ]
   },
 
   // Always leave this as last one,

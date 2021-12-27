@@ -23,7 +23,12 @@ module.exports = function(ctx ) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
-    boot: ["init"],
+    boot: [
+      "init",
+      "registr-components.js",
+      "validation.js",
+      "registr-router-hooks.js"
+    ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: ["app.scss"],
@@ -109,7 +114,7 @@ module.exports = function(ctx ) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ["Meta, Loading"]
+      plugins: ["Meta", "Loading", "Notify"]
     },
 
     // animations: 'all', // --- includes all animations
