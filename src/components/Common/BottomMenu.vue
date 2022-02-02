@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     openCUR() {
-      window.open('http://cur-rb.ru', '_blank');
+      window.open('https://cur-3d.bashkortostan.ru', '_blank');
     },
     toggleMenu() {
       this.$emit('toggleDoklad');

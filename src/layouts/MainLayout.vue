@@ -1,6 +1,15 @@
 <template>
   <q-layout class="container" :class="{ open }">
-    <q-page-container>
+    <q-page-container v-if="$route.name=='first'" class="bg" style="background: url(./images/main-map.jpg);background-size: cover;background-repeat: no-repeat;">
+      <DateTimeBar class="timebar" />
+                <transition
+            leave-active-class="leave"
+            enter-active-class="animated fadeIn slow-enter1"
+          >
+            <router-view class="main-wrapper" />
+          </transition>
+    </q-page-container>
+    <q-page-container v-else>
       <MainVideoBackground src="videos/main.mp4" />
       <q-page class="tw-flex tw-flex-col tw-overflow-auto">
         <div class="tw-flex-grow">
@@ -25,6 +34,7 @@
 </template>
 
 <script>
+import DateTimeBar from 'components/Common/DateTimeBar';
 import BottomMenu from 'components/Common/BottomMenu';
 import MainMenuItems from 'components/Main/MenuItems/MainMenuItems';
 import MainVideoBackground from 'components/Main/MainVideoBackground';
@@ -61,11 +71,17 @@ export default {
     BottomMenu,
     MainMenuItems,
     MainVideoBackground,
+    DateTimeBar
   },
 };
 </script>
 <style lang="scss" scoped>
 //$
+.bg{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .container {
   height: 100vh;
   overflow: hidden;
@@ -102,5 +118,11 @@ export default {
   padding-left: convertValues(161px);
   padding-right: convertValues(161px);
   padding-top: convertValues(391px);
+}
+.timebar {
+  position: absolute;
+  top: convertValues(83px);
+  right: convertValues(83px);
+  z-index: 1;
 }
 </style>

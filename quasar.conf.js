@@ -89,7 +89,7 @@ module.exports = function(ctx ) {
       proxy: {
         // proxy all requests starting with /api to jsonplaceholder
         "/admin/api": {
-          target: "http://62.109.10.150/",
+          target: "https://cur-os.bashkortostan.ru/",
           changeOrigin: true
         }
       }

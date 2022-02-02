@@ -7,6 +7,11 @@ const routes = [
     children: markAuth(
       {
         path: "/",
+        component: () => import("pages/First.vue"),
+        name: "first"
+      },
+      {
+        path: "/home",
         component: () => import("pages/Index.vue"),
         name: "home"
       },

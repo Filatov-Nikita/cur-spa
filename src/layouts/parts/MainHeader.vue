@@ -1,9 +1,9 @@
 <template>
   <div class="header main-wrapper tw-flex">
-    <router-link to="/">
+    <router-link to="/" v-show="$route.name!=='first'" >
       <img src="~assets/logo.svg" alt=""  class="logo" />
     </router-link>
-    <img src="~assets/bash-logo.svg" class="logo2" alt="" />
+    <img v-show="$route.name!=='first'" src="~assets/bash-logo.svg" class="logo2" alt="" />
     <DateTimeBar class="timebar" />
   </div>
 </template>

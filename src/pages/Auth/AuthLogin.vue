@@ -46,7 +46,7 @@ export default {
       const res = this.testAttempt(this.email, this.password);
       if (res) {
         localStorage.setItem('auth', true);
-        this.$router.push({ name: 'home' });
+        this.$router.push({ name: 'first' });
       } else {
         this.$q.notify({
           type: 'negative',
