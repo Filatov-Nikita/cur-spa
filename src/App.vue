@@ -10,15 +10,15 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 export default {
-  name: 'App',
+  name: "App",
   methods: {
     async getData() {
       try {
-        await this.$store.dispatch('activeMetting');
+        await this.$store.dispatch("activeMetting");
       } catch (e) {
-        console.log(e);
+        throw e;
       } finally {
         this.$q.loading.hide();
       }
@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      slideData: 'slideDataGetter',
+      slideData: "slideDataGetter",
     }),
   },
   created() {

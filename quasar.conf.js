@@ -9,10 +9,10 @@ require("dotenv").config();
 
 const env = {
   API: process.env.DEVAPI,
-  APP_VERSION: require("./package.json").version
+  APP_VERSION: require("./package.json").version,
 };
 
-module.exports = function(ctx ) {
+module.exports = function (ctx) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -27,7 +27,7 @@ module.exports = function(ctx ) {
       "init",
       "registr-components.js",
       "validation.js",
-      "registr-router-hooks.js"
+      "registr-router-hooks.js",
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -44,22 +44,22 @@ module.exports = function(ctx ) {
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       "roboto-font", // optional, you are not bound to it
-      "material-icons" // optional, you are not bound to it
+      "material-icons", // optional, you are not bound to it
     ],
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: "hash", // available values: 'hash', 'history'
-            env: ctx.dev
+      env: ctx.dev
         ? {
             // so on dev we'll have
             ...env,
-            API: process.env.DEVAPI
+            API: process.env.DEVAPI,
           }
         : {
             // and on build (production):
             ...env,
-            API: process.env.PRODAPI
+            API: process.env.PRODAPI,
           },
       // transpile: false,
 
@@ -78,7 +78,7 @@ module.exports = function(ctx ) {
       // extractCSS: false,
 
       // https://quasar.dev/quasar-cli/handling-webpack
-      extendWebpack(cfg) {}
+      extendWebpack(cfg) {},
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
@@ -88,11 +88,11 @@ module.exports = function(ctx ) {
       open: true, // opens browser window automatically
       proxy: {
         // proxy all requests starting with /api to jsonplaceholder
-        "/admin/api": {
-          target: "https://cur-os.bashkortostan.ru/",
-          changeOrigin: true
-        }
-      }
+        "/api": {
+          target: "https://preza.danat.su/",
+          changeOrigin: true,
+        },
+      },
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
@@ -114,7 +114,7 @@ module.exports = function(ctx ) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ["Meta", "Loading", "Notify"]
+      plugins: ["Meta", "Loading", "Notify"],
     },
 
     // animations: 'all', // --- includes all animations
@@ -123,7 +123,7 @@ module.exports = function(ctx ) {
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
-      pwa: false
+      pwa: false,
     },
 
     // https://quasar.dev/quasar-cli/developing-pwa/configuring-pwa
@@ -142,30 +142,30 @@ module.exports = function(ctx ) {
           {
             src: "icons/icon-128x128.png",
             sizes: "128x128",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "icons/icon-192x192.png",
             sizes: "192x192",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "icons/icon-256x256.png",
             sizes: "256x256",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "icons/icon-384x384.png",
             sizes: "384x384",
-            type: "image/png"
+            type: "image/png",
           },
           {
             src: "icons/icon-512x512.png",
             sizes: "512x512",
-            type: "image/png"
-          }
-        ]
-      }
+            type: "image/png",
+          },
+        ],
+      },
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
@@ -175,7 +175,7 @@ module.exports = function(ctx ) {
 
     // Full list of options: https://quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
     capacitor: {
-      hideSplashscreen: true
+      hideSplashscreen: true,
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
@@ -196,7 +196,7 @@ module.exports = function(ctx ) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: "cur-spa"
+        appId: "cur-spa",
       },
 
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
@@ -205,7 +205,7 @@ module.exports = function(ctx ) {
       extendWebpack(/* cfg */) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
-      }
-    }
+      },
+    },
   };
 };

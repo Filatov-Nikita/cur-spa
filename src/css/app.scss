@@ -57,6 +57,12 @@ button:focus {
   @apply tw-font-pt-sans tw-text-white tw-font-normal;
 }
 
+.text-description {
+  font-size: convertValues(80px);
+  line-height: convertValues(94px);
+  @apply tw-font-pt-sans tw-text-white tw-font-normal;
+}
+
 .slide-text-lg,
 .slide-text-md,
 .slide-text-md2,

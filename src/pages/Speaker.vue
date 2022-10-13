@@ -13,19 +13,15 @@
     </div>
 
     <div></div>
-    <PrestationControl
-      class="bottom"
-      @next="$router.push({ params: { currentSlide: 1 } })"
-      @prev="$emit('prevType')"
-    />
+    <PrestationControl class="bottom" @next="next" @prev="$emit('prevType')" />
   </q-page>
 </template>
 
 <script>
-import MainHeader from 'layouts/parts/MainHeader';
-import PresentationVideoBackground from 'src/components/Presentation/PresentationVideoBackground';
-import PrestationControl from 'src/components/Presentation/PrestationControl';
-import SpeakerIntroduction from 'src/components/Common/SpeakerIntroduction';
+import MainHeader from "layouts/parts/MainHeader";
+import PresentationVideoBackground from "src/components/Presentation/PresentationVideoBackground";
+import PrestationControl from "src/components/Presentation/PrestationControl";
+import SpeakerIntroduction from "src/components/Common/SpeakerIntroduction";
 
 export default {
   props: {
@@ -44,6 +40,19 @@ export default {
     speaker: {
       required: true,
       type: Object,
+    },
+    slides: {
+      required: true,
+      type: Array,
+    },
+  },
+  methods: {
+    next() {
+      if (this.slides.length > 0) {
+        this.$router.push({ params: { currentSlide: 1 } });
+      } else {
+        return this.$emit("nextType");
+      }
     },
   },
   components: {

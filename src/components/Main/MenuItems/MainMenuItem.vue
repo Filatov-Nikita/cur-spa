@@ -2,7 +2,10 @@
   <router-link tag="li" :to="to" class="li">
     <div class="num">{{ index }}</div>
     <img class="icon" :src="icon" alt="" />
-    <p class="text">{{ name }}</p>
+    <div class="tw-mb-5">
+      <p class="text">{{ name }}</p>
+      <b class="text">{{ speaker["first_name"] }} {{ speaker["last_name"] }}</b>
+    </div>
   </router-link>
 </template>
 
@@ -10,8 +13,12 @@
 export default {
   props: {
     index: {
-      default: '1',
+      default: "1",
       type: [String, Number],
+    },
+    speaker: {
+      type: Object,
+      required: true,
     },
     to: { require: true },
     name: {

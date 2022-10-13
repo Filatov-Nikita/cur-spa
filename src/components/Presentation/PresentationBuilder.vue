@@ -1,9 +1,17 @@
 <template>
   <div class="builder">
-    <PresentationTopBar :title="slideTitle" :speaker="speaker" />
+    <PresentationTopBar
+      v-if="slideTitle"
+      :title="slideTitle"
+      :speaker="speaker"
+    />
     <div class="board-container">
-      <div class="board-wrapper">
-        <transition enter-active-class="animated zoomIn slow" appear mode="out-in">
+      <div class="board-wrapper" v-if="board">
+        <transition
+          enter-active-class="animated zoomIn slow"
+          appear
+          mode="out-in"
+        >
           <component
             :is="board"
             :type="slides[current].data"
@@ -33,10 +41,10 @@
 </template>
 
 <script>
-import PresentationLeftBar from './PresentationLeftBar';
-import PresentationTopBar from './PresentationTopBar';
-import PresentationBottomBar from './PresentationBottomBar';
-import { mapGetters } from 'vuex';
+import PresentationLeftBar from "./PresentationLeftBar";
+import PresentationTopBar from "./PresentationTopBar";
+import PresentationBottomBar from "./PresentationBottomBar";
+import { mapGetters } from "vuex";
 /*
   Делаем нулевой слайд
   отслеживаем если слайд 0 то отображаем спикера
@@ -81,15 +89,18 @@ export default {
   },
   computed: {
     ...mapGetters({
-      slideData: 'slideDataGetter',
+      slideData: "slideDataGetter",
     }),
     board() {
-      const type = this.slides[this.current].type;
-
-      return () => import('src/components/Boards/Board_' + type);
+      if (this.slides.length > 0) {
+        const type = this.slides[this.current].type;
+        return () => import("src/components/Boards/Board_" + type);
+      }
     },
     slideTitle() {
-      return this.slides[this.current].data.name;
+      if (this.slides.length > 0) {
+        return this.slides[this.current].data.name;
+      }
     },
   },
   methods: {
@@ -99,8 +110,9 @@ export default {
     next() {
       const prev = this.current;
       this.current = this.minMax(this.current + 1);
+
       if (prev === this.current) {
-        return this.$emit('nextType');
+        return this.$emit("nextType");
       }
 
       this.$router.push({
@@ -110,7 +122,7 @@ export default {
     back() {
       const prev = this.current;
       this.current = this.minMax(this.current - 1);
-      if (prev === this.current) return this.$emit('showSpeaker');
+      if (prev === this.current) return this.$emit("showSpeaker");
       this.$router.push({
         params: { ...this.$route.params, currentSlide: this.current + 1 },
       });

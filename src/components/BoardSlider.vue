@@ -13,6 +13,7 @@
         :src="slide.url"
         width="100%"
         height="100%"
+        contain
         style="max-height: 95rem"
       />
     </q-carousel-slide>
@@ -22,15 +23,16 @@
     :src="images[0].url"
     width="100%"
     height="100%"
+    contain
     style="max-height: 95rem"
   />
 </template>
 
 <script>
-import BoardsCarousel from 'src/components/BoardsCarousel';
+import BoardsCarousel from "src/components/BoardsCarousel";
 export default {
   components: { BoardsCarousel },
-  name: 'BoardSlide',
+  name: "BoardSlide",
   props: {
     value: {
       default: 0,
@@ -54,7 +56,7 @@ export default {
       if (newVal !== this.innerValue) this.innerValue = newVal;
     },
     innerValue(value) {
-      this.$emit('input', value);
+      this.$emit("input", value);
     },
   },
 };

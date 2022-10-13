@@ -1,10 +1,12 @@
 <template>
-  <div class="left" :class="'tw-bg-' + color">
+  <div class="left" :class="'tw-bg-' + color" ref="left">
     <div class="left-wrapper">
-      <router-link class="logo" :to="{ name: 'home' }">
-        <q-img class="img" :src="logo" />
-      </router-link>
-      <div class="name">{{ title }}</div>
+      <div ref="svg">
+        <router-link class="logo" :to="{ name: 'home' }">
+          <q-img class="img" :src="logo" />
+        </router-link>
+      </div>
+      <div class="name" ref="title">{{ title }}</div>
     </div>
   </div>
 </template>
@@ -24,6 +26,43 @@ export default {
       required: true,
       type: String,
     },
+  },
+  mounted() {
+    const parentHeight = this.$refs.left.getBoundingClientRect().height;
+    const svgHeight = this.$refs.svg.getBoundingClientRect().height;
+    const difference = parentHeight - svgHeight;
+    const titleEl = this.$refs.title;
+    const titleHeight = titleEl.getBoundingClientRect().height;
+    const initFontSizeEl = getStyle(titleEl, "font-size");
+
+    let fontsS = initFontSizeEl.replace(/[^\d][^.\d]/g, "");
+
+    while (difference < titleEl.getBoundingClientRect().height) {
+      let offset = 2;
+      fontsS -= offset;
+      titleEl.style.fontSize = fontsS + "px";
+    }
+
+    function getStyle(el, styleProp) {
+      let camelize = function (str) {
+        return str.replace(/\-(\w)/g, function (str, letter) {
+          return letter.toUpperCase();
+        });
+      };
+
+      if (el.currentStyle) {
+        return el.currentStyle[camelize(styleProp)];
+      } else if (
+        document.defaultView &&
+        document.defaultView.getComputedStyle
+      ) {
+        return document.defaultView
+          .getComputedStyle(el, null)
+          .getPropertyValue(styleProp);
+      } else {
+        return el.style[camelize(styleProp)];
+      }
+    }
   },
 };
 </script>

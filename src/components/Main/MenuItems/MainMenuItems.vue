@@ -1,7 +1,7 @@
 <template>
   <div class="menu-container">
     <div class="tw-flex tw-flex-wrap menu-container__wrap">
-      <q-space/>
+      <q-space />
       <button
         :style="{ 'font-size': $toRem('30px') }"
         class="tw-inline-flex tw-items-center"
@@ -23,6 +23,7 @@
           :icon="item.icon"
           :name="item.name"
           :to="item.to"
+          :speaker="item.speaker"
         />
       </ul>
     </div>
@@ -30,45 +31,49 @@
 </template>
 
 <script>
-import MainMenuItem from './MainMenuItem';
-import { mapGetters } from 'vuex';
+import MainMenuItem from "./MainMenuItem";
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
       items: [
         {
-          name: 'Здравоохранение',
-          icon: 'medical',
-          to: { name: 'presentation', params: { type: 'medical' } },
+          name: "Здравоохранение",
+          icon: "medical",
+          to: { name: "presentation", params: { type: "medical" } },
         },
         {
-          name: 'Жилищно-коммунальное хозяйство',
-          icon: 'jil',
-          to: { name: 'presentation', params: { type: 'hoz' } },
+          name: "Жилищно-коммунальное хозяйство",
+          icon: "jil",
+          to: { name: "presentation", params: { type: "hoz" } },
         },
         {
-          name: 'Транспорт и дорожное хозяйство',
-          icon: 'transport',
-          to: { name: 'presentation', params: { type: 'transport' } },
+          name: "Транспорт и дорожное хозяйство",
+          icon: "transport",
+          to: { name: "presentation", params: { type: "transport" } },
         },
         {
-          name: 'Чрезвычайные ситуации',
-          icon: 'chs',
-          to: { name: 'presentation', params: { type: 'situations' } },
+          name: "Чрезвычайные ситуации",
+          icon: "chs",
+          to: { name: "presentation", params: { type: "situations" } },
         },
       ],
     };
   },
   computed: {
     ...mapGetters({
-      slideData: 'slideDataGetter',
+      slideData: "slideDataGetter",
     }),
     presentations() {
       const getItem = (item) => ({
         name: item.department.name,
-        icon: item.department['menu_image'].url,
+        icon: item.department["menu_image"].url,
+        speaker: {
+          first_name: item.speaker["first_name"],
+          last_name: item.speaker["last_name"],
+        },
         to: {
-          name: 'presentation',
+          name: "presentation",
           params: { id: item.id, type: item.type, currentSlide: 0 },
         },
       });

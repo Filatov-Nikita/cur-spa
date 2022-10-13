@@ -26,6 +26,8 @@
             :logo="logo"
             :name="name"
             :speaker="speaker"
+            :slides="slides"
+            @nextType="nextType"
             @prevType="prevType"
           />
         </template>
@@ -35,75 +37,75 @@
 </template>
 
 <script>
-import PresentationBuilder from 'src/components/Presentation/PresentationBuilder';
-import PresentationVideoBackground from 'src/components/Presentation/PresentationVideoBackground';
-import Speaker from 'pages/Speaker';
-import { mapGetters } from 'vuex';
+import PresentationBuilder from "src/components/Presentation/PresentationBuilder";
+import PresentationVideoBackground from "src/components/Presentation/PresentationVideoBackground";
+import Speaker from "pages/Speaker";
+import { mapGetters } from "vuex";
 
 const types = {
   medical: {
-    name: 'Здравоохранение',
-    video: 'videos/medicine.mp4',
-    color: 'negative',
-    logo: 'pres-logos/medical.svg',
+    name: "Здравоохранение",
+    video: "videos/medicine.mp4",
+    color: "negative",
+    logo: "pres-logos/medical.svg",
     // временно
     speaker: {
-      avatar: 'speakers/Забелин.png',
-      name: 'Забелин Максим Васильевич',
+      avatar: "speakers/Забелин.png",
+      name: "Забелин Максим Васильевич",
       position:
-        'Заместитель Премьер-министра Правительства Республики Башкортостан - министр здравоохранения',
+        "Заместитель Премьер-министра Правительства Республики Башкортостан - министр здравоохранения",
     },
   },
   transport: {
-    name: 'Транспорт и дорожное хозяйство',
-    video: 'videos/transport.mp4',
-    color: 'blue',
-    logo: 'pres-logos/transport.svg',
+    name: "Транспорт и дорожное хозяйство",
+    video: "videos/transport.mp4",
+    color: "blue",
+    logo: "pres-logos/transport.svg",
     // временно
     speaker: {
-      avatar: 'speakers/Жульков.jpg',
-      name: 'Жульков Виктор Михайлович',
+      avatar: "speakers/Жульков.jpg",
+      name: "Жульков Виктор Михайлович",
       position:
-        'Исполняющий обязанности министра транспорта и дорожного хозяйства Республики Башкортостан',
+        "Исполняющий обязанности министра транспорта и дорожного хозяйства Республики Башкортостан",
     },
   },
   zkh: {
-    name: 'Жилищно-коммунальное хозяйство',
-    video: 'videos/hoz.mp4',
-    color: 'orange',
-    logo: 'pres-logos/hoz.svg',
+    name: "Жилищно-коммунальное хозяйство",
+    video: "videos/hoz.mp4",
+    color: "orange",
+    logo: "pres-logos/hoz.svg",
     // временно
     speaker: {
-      avatar: 'speakers/Голованова.jpg',
-      name: 'Голованова Ирина Александровна',
+      avatar: "speakers/Голованова.jpg",
+      name: "Голованова Ирина Александровна",
       position:
-        'Исполняющий обязанности министра жилищно-коммунального хозяйства Республики Башкортостан',
+        "Исполняющий обязанности министра жилищно-коммунального хозяйства Республики Башкортостан",
     },
   },
   emergency: {
-    name: 'Чрезвычайные ситуации',
-    video: 'videos/situations.mp4',
-    color: 'green',
-    logo: 'pres-logos/situations.svg',
+    name: "Чрезвычайные ситуации",
+    video: "videos/situations.mp4",
+    color: "green",
+    logo: "pres-logos/situations.svg",
     // временно
     speaker: {
-      avatar: 'speakers/Гумеров.jpg',
-      name: 'Гумеров Фарит Рифович',
+      avatar: "speakers/Гумеров.jpg",
+      name: "Гумеров Фарит Рифович",
       position:
-        'Председатель Государственного комитета Республики Башкортостан по чрезвычайным ситуациям',
+        "Председатель Государственного комитета Республики Башкортостан по чрезвычайным ситуациям",
     },
   },
   universal: {
-    name: ' Сельское хозяйство',
-    video: 'videos/universal.mp4',
-    color: 'blueSea',
-    logo: 'pres-logos/sel.png',
+    name: " Сельское хозяйство",
+    video: "videos/universal.mp4",
+    color: "blueSea",
+    logo: "pres-logos/sel.png",
     // временно
     speaker: {
-      avatar: 'speakers/Фазрахманов.jpg',
-      name: 'Фазрахманов Ильшат Ильдусович',
+      avatar: "speakers/Фазрахманов.jpg",
+      name: "Фазрахманов Ильшат Ильдусович",
       position:
-        'Заместитель Премьер-министра Правительства Республики Башкортостан - министр сельского хозяйства',
+        "Заместитель Премьер-министра Правительства Республики Башкортостан - министр сельского хозяйства",
     },
   },
 };
@@ -130,7 +132,7 @@ export default {
   },
   methods: {
     nextType() {
-      if (!this.hasNext) return this.$router.push({ name: 'home' });
+      if (!this.hasNext) return this.$router.push({ name: "home" });
 
       this.$router.push({
         params: {
@@ -146,8 +148,8 @@ export default {
       });
     },
     prevType() {
-      if (!this.hasPrev) return this.$router.push({ name: 'home' });
-
+      if (!this.hasPrev) return this.$router.push({ name: "home" });
+      console.log(this.prevPres);
       this.$router.push({
         params: {
           currentSlide: this.prevPres?.slides?.length,
@@ -159,7 +161,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      slideData: 'slideDataGetter',
+      slideData: "slideDataGetter",
     }),
     presentations() {
       return this.slideData?.presentations || [];
@@ -198,8 +200,8 @@ export default {
       return this.curIndex + 1 < this.presentations.length;
     },
     hasPrev() {
-      console.log(this.curIndex)
-      console.log(this.curIndex  > 0)
+      console.log(this.curIndex);
+      console.log(this.curIndex > 0);
       return this.curIndex > 0;
     },
     nextPres() {
@@ -223,7 +225,7 @@ export default {
       return this.prevPres?.type || null;
     },
     curTypeParams() {
-      return types[this.type] || types['medical'];
+      return types[this.type] || types["medical"];
     },
     video() {
       return this.curTypeParams.video;
